@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EditDeadlineOption",
+  "description": "EditDeadlineOption options for creating a deadline",
+  "type": "object",
+  "required": [
+    "due_date"
+  ],
+  "properties": {
+    "due_date": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Deadline"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

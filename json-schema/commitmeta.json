@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CommitMeta contains meta information of a commit in terms of API.",
+  "type": "object",
+  "properties": {
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Created"
+    },
+    "sha": {
+      "type": "string",
+      "x-go-name": "SHA"
+    },
+    "url": {
+      "type": "string",
+      "x-go-name": "URL"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EditReactionOption",
+  "description": "EditReactionOption contain the reaction type",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "x-go-name": "Reaction"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

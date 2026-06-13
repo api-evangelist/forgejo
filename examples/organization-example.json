@@ -1,0 +1,16 @@
+{
+  "title": "Forgejo Organization Example",
+  "description": "Organization represents an organization",
+  "example": {
+    "avatar_url": "string",
+    "created": "2024-01-15T12:00:00Z",
+    "description": "string",
+    "email": "string",
+    "full_name": "string",
+    "id": 1,
+    "location": "string",
+    "name": "string",
+    "repo_admin_change_team_access": false,
+    "username": "string"
+  }
+}

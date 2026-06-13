@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DismissPullReviewOptions",
+  "description": "DismissPullReviewOptions are options to dismiss a pull review",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "x-go-name": "Message"
+    },
+    "priors": {
+      "type": "boolean",
+      "x-go-name": "Priors"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

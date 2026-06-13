@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuotaUsedSize",
+  "description": "QuotaUsedSize represents the size-based quota usage of a user",
+  "type": "object",
+  "properties": {
+    "assets": {
+      "$ref": "#/definitions/QuotaUsedSizeAssets"
+    },
+    "git": {
+      "$ref": "#/definitions/QuotaUsedSizeGit"
+    },
+    "repos": {
+      "$ref": "#/definitions/QuotaUsedSizeRepos"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

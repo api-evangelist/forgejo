@@ -1,0 +1,16 @@
+{
+  "title": "Forgejo User Example",
+  "description": "User represents a user",
+  "example": {
+    "active": false,
+    "avatar_url": "string",
+    "created": "2024-01-15T12:00:00Z",
+    "description": "string",
+    "email": "string",
+    "followers_count": 1,
+    "following_count": 1,
+    "full_name": "string",
+    "html_url": "string",
+    "id": 1
+  }
+}

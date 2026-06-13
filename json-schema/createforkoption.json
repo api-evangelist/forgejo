@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateForkOption",
+  "description": "CreateForkOption options for creating a fork",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "name of the forked repository",
+      "type": "string",
+      "x-go-name": "Name"
+    },
+    "organization": {
+      "description": "organization name, if forking into an organization",
+      "type": "string",
+      "x-go-name": "Organization"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

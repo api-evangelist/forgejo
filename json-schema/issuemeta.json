@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IssueMeta",
+  "description": "IssueMeta basic issue information",
+  "type": "object",
+  "properties": {
+    "index": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Index"
+    },
+    "owner": {
+      "type": "string",
+      "x-go-name": "Owner"
+    },
+    "repo": {
+      "type": "string",
+      "x-go-name": "Name"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Forgejo NotificationThread Example",
+  "description": "NotificationThread expose Notification on API",
+  "example": {
+    "id": 1,
+    "pinned": false,
+    "repository": {
+      "allow_fast_forward_only_merge": false,
+      "allow_merge_commits": false,
+      "allow_rebase": false,
+      "allow_rebase_explicit": false,
+      "allow_rebase_update": false,
+      "allow_squash_merge": false,
+      "archived": false,
+      "archived_at": "2024-01-15T12:00:00Z",
+      "avatar_url": "string",
+      "clone_url": "string"
+    },
+    "subject": {
+      "html_url": "string",
+      "latest_comment_html_url": "string",
+      "latest_comment_url": "string",
+      "state": "<StateType>",
+      "title": "string",
+      "type": "<NotifySubjectType>",
+      "url": "string"
+    },
+    "unread": false,
+    "updated_at": "2024-01-15T12:00:00Z",
+    "url": "string"
+  }
+}

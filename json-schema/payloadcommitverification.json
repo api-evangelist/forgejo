@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PayloadCommitVerification",
+  "description": "PayloadCommitVerification represents the GPG verification of a commit",
+  "type": "object",
+  "properties": {
+    "payload": {
+      "type": "string",
+      "x-go-name": "Payload"
+    },
+    "reason": {
+      "type": "string",
+      "x-go-name": "Reason"
+    },
+    "signature": {
+      "type": "string",
+      "x-go-name": "Signature"
+    },
+    "signer": {
+      "$ref": "#/definitions/PayloadUser"
+    },
+    "verified": {
+      "type": "boolean",
+      "x-go-name": "Verified"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ForgeOutbox",
+  "description": "ActivityStream OrderedCollection of activities",
+  "type": "object",
+  "x-go-package": "forgejo.org/modules/forgefed"
+}

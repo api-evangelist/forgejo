@@ -1,0 +1,16 @@
+{
+  "title": "Forgejo Repository Example",
+  "description": "Repository represents a repository",
+  "example": {
+    "allow_fast_forward_only_merge": false,
+    "allow_merge_commits": false,
+    "allow_rebase": false,
+    "allow_rebase_explicit": false,
+    "allow_rebase_update": false,
+    "allow_squash_merge": false,
+    "archived": false,
+    "archived_at": "2024-01-15T12:00:00Z",
+    "avatar_url": "string",
+    "clone_url": "string"
+  }
+}

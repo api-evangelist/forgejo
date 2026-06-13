@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TopicName",
+  "description": "TopicName a list of repo topic names",
+  "type": "object",
+  "properties": {
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "x-go-name": "TopicNames"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

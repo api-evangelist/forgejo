@@ -1,0 +1,48 @@
+{
+  "title": "Forgejo Package Example",
+  "description": "Package represents a package",
+  "example": {
+    "created_at": "2024-01-15T12:00:00Z",
+    "creator": {
+      "active": false,
+      "avatar_url": "string",
+      "created": "2024-01-15T12:00:00Z",
+      "description": "string",
+      "email": "string",
+      "followers_count": 1,
+      "following_count": 1,
+      "full_name": "string",
+      "html_url": "string",
+      "id": 1
+    },
+    "html_url": "string",
+    "id": 1,
+    "name": "string",
+    "owner": {
+      "active": false,
+      "avatar_url": "string",
+      "created": "2024-01-15T12:00:00Z",
+      "description": "string",
+      "email": "string",
+      "followers_count": 1,
+      "following_count": 1,
+      "full_name": "string",
+      "html_url": "string",
+      "id": 1
+    },
+    "repository": {
+      "allow_fast_forward_only_merge": false,
+      "allow_merge_commits": false,
+      "allow_rebase": false,
+      "allow_rebase_explicit": false,
+      "allow_rebase_update": false,
+      "allow_squash_merge": false,
+      "archived": false,
+      "archived_at": "2024-01-15T12:00:00Z",
+      "avatar_url": "string",
+      "clone_url": "string"
+    },
+    "type": "string",
+    "version": "string"
+  }
+}

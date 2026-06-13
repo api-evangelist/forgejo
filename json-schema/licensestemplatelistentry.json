@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LicensesTemplateListEntry",
+  "description": "LicensesListEntry is used for the API",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "x-go-name": "Key"
+    },
+    "name": {
+      "type": "string",
+      "x-go-name": "Name"
+    },
+    "url": {
+      "type": "string",
+      "x-go-name": "URL"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

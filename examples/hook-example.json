@@ -1,0 +1,17 @@
+{
+  "title": "Forgejo Hook Example",
+  "description": "Hook a hook is a web hook when one repository changed",
+  "example": {
+    "active": false,
+    "authorization_header": "string",
+    "branch_filter": "string",
+    "config": {},
+    "content_type": "string",
+    "created_at": "2024-01-15T12:00:00Z",
+    "events": [
+      "string"
+    ],
+    "id": 1,
+    "type": "string"
+  }
+}

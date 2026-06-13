@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GitignoreTemplateInfo",
+  "description": "GitignoreTemplateInfo name and text of a gitignore template",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "x-go-name": "Name"
+    },
+    "source": {
+      "type": "string",
+      "x-go-name": "Source"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

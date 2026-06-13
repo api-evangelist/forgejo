@@ -1,0 +1,28 @@
+{
+  "title": "Forgejo Team Example",
+  "description": "Team represents a team in an organization",
+  "example": {
+    "can_create_org_repo": false,
+    "description": "string",
+    "id": 1,
+    "includes_all_repositories": false,
+    "name": "string",
+    "organization": {
+      "avatar_url": "string",
+      "created": "2024-01-15T12:00:00Z",
+      "description": "string",
+      "email": "string",
+      "full_name": "string",
+      "id": 1,
+      "location": "string",
+      "name": "string",
+      "repo_admin_change_team_access": false,
+      "username": "string"
+    },
+    "permission": "none",
+    "units": [
+      "string"
+    ],
+    "units_map": {}
+  }
+}

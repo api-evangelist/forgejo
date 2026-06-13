@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UpdateRepoAvatarOption",
+  "description": "UpdateRepoAvatarUserOption options when updating the repo avatar",
+  "type": "object",
+  "properties": {
+    "image": {
+      "description": "image must be base64 encoded",
+      "type": "string",
+      "x-go-name": "Image"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

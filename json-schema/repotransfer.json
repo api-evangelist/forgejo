@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RepoTransfer",
+  "description": "RepoTransfer represents a pending repo transfer",
+  "type": "object",
+  "properties": {
+    "doer": {
+      "$ref": "#/definitions/User"
+    },
+    "recipient": {
+      "$ref": "#/definitions/User"
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Team"
+      },
+      "x-go-name": "Teams"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

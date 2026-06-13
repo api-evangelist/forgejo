@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WikiCommitList",
+  "description": "WikiCommitList commit/revision list",
+  "type": "object",
+  "properties": {
+    "commits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/WikiCommit"
+      },
+      "x-go-name": "WikiCommits"
+    },
+    "count": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Count"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuotaUsedSizeAssets",
+  "description": "QuotaUsedSizeAssets represents the size-based asset usage of a user",
+  "type": "object",
+  "properties": {
+    "artifacts": {
+      "description": "Storage size used for the user's artifacts",
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Artifacts"
+    },
+    "attachments": {
+      "$ref": "#/definitions/QuotaUsedSizeAssetsAttachments"
+    },
+    "packages": {
+      "$ref": "#/definitions/QuotaUsedSizeAssetsPackages"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

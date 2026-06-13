@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Compare represents a comparison between two commits.",
+  "type": "object",
+  "properties": {
+    "commits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Commit"
+      },
+      "x-go-name": "Commits"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CommitAffectedFiles"
+      },
+      "x-go-name": "Files"
+    },
+    "total_commits": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "TotalCommits"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

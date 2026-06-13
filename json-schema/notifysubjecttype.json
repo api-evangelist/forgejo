@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NotifySubjectType",
+  "description": "NotifySubjectType represent type of notification subject",
+  "type": "string",
+  "x-go-package": "forgejo.org/modules/structs"
+}

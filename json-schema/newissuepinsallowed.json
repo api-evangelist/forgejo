@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NewIssuePinsAllowed",
+  "description": "NewIssuePinsAllowed represents an API response that says if new Issue Pins are allowed",
+  "type": "object",
+  "properties": {
+    "issues": {
+      "type": "boolean",
+      "x-go-name": "Issues"
+    },
+    "pull_requests": {
+      "type": "boolean",
+      "x-go-name": "PullRequests"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

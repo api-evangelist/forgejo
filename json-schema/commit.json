@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Commit contains information generated from a Git commit.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/User"
+    },
+    "commit": {
+      "$ref": "#/definitions/RepoCommit"
+    },
+    "committer": {
+      "$ref": "#/definitions/User"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Created"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CommitAffectedFiles"
+      },
+      "x-go-name": "Files"
+    },
+    "html_url": {
+      "type": "string",
+      "x-go-name": "HTMLURL"
+    },
+    "parents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CommitMeta"
+      },
+      "x-go-name": "Parents"
+    },
+    "sha": {
+      "type": "string",
+      "x-go-name": "SHA"
+    },
+    "stats": {
+      "$ref": "#/definitions/CommitStats"
+    },
+    "url": {
+      "type": "string",
+      "x-go-name": "URL"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

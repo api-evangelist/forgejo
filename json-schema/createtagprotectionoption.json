@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateTagProtectionOption",
+  "description": "CreateTagProtectionOption options for creating a tag protection",
+  "type": "object",
+  "properties": {
+    "name_pattern": {
+      "type": "string",
+      "x-go-name": "NamePattern"
+    },
+    "whitelist_teams": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "x-go-name": "WhitelistTeams"
+    },
+    "whitelist_usernames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "x-go-name": "WhitelistUsernames"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

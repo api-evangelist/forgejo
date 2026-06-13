@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EditGitHookOption",
+  "description": "EditGitHookOption options when modifying one Git hook",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "x-go-name": "Content"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

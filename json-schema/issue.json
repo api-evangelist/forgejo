@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Issue",
+  "description": "Issue represents an issue in a repository",
+  "type": "object",
+  "properties": {
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Attachment"
+      },
+      "x-go-name": "Attachments"
+    },
+    "assignee": {
+      "$ref": "#/definitions/User"
+    },
+    "assignees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/User"
+      },
+      "x-go-name": "Assignees"
+    },
+    "body": {
+      "type": "string",
+      "x-go-name": "Body"
+    },
+    "closed_at": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Closed"
+    },
+    "comments": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Comments"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Created"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Deadline"
+    },
+    "html_url": {
+      "type": "string",
+      "x-go-name": "HTMLURL"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "ID"
+    },
+    "is_locked": {
+      "type": "boolean",
+      "x-go-name": "IsLocked"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Label"
+      },
+      "x-go-name": "Labels"
+    },
+    "milestone": {
+      "$ref": "#/definitions/Milestone"
+    },
+    "number": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Index"
+    },
+    "original_author": {
+      "type": "string",
+      "x-go-name": "OriginalAuthor"
+    },
+    "original_author_id": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "OriginalAuthorID"
+    },
+    "pin_order": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "PinOrder"
+    },
+    "pull_request": {
+      "$ref": "#/definitions/PullRequestMeta"
+    },
+    "ref": {
+      "type": "string",
+      "x-go-name": "Ref"
+    },
+    "repository": {
+      "$ref": "#/definitions/RepositoryMeta"
+    },
+    "state": {
+      "$ref": "#/definitions/StateType"
+    },
+    "title": {
+      "type": "string",
+      "x-go-name": "Title"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Updated"
+    },
+    "url": {
+      "type": "string",
+      "x-go-name": "URL"
+    },
+    "user": {
+      "$ref": "#/definitions/User"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

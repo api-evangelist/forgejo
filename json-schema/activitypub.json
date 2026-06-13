@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityPub",
+  "description": "ActivityPub type",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "x-go-name": "Context"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

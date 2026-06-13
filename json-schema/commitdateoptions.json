@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CommitDateOptions",
+  "description": "CommitDateOptions store dates for GIT_AUTHOR_DATE and GIT_COMMITTER_DATE",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Author"
+    },
+    "committer": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Committer"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

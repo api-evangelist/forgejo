@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IssueFormFieldVisible",
+  "description": "IssueFormFieldVisible defines issue form field visible",
+  "type": "string",
+  "x-go-package": "forgejo.org/modules/structs"
+}

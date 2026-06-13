@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListActionRunResponse",
+  "description": "ListActionRunResponse return a list of ActionRun",
+  "type": "object",
+  "properties": {
+    "total_count": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "TotalCount"
+    },
+    "workflow_runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ActionRun"
+      },
+      "x-go-name": "Entries"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

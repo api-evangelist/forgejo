@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NotificationSubject",
+  "description": "NotificationSubject contains the notification subject (Issue/Pull/Commit)",
+  "type": "object",
+  "properties": {
+    "html_url": {
+      "type": "string",
+      "x-go-name": "HTMLURL"
+    },
+    "latest_comment_html_url": {
+      "type": "string",
+      "x-go-name": "LatestCommentHTMLURL"
+    },
+    "latest_comment_url": {
+      "type": "string",
+      "x-go-name": "LatestCommentURL"
+    },
+    "state": {
+      "$ref": "#/definitions/StateType"
+    },
+    "title": {
+      "type": "string",
+      "x-go-name": "Title"
+    },
+    "type": {
+      "$ref": "#/definitions/NotifySubjectType"
+    },
+    "url": {
+      "type": "string",
+      "x-go-name": "URL"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

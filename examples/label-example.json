@@ -1,0 +1,13 @@
+{
+  "title": "Forgejo Label Example",
+  "description": "Label a label to an issue or a pr",
+  "example": {
+    "color": "00aabb",
+    "description": "string",
+    "exclusive": false,
+    "id": 1,
+    "is_archived": false,
+    "name": "string",
+    "url": "string"
+  }
+}

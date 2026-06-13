@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuotaUsedSizeAssetsPackages",
+  "description": "QuotaUsedSizeAssetsPackages represents the size-based package quota usage of a user",
+  "type": "object",
+  "properties": {
+    "all": {
+      "description": "Storage suze used for the user's packages",
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "All"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

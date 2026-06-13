@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GitTreeResponse",
+  "description": "GitTreeResponse returns a git tree",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Page"
+    },
+    "sha": {
+      "type": "string",
+      "x-go-name": "SHA"
+    },
+    "total_count": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "TotalCount"
+    },
+    "tree": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/GitEntry"
+      },
+      "x-go-name": "Entries"
+    },
+    "truncated": {
+      "type": "boolean",
+      "x-go-name": "Truncated"
+    },
+    "url": {
+      "type": "string",
+      "x-go-name": "URL"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "forgejo": "https://forgejo.org/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": "schema:WebAPI",
+  "@id": "https://forgejo.org/api/v1",
+  "schema:name": "Forgejo API",
+  "schema:description": "This documentation describes the Forgejo API.",
+  "schema:version": "16.0.0-dev-465-4b83448b7d+gitea-1.22.0",
+  "schema:license": "https://opensource.org/licenses/MIT",
+  "schema:url": "https://forgejo.org/docs/latest/user/api-usage/",
+  "schema:documentation": "https://forgejo.org/docs/latest/user/api-usage/",
+  "schema:provider": {
+    "@type": "schema:Organization",
+    "schema:name": "Forgejo",
+    "schema:url": "https://forgejo.org"
+  },
+  "forgejo:baseURL": "https://code.forgejo.org/api/v1",
+  "forgejo:specURL": "https://code.forgejo.org/swagger.v1.json",
+  "forgejo:pathCount": 326,
+  "forgejo:definitionCount": 246,
+  "forgejo:tags": []
+}

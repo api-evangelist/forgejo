@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateMilestoneOption",
+  "description": "CreateMilestoneOption options for creating a milestone",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "x-go-name": "Description"
+    },
+    "due_on": {
+      "type": "string",
+      "format": "date-time",
+      "x-go-name": "Deadline"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "open",
+        "closed"
+      ],
+      "x-go-name": "State"
+    },
+    "title": {
+      "type": "string",
+      "x-go-name": "Title"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

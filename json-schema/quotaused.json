@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuotaUsed",
+  "description": "QuotaUsed represents the quota usage of a user",
+  "type": "object",
+  "properties": {
+    "size": {
+      "$ref": "#/definitions/QuotaUsedSize"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

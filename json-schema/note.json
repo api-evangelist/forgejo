@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Note",
+  "description": "Note contains information related to a git note",
+  "type": "object",
+  "properties": {
+    "commit": {
+      "$ref": "#/definitions/Commit"
+    },
+    "message": {
+      "type": "string",
+      "x-go-name": "Message"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

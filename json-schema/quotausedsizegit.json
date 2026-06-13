@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuotaUsedSizeGit",
+  "description": "QuotaUsedSizeGit represents the size-based git (lfs) quota usage of a user",
+  "type": "object",
+  "properties": {
+    "LFS": {
+      "description": "Storage size of the user's Git LFS objects",
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

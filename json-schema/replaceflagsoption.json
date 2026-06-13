@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ReplaceFlagsOption",
+  "description": "ReplaceFlagsOption options when replacing the flags of a repository",
+  "type": "object",
+  "properties": {
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "x-go-name": "Flags"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

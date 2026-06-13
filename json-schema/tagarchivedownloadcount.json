@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TagArchiveDownloadCount",
+  "description": "TagArchiveDownloadCount counts how many times a archive was downloaded",
+  "type": "object",
+  "properties": {
+    "tar_gz": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "TarGz"
+    },
+    "zip": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "Zip"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

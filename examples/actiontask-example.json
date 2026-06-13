@@ -1,0 +1,16 @@
+{
+  "title": "Forgejo ActionTask Example",
+  "description": "ActionTask represents a ActionTask",
+  "example": {
+    "created_at": "2024-01-15T12:00:00Z",
+    "display_title": "string",
+    "event": "string",
+    "head_branch": "string",
+    "head_sha": "string",
+    "id": 1,
+    "name": "string",
+    "run_number": 1,
+    "run_started_at": "2024-01-15T12:00:00Z",
+    "status": "string"
+  }
+}

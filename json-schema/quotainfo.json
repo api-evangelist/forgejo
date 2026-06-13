@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuotaInfo",
+  "description": "QuotaInfo represents information about a user's quota",
+  "type": "object",
+  "properties": {
+    "groups": {
+      "$ref": "#/definitions/QuotaGroupList"
+    },
+    "used": {
+      "$ref": "#/definitions/QuotaUsed"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

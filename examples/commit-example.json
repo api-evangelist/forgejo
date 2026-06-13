@@ -1,0 +1,53 @@
+{
+  "title": "Forgejo Commit Example",
+  "description": "Example of a Forgejo Commit object",
+  "example": {
+    "author": {
+      "active": false,
+      "avatar_url": "string",
+      "created": "2024-01-15T12:00:00Z",
+      "description": "string",
+      "email": "string",
+      "followers_count": 1,
+      "following_count": 1,
+      "full_name": "string",
+      "html_url": "string",
+      "id": 1
+    },
+    "commit": {
+      "author": "<CommitUser>",
+      "committer": "<CommitUser>",
+      "message": "string",
+      "tree": "<CommitMeta>",
+      "url": "string",
+      "verification": "<PayloadCommitVerification>"
+    },
+    "committer": {
+      "active": false,
+      "avatar_url": "string",
+      "created": "2024-01-15T12:00:00Z",
+      "description": "string",
+      "email": "string",
+      "followers_count": 1,
+      "following_count": 1,
+      "full_name": "string",
+      "html_url": "string",
+      "id": 1
+    },
+    "created": "2024-01-15T12:00:00Z",
+    "files": [
+      "<CommitAffectedFiles>"
+    ],
+    "html_url": "string",
+    "parents": [
+      "<CommitMeta>"
+    ],
+    "sha": "string",
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 1
+    },
+    "url": "string"
+  }
+}

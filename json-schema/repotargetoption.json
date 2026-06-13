@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RepoTargetOption",
+  "type": "object",
+  "required": [
+    "owner",
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "description": "Name of repository",
+      "type": "string",
+      "x-go-name": "Name"
+    },
+    "owner": {
+      "description": "Name of user or organisation that owns the repository",
+      "type": "string",
+      "x-go-name": "Owner"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

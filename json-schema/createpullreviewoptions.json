@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreatePullReviewOptions",
+  "description": "CreatePullReviewOptions are options to create a pull review",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "string",
+      "x-go-name": "Body"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CreatePullReviewComment"
+      },
+      "x-go-name": "Comments"
+    },
+    "commit_id": {
+      "type": "string",
+      "x-go-name": "CommitID"
+    },
+    "event": {
+      "$ref": "#/definitions/ReviewStateType"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

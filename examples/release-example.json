@@ -1,0 +1,32 @@
+{
+  "title": "Forgejo Release Example",
+  "description": "Release represents a repository release",
+  "example": {
+    "archive_download_count": {
+      "tar_gz": 1,
+      "zip": 1
+    },
+    "assets": [
+      "<Attachment>"
+    ],
+    "author": {
+      "active": false,
+      "avatar_url": "string",
+      "created": "2024-01-15T12:00:00Z",
+      "description": "string",
+      "email": "string",
+      "followers_count": 1,
+      "following_count": 1,
+      "full_name": "string",
+      "html_url": "string",
+      "id": 1
+    },
+    "body": "string",
+    "created_at": "2024-01-15T12:00:00Z",
+    "draft": false,
+    "hide_archive_links": false,
+    "html_url": "string",
+    "id": 1,
+    "name": "string"
+  }
+}

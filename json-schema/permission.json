@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Permission",
+  "description": "Permission represents a set of permissions",
+  "type": "object",
+  "properties": {
+    "admin": {
+      "type": "boolean",
+      "x-go-name": "Admin"
+    },
+    "pull": {
+      "type": "boolean",
+      "x-go-name": "Pull"
+    },
+    "push": {
+      "type": "boolean",
+      "x-go-name": "Push"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}

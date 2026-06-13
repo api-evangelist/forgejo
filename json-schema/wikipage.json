@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WikiPage",
+  "description": "WikiPage a wiki page",
+  "type": "object",
+  "properties": {
+    "commit_count": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-name": "CommitCount"
+    },
+    "content_base64": {
+      "description": "Page content, base64 encoded",
+      "type": "string",
+      "x-go-name": "ContentBase64"
+    },
+    "footer": {
+      "type": "string",
+      "x-go-name": "Footer"
+    },
+    "html_url": {
+      "type": "string",
+      "x-go-name": "HTMLURL"
+    },
+    "last_commit": {
+      "$ref": "#/definitions/WikiCommit"
+    },
+    "sidebar": {
+      "type": "string",
+      "x-go-name": "Sidebar"
+    },
+    "sub_url": {
+      "type": "string",
+      "x-go-name": "SubURL"
+    },
+    "title": {
+      "type": "string",
+      "x-go-name": "Title"
+    }
+  },
+  "x-go-package": "forgejo.org/modules/structs"
+}
