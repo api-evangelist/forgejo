@@ -1,0 +1,59 @@
+name: Forgejo API Rate Limits
+description: Forgejo's rate limiting behavior is configurable by instance administrators and is not fixed at the software level. Self-hosted instances can be tuned via the app.ini configuration file. Hosted instances like Codeberg.org apply their own limits. The API uses token-based authentication and supports pagination for large result sets.
+url: https://forgejo.org/docs/latest/user/api-usage/
+created: '2026-06-13'
+modified: '2026-06-13'
+rateLimits:
+  - name: Self-Hosted Default
+    description: Forgejo does not enforce API rate limits by default in a self-hosted deployment. Instance administrators can configure rate limits via the [api] section of app.ini, including MAX_RESPONSE_ITEMS and DEFAULT_PAGING_NUM settings.
+    scope: instance
+    enforced: false
+    notes: Rate limits are entirely at the discretion of the instance operator. No default cap on requests per minute or per hour.
+  - name: Codeberg.org API Rate Limits
+    description: Codeberg.org, the primary public hosted instance, applies rate limits to prevent abuse. Specific numbers are subject to change and enforced at the infrastructure level. Authenticated requests receive higher limits than unauthenticated requests.
+    scope: hosted-instance
+    enforced: true
+    authenticated: true
+    notes: Check https://codeberg.org for current limits. Codeberg has previously applied limits around repository migration to prevent abuse.
+pagination:
+  description: All list endpoints support pagination via query parameters.
+  parameters:
+    - name: page
+      type: integer
+      description: Page number of results to return (1-indexed)
+    - name: limit
+      type: integer
+      description: Page size of results. Default varies by endpoint; configurable via admin DEFAULT_PAGING_NUM setting.
+  responseHeaders:
+    - name: x-total-count
+      description: Total number of items across all pages
+    - name: Link
+      description: RFC 5988 Link header with rel=next, rel=prev, rel=first, rel=last for navigation
+apiSettings:
+  configSection: '[api]'
+  configFile: app.ini
+  relevantSettings:
+    - key: MAX_RESPONSE_ITEMS
+      description: Maximum number of items any single API endpoint can return in one page
+    - key: DEFAULT_PAGING_NUM
+      description: Default page size for paginated endpoints
+    - key: MAX_PAGING_NUM
+      description: Maximum allowed page size a client can request
+  referenceURL: https://forgejo.org/docs/latest/admin/config-cheat-sheet/
+authentication:
+  methods:
+    - type: Bearer Token
+      header: 'Authorization: Bearer <token>'
+      description: OAuth2 access tokens or personal access tokens
+    - type: Token Header
+      header: 'Authorization: token <token>'
+      description: Legacy personal access token format
+    - type: Basic Auth
+      description: HTTP Basic Authentication (username/password); required for token generation endpoint
+    - type: OTP Header
+      header: 'X-Forgejo-OTP: <otp-code>'
+      description: Required alongside basic auth for accounts with two-factor authentication enabled
+  tokenGeneration:
+    endpoint: POST /api/v1/users/{username}/tokens
+    authentication: basic
+    notes: Tokens are returned only once at creation time and cannot be retrieved later. Tokens can be scoped to specific repositories as of Forgejo v15.0.

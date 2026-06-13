@@ -1,0 +1,44 @@
+name: Forgejo Plans and Pricing
+description: Forgejo is a Free and Open Source Software (FOSS) project with no commercial pricing tiers. The software itself is freely available under the GPL v3.0+ license (MIT for versions prior to v9.0). Deployment costs are determined entirely by the infrastructure you choose to self-host on. Codeberg.org is the primary hosted instance operated by Codeberg e.V., a non-profit that accepts donations.
+url: https://forgejo.org
+created: '2026-06-13'
+modified: '2026-06-13'
+plans:
+  - name: Self-Hosted (Free)
+    description: Download and run Forgejo on your own infrastructure. No licensing fees. Requires your own server, VPS, or cloud resources. Supports all features including Actions runners, package registry, and API access.
+    url: https://forgejo.org/docs/latest/admin/
+    price: 0
+    priceCurrency: USD
+    billingCycle: free
+    features:
+      - Full REST API access
+      - Repository hosting (unlimited on self-hosted)
+      - Issues and pull requests
+      - Forgejo Actions (CI/CD)
+      - Package registry (npm, Docker, PyPI, Maven, Cargo, and 15+ formats)
+      - Webhooks
+      - OAuth2 and LDAP authentication
+      - Organizations and teams
+      - Wiki and project boards
+      - ActivityPub federation (experimental)
+      - No user or repository limits (hardware-bound)
+  - name: Codeberg.org (Hosted, Donation-Supported)
+    description: Codeberg.org is a free public instance of Forgejo operated by Codeberg e.V., a German non-profit association. It is available to the public at no cost, sustained by community donations. Resource limits may apply per account.
+    url: https://codeberg.org
+    price: 0
+    priceCurrency: USD
+    billingCycle: free
+    features:
+      - Free account for open-source and personal projects
+      - REST API access
+      - Repository hosting
+      - Issues, pull requests, wikis
+      - Package registry
+      - CI/CD via Forgejo Actions
+      - Community-governed with transparent policies
+    notes: Codeberg may apply resource quotas (storage, bandwidth, runner minutes) to ensure fair use for all hosted users. Donations support infrastructure costs.
+notes:
+  - Forgejo has no commercial licensing model or paid tiers.
+  - The project is funded via donations at https://liberapay.com/forgejo and through Codeberg e.V. memberships.
+  - Professional services and support can be obtained from independent vendors in the community.
+  - Hosting costs depend entirely on your chosen infrastructure provider (VPS, cloud, on-premises).

@@ -1,0 +1,75 @@
+aid: forgejo
+name: Forgejo
+description: Forgejo is a self-hosted lightweight software forge and open-source Git service (a Gitea fork) managed by the non-profit Codeberg e.V. It provides a comprehensive REST API for managing repositories, users, organizations, issues, pull requests, CI/CD workflows via Actions, and package registries. Forgejo emphasizes privacy, low resource usage, and community ownership as a Free Software alternative to centralized code hosting platforms.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/forgejo/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Git
+  - Source Code Management
+  - Self-Hosted
+  - DevOps
+  - CI/CD
+  - Open Source
+  - Forge
+  - Repositories
+  - Issues
+  - Pull Requests
+apis:
+  - aid: forgejo:forgejo-api
+    name: Forgejo REST API
+    description: The Forgejo REST API (v1) provides programmatic access to all forge functionality including repository management, user and organization administration, issues, pull requests, CI/CD Actions runners, package registries, webhooks, notifications, and ActivityPub federation endpoints. The API is documented via Swagger (OpenAPI v2) and accessible on any Forgejo instance at /api/v1.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://forgejo.org/docs/latest/user/api-usage/
+    baseURL: https://code.forgejo.org/api/v1
+    tags:
+      - Git
+      - Repositories
+      - Users
+      - Organizations
+      - Issues
+      - Pull Requests
+      - CI/CD
+      - Packages
+      - Webhooks
+      - Notifications
+      - ActivityPub
+    properties:
+      - type: Documentation
+        url: https://forgejo.org/docs/latest/user/api-usage/
+      - type: OpenAPI
+        url: https://code.forgejo.org/swagger.v1.json
+      - type: Swagger
+        url: https://code.forgejo.org/api/swagger
+common:
+  - type: Website
+    url: https://forgejo.org
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/
+  - type: GitHubOrg
+    url: https://github.com/forgejo
+  - type: Blog
+    url: https://forgejo.org/news/
+  - type: BlogRSS
+    url: https://forgejo.org/rss.xml
+  - type: StatusPage
+    url: https://status.forgejo.org
+  - type: X
+    url: https://floss.social/@forgejo
+  - type: Pricing
+    url: https://forgejo.org
+  - type: Plans
+    url: plans/forgejo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/forgejo-rate-limits.yml
+  - type: FinOps
+    url: finops/forgejo-finops.yml
+  - type: SourceCode
+    url: https://codeberg.org/forgejo/forgejo
+  - type: Donate
+    url: https://liberapay.com/forgejo
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

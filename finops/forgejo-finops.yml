@@ -1,0 +1,62 @@
+name: Forgejo FinOps
+description: Forgejo is Free and Open Source Software with no software licensing costs. All financial considerations relate to self-hosting infrastructure or voluntary contributions to the project. This FinOps guide covers infrastructure cost patterns, donation channels, and cost optimization for self-hosted Forgejo deployments.
+url: https://forgejo.org
+created: '2026-06-13'
+modified: '2026-06-13'
+softwareCost:
+  model: free-open-source
+  licensingFee: 0
+  currency: USD
+  license: GPL-3.0-or-later
+  notes: Forgejo source code is freely available. No per-seat, per-repo, or usage-based software fees exist.
+infrastructureCosts:
+  description: Costs are entirely determined by the operator's chosen hosting environment. Forgejo is designed to be lightweight and run on modest hardware.
+  minimumRecommended:
+    cpu: 1 vCPU
+    ram: 512 MB
+    storage: 10 GB (expandable based on repo/package storage needs)
+    notes: Forgejo can run on a Raspberry Pi or entry-level VPS. Actual requirements scale with number of users, repositories, and Actions runner usage.
+  typicalVPSCost:
+    lowEnd:
+      description: Small team or personal use on entry-level VPS
+      monthlyCostUSD: 4-10
+      examples:
+        - Hetzner CX22 (~4 EUR/month)
+        - DigitalOcean Droplet Basic (4 USD/month)
+        - Linode Nanode (5 USD/month)
+    mediumScale:
+      description: Team of 10-50 developers with active CI/CD
+      monthlyCostUSD: 20-60
+      examples:
+        - 2-4 vCPU, 4-8 GB RAM VPS
+        - Separate storage volume for repositories and packages
+    largeScale:
+      description: Organization-wide deployment with many repositories and Actions runners
+      monthlyCostUSD: 100-500+
+      notes: Dedicated Actions runner machines, object storage for packages, and database scaling add to base costs.
+  storageConsiderations:
+    - Git repository data (scales with codebase and history)
+    - LFS (Large File Storage) objects
+    - Package registry artifacts (Docker images, npm packages, etc. can be large)
+    - Actions artifacts and logs
+    - Recommended to use object storage (S3-compatible) for packages and LFS at scale
+donations:
+  description: Forgejo is sustained by community donations. Contributions support infrastructure, development, and the Codeberg e.V. non-profit.
+  channels:
+    - name: Liberapay
+      url: https://liberapay.com/forgejo
+      description: Primary recurring donation platform for Forgejo project
+    - name: Codeberg e.V. Membership
+      url: https://codeberg.org
+      description: Join Codeberg e.V. as a supporting member to help fund the non-profit that stewards Forgejo
+costOptimization:
+  tips:
+    - Use a lightweight VPS or even a Raspberry Pi 4 for small teams
+    - Enable Git object packing and periodic git gc to reduce storage
+    - Use external S3-compatible storage for package registry to separate compute and storage costs
+    - Self-host Actions runners only when needed; scale down during off-hours
+    - Use Forgejo's built-in quota management (soft-quota feature) to control storage per user/org
+    - Consider Codeberg.org as a free option for small open-source projects
+  referenceURL: https://forgejo.org/docs/latest/admin/
+comparisonToAlternatives:
+  notes: Forgejo's self-hosted model eliminates per-seat SaaS fees common in GitHub, GitLab, and Bitbucket Cloud. Total cost of ownership (TCO) is typically 80-95% lower than SaaS alternatives for teams above ~5 users when accounting for SaaS subscription costs vs. infrastructure costs.
