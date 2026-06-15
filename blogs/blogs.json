@@ -1,0 +1,21 @@
+{
+  "repo": "forgejo",
+  "feeds": [
+    {
+      "source": "https://github.com/forgejo",
+      "feed_url": "https://github.com/forgejo",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://forgejo.org/news/",
+      "feed_url": "https://forgejo.org/rss.xml",
+      "title": "",
+      "saved": 1,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 1,
+  "fetched": "2026-06-14T20:42:17Z"
+}
