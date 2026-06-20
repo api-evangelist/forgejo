@@ -1,7 +1,7 @@
 aid: forgejo
 name: Forgejo
 description: Forgejo is a self-hosted lightweight software forge and open-source Git service (a Gitea fork) managed by the non-profit Codeberg e.V. It provides a comprehensive REST API for managing repositories, users, organizations, issues, pull requests, CI/CD workflows via Actions, and package registries. Forgejo emphasizes privacy, low resource usage, and community ownership as a Free Software alternative to centralized code hosting platforms.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/forgejo/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -21,7 +21,7 @@ apis:
   - aid: forgejo:forgejo-api
     name: Forgejo REST API
     description: The Forgejo REST API (v1) provides programmatic access to all forge functionality including repository management, user and organization administration, issues, pull requests, CI/CD Actions runners, package registries, webhooks, notifications, and ActivityPub federation endpoints. The API is documented via Swagger (OpenAPI v2) and accessible on any Forgejo instance at /api/v1.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://forgejo.org/docs/latest/user/api-usage/
     baseURL: https://code.forgejo.org/api/v1
     tags:
