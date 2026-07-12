@@ -44,6 +44,12 @@ apis:
       - type: Swagger
         url: https://code.forgejo.org/api/swagger
 common:
+  - type: VulnerabilityDisclosure
+    url: security/forgejo-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/forgejo-domain-security.yml
+  - type: Authentication
+    url: authentication/forgejo-authentication.yml
   - type: Website
     url: https://forgejo.org
   - type: Documentation

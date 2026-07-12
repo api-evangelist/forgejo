@@ -1,0 +1,44 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.json
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+  - query
+schemes:
+- name: AuthorizationHeaderToken
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: API tokens must be prepended with "token" followed by a space.
+  sources:
+  - openapi/openapi.json
+- name: BasicAuth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/openapi.json
+- name: SudoHeader
+  type: apiKey
+  in: header
+  parameter: Sudo
+  description: Sudo API request as the user provided as the key. Admin privileges are required.
+  sources:
+  - openapi/openapi.json
+- name: SudoParam
+  type: apiKey
+  in: query
+  parameter: sudo
+  description: Sudo API request as the user provided as the key. Admin privileges are required.
+  sources:
+  - openapi/openapi.json
+- name: TOTPHeader
+  type: apiKey
+  in: header
+  parameter: X-FORGEJO-OTP
+  description: Must be used in combination with BasicAuth if two-factor authentication is enabled.
+  sources:
+  - openapi/openapi.json
