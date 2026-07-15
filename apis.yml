@@ -44,6 +44,8 @@ apis:
       - type: Swagger
         url: https://code.forgejo.org/api/swagger
 common:
+  - type: AgenticAccess
+    url: agentic-access/forgejo-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/forgejo-vulnerability-disclosure.yml
   - type: DomainSecurity
