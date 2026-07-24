@@ -1,0 +1,282 @@
+swagger: '2.0'
+info:
+  description: This documentation describes the Forgejo API.
+  title: Forgejo activitypub API
+  license:
+    name: This file is distributed under the MIT license for the purpose of interoperability
+    url: http://opensource.org/licenses/MIT
+  version: 16.0.0-dev-465-4b83448b7d+gitea-1.22.0
+basePath: /api/v1
+schemes:
+- https
+- http
+consumes:
+- application/json
+- text/plain
+produces:
+- application/json
+- text/html
+security:
+- BasicAuth: []
+- AuthorizationHeaderToken: []
+- SudoParam: []
+- SudoHeader: []
+- TOTPHeader: []
+tags:
+- name: activitypub
+paths:
+  /activitypub/actor:
+    get:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Returns the instance's Actor
+      operationId: activitypubInstanceActor
+      responses:
+        '200':
+          $ref: '#/responses/ActivityPub'
+  /activitypub/actor/inbox:
+    post:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Send to the inbox
+      operationId: activitypubInstanceActorInbox
+      responses:
+        '204':
+          $ref: '#/responses/empty'
+  /activitypub/actor/outbox:
+    post:
+      produces:
+      - application/ld+json
+      tags:
+      - activitypub
+      summary: Display the outbox (always empty)
+      operationId: activitypubInstanceActorOutbox
+      responses:
+        '200':
+          $ref: '#/responses/Outbox'
+  /activitypub/repository-id/{repository-id}:
+    get:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Returns the Repository actor for a repo
+      operationId: activitypubRepository
+      parameters:
+      - type: integer
+        format: int64
+        description: repository ID of the repo
+        name: repository-id
+        in: path
+        required: true
+      responses:
+        '200':
+          $ref: '#/responses/ActivityPub'
+  /activitypub/repository-id/{repository-id}/inbox:
+    post:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Send to the inbox
+      operationId: activitypubRepositoryInbox
+      parameters:
+      - type: integer
+        format: int64
+        description: repository ID of the repo
+        name: repository-id
+        in: path
+        required: true
+      - name: body
+        in: body
+        schema:
+          $ref: '#/definitions/ForgeLike'
+      responses:
+        '204':
+          $ref: '#/responses/empty'
+  /activitypub/repository-id/{repository-id}/outbox:
+    post:
+      produces:
+      - application/ld+json
+      tags:
+      - activitypub
+      summary: Display the outbox
+      operationId: activitypubRepositoryOutbox
+      parameters:
+      - type: integer
+        format: int64
+        description: repository ID of the repo
+        name: repository-id
+        in: path
+        required: true
+      responses:
+        '200':
+          $ref: '#/responses/Outbox'
+  /activitypub/user-id/{user-id}:
+    get:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Returns the Person actor for a user
+      operationId: activitypubPerson
+      parameters:
+      - type: integer
+        format: int64
+        description: user ID of the user
+        name: user-id
+        in: path
+        required: true
+      responses:
+        '200':
+          $ref: '#/responses/ActivityPub'
+  /activitypub/user-id/{user-id}/activities/{activity-id}:
+    get:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Get a specific activity object of the user
+      operationId: activitypubPersonActivityNote
+      parameters:
+      - type: integer
+        description: user ID of the user
+        name: user-id
+        in: path
+        required: true
+      - type: integer
+        description: activity ID of the sought activity
+        name: activity-id
+        in: path
+        required: true
+      responses:
+        '200':
+          $ref: '#/responses/ActivityPub'
+  /activitypub/user-id/{user-id}/activities/{activity-id}/activity:
+    get:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Get a specific activity of the user
+      operationId: activitypubPersonActivity
+      parameters:
+      - type: integer
+        description: user ID of the user
+        name: user-id
+        in: path
+        required: true
+      - type: integer
+        description: activity ID of the sought activity
+        name: activity-id
+        in: path
+        required: true
+      responses:
+        '200':
+          $ref: '#/responses/ActivityPub'
+  /activitypub/user-id/{user-id}/inbox:
+    post:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: Send to the inbox
+      operationId: activitypubPersonInbox
+      parameters:
+      - type: integer
+        format: int64
+        description: user ID of the user
+        name: user-id
+        in: path
+        required: true
+      responses:
+        '202':
+          $ref: '#/responses/empty'
+  /activitypub/user-id/{user-id}/outbox:
+    get:
+      produces:
+      - application/json
+      tags:
+      - activitypub
+      summary: List the user's recorded activity
+      operationId: activitypubPersonFeed
+      parameters:
+      - type: integer
+        description: user ID of the user
+        name: user-id
+        in: path
+        required: true
+      responses:
+        '200':
+          $ref: '#/responses/Outbox'
+        '403':
+          $ref: '#/responses/forbidden'
+definitions:
+  APIForbiddenError:
+    type: object
+    properties:
+      message:
+        type: string
+        x-go-name: Message
+      url:
+        type: string
+        x-go-name: URL
+    x-go-package: forgejo.org/services/context
+  ForgeLike:
+    description: ForgeLike activity data type
+    type: object
+    x-go-package: forgejo.org/modules/forgefed
+  ForgeOutbox:
+    description: ActivityStream OrderedCollection of activities
+    type: object
+    x-go-package: forgejo.org/modules/forgefed
+  ActivityPub:
+    description: ActivityPub type
+    type: object
+    properties:
+      '@context':
+        type: string
+        x-go-name: Context
+    x-go-package: forgejo.org/modules/structs
+responses:
+  empty:
+    description: APIEmpty is an empty response
+  forbidden:
+    description: APIForbiddenError is a forbidden error response
+    schema:
+      $ref: '#/definitions/APIForbiddenError'
+  Outbox:
+    description: Outbox
+    schema:
+      $ref: '#/definitions/ForgeOutbox'
+  ActivityPub:
+    description: ActivityPub
+    schema:
+      $ref: '#/definitions/ActivityPub'
+securityDefinitions:
+  AuthorizationHeaderToken:
+    description: API tokens must be prepended with "token" followed by a space.
+    type: apiKey
+    name: Authorization
+    in: header
+  BasicAuth:
+    type: basic
+  SudoHeader:
+    description: Sudo API request as the user provided as the key. Admin privileges are required.
+    type: apiKey
+    name: Sudo
+    in: header
+  SudoParam:
+    description: Sudo API request as the user provided as the key. Admin privileges are required.
+    type: apiKey
+    name: sudo
+    in: query
+  TOTPHeader:
+    description: Must be used in combination with BasicAuth if two-factor authentication is enabled.
+    type: apiKey
+    name: X-FORGEJO-OTP
+    in: header
