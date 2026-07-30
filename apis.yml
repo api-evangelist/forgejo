@@ -1,7 +1,20 @@
 aid: forgejo
 name: Forgejo
 description: Forgejo is a self-hosted lightweight software forge and open-source Git service (a Gitea fork) managed by the non-profit Codeberg e.V. It provides a comprehensive REST API for managing repositories, users, organizations, issues, pull requests, CI/CD workflows via Actions, and package registries. Forgejo emphasizes privacy, low resource usage, and community ownership as a Free Software alternative to centralized code hosting platforms.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/forgejo.png
 url: https://raw.githubusercontent.com/api-evangelist/forgejo/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -18,31 +31,146 @@ tags:
   - Issues
   - Pull Requests
 apis:
-  - aid: forgejo:forgejo-api
-    name: Forgejo REST API
-    description: The Forgejo REST API (v1) provides programmatic access to all forge functionality including repository management, user and organization administration, issues, pull requests, CI/CD Actions runners, package registries, webhooks, notifications, and ActivityPub federation endpoints. The API is documented via Swagger (OpenAPI v2) and accessible on any Forgejo instance at /api/v1.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://forgejo.org/docs/latest/user/api-usage/
-    baseURL: https://code.forgejo.org/api/v1
-    tags:
-      - Git
-      - Repositories
-      - Users
-      - Organizations
-      - Issues
-      - Pull Requests
-      - CI/CD
-      - Packages
-      - Webhooks
-      - Notifications
-      - ActivityPub
-    properties:
-      - type: Documentation
-        url: https://forgejo.org/docs/latest/user/api-usage/
-      - type: OpenAPI
-        url: https://code.forgejo.org/swagger.v1.json
-      - type: Swagger
-        url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-activitypub-api
+  name: Forgejo activitypub API
+  description: The activitypub API from Forgejo — 11 operation(s) for activitypub.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - activitypub
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-activitypub-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-admin-api
+  name: Forgejo admin API
+  description: The admin API from Forgejo — 34 operation(s) for admin.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - admin
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-admin-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-issue-api
+  name: Forgejo issue API
+  description: The issue API from Forgejo — 33 operation(s) for issue.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - issue
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-issue-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-miscellaneous-api
+  name: Forgejo miscellaneous API
+  description: The miscellaneous API from Forgejo — 14 operation(s) for miscellaneous.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - miscellaneous
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-miscellaneous-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-notification-api
+  name: Forgejo notification API
+  description: The notification API from Forgejo — 4 operation(s) for notification.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - notification
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-notification-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-organization-api
+  name: Forgejo organization API
+  description: The organization API from Forgejo — 42 operation(s) for organization.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - organization
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-organization-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-package-api
+  name: Forgejo package API
+  description: The package API from Forgejo — 5 operation(s) for package.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - package
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-package-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-repository-api
+  name: Forgejo repository API
+  description: The repository API from Forgejo — 126 operation(s) for repository.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - repository
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-repository-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-settings-api
+  name: Forgejo settings API
+  description: The settings API from Forgejo — 4 operation(s) for settings.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - settings
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-settings-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
+- aid: forgejo:forgejo-user-api
+  name: Forgejo user API
+  description: The user API from Forgejo — 54 operation(s) for user.
+  humanURL: https://forgejo.org/docs/latest/user/api-usage/
+  baseURL: https://code.forgejo.org/api/v1
+  tags:
+  - user
+  properties:
+  - type: OpenAPI
+    url: openapi/forgejo-user-api-openapi.yml
+  - type: Documentation
+    url: https://forgejo.org/docs/latest/user/api-usage/
+  - type: Swagger
+    url: https://code.forgejo.org/api/swagger
 common:
   - type: AgenticAccess
     url: agentic-access/forgejo-agentic-access.yml
