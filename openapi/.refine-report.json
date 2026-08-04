@@ -1,0 +1,32 @@
+{
+  "provider": "forgejo",
+  "sources": [
+    "forgejo-activitypub-api-openapi.yml",
+    "forgejo-admin-api-openapi.yml",
+    "forgejo-issue-api-openapi.yml",
+    "forgejo-miscellaneous-api-openapi.yml",
+    "forgejo-notification-api-openapi.yml",
+    "forgejo-organization-api-openapi.yml",
+    "forgejo-package-api-openapi.yml",
+    "forgejo-repository-api-openapi.yml",
+    "forgejo-settings-api-openapi.yml",
+    "forgejo-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "forgejo-activitypub-api-openapi.yml",
+    "forgejo-admin-api-openapi.yml",
+    "forgejo-issue-api-openapi.yml",
+    "forgejo-miscellaneous-api-openapi.yml",
+    "forgejo-notification-api-openapi.yml",
+    "forgejo-organization-api-openapi.yml",
+    "forgejo-package-api-openapi.yml",
+    "forgejo-repository-api-openapi.yml",
+    "forgejo-settings-api-openapi.yml",
+    "forgejo-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
