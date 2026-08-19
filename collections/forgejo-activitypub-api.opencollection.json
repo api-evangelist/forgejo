@@ -1,0 +1,215 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forgejo activitypub API",
+    "version": "16.0.0-dev-465-4b83448b7d+gitea-1.22.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "activitypub",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the instance's Actor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/activitypub/actor"
+          },
+          "docs": "Returns the instance's Actor"
+        },
+        {
+          "info": {
+            "name": "Send to the inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/activitypub/actor/inbox"
+          },
+          "docs": "Send to the inbox"
+        },
+        {
+          "info": {
+            "name": "Display the outbox (always empty)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/activitypub/actor/outbox"
+          },
+          "docs": "Display the outbox (always empty)"
+        },
+        {
+          "info": {
+            "name": "Returns the Repository actor for a repo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/activitypub/repository-id/:repository-id",
+            "params": [
+              {
+                "name": "repository-id",
+                "value": "",
+                "type": "path",
+                "description": "repository ID of the repo"
+              }
+            ]
+          },
+          "docs": "Returns the Repository actor for a repo"
+        },
+        {
+          "info": {
+            "name": "Send to the inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/activitypub/repository-id/:repository-id/inbox",
+            "params": [
+              {
+                "name": "repository-id",
+                "value": "",
+                "type": "path",
+                "description": "repository ID of the repo"
+              }
+            ]
+          },
+          "docs": "Send to the inbox"
+        },
+        {
+          "info": {
+            "name": "Display the outbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/activitypub/repository-id/:repository-id/outbox",
+            "params": [
+              {
+                "name": "repository-id",
+                "value": "",
+                "type": "path",
+                "description": "repository ID of the repo"
+              }
+            ]
+          },
+          "docs": "Display the outbox"
+        },
+        {
+          "info": {
+            "name": "Returns the Person actor for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/activitypub/user-id/:user-id",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path",
+                "description": "user ID of the user"
+              }
+            ]
+          },
+          "docs": "Returns the Person actor for a user"
+        },
+        {
+          "info": {
+            "name": "Get a specific activity object of the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/activitypub/user-id/:user-id/activities/:activity-id",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path",
+                "description": "user ID of the user"
+              },
+              {
+                "name": "activity-id",
+                "value": "",
+                "type": "path",
+                "description": "activity ID of the sought activity"
+              }
+            ]
+          },
+          "docs": "Get a specific activity object of the user"
+        },
+        {
+          "info": {
+            "name": "Get a specific activity of the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/activitypub/user-id/:user-id/activities/:activity-id/activity",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path",
+                "description": "user ID of the user"
+              },
+              {
+                "name": "activity-id",
+                "value": "",
+                "type": "path",
+                "description": "activity ID of the sought activity"
+              }
+            ]
+          },
+          "docs": "Get a specific activity of the user"
+        },
+        {
+          "info": {
+            "name": "Send to the inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/activitypub/user-id/:user-id/inbox",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path",
+                "description": "user ID of the user"
+              }
+            ]
+          },
+          "docs": "Send to the inbox"
+        },
+        {
+          "info": {
+            "name": "List the user's recorded activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/activitypub/user-id/:user-id/outbox",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path",
+                "description": "user ID of the user"
+              }
+            ]
+          },
+          "docs": "List the user's recorded activity"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

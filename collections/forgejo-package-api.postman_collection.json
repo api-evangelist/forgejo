@@ -1,0 +1,1319 @@
+{
+  "item": [
+    {
+      "id": "9e3740d4-1b21-4886-965c-aa8196ba8b5d",
+      "name": "package",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bbe00bd7-8df8-4753-ac57-d33a293a0481",
+          "name": "Gets all packages of an owner",
+          "request": {
+            "name": "Gets all packages of an owner",
+            "description": {},
+            "url": {
+              "path": [
+                "packages",
+                ":owner"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "page number of results to return (1-based)"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "page size of results"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "package type filter"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "name filter"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) owner of the packages"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffee8cec-d04d-4801-b175-757036878620",
+              "name": "PackageList",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the packages"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The total number of packages",
+                  "key": "X-Total-Count",
+                  "value": "7359"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"created_at\": \"1953-04-18T15:10:24.676Z\",\n    \"creator\": {\n      \"active\": false,\n      \"avatar_url\": \"string\",\n      \"created\": \"2016-02-17T02:12:18.023Z\",\n      \"description\": \"string\",\n      \"email\": \"WjZ5PQa3GsO@FQVNftKYkHaxFt.hes\",\n      \"followers_count\": 6824,\n      \"following_count\": 7985,\n      \"full_name\": \"string\",\n      \"html_url\": \"string\",\n      \"id\": 1025,\n      \"is_admin\": false,\n      \"language\": \"string\",\n      \"last_login\": \"1947-12-01T07:42:45.984Z\",\n      \"location\": \"string\",\n      \"login\": \"string\",\n      \"login_name\": \"empty\",\n      \"prohibit_login\": true,\n      \"pronouns\": \"string\",\n      \"restricted\": true,\n      \"source_id\": 523,\n      \"starred_repos_count\": 9278,\n      \"visibility\": \"string\",\n      \"website\": \"string\"\n    },\n    \"html_url\": \"string\",\n    \"id\": 38,\n    \"name\": \"string\",\n    \"owner\": {\n      \"active\": true,\n      \"avatar_url\": \"string\",\n      \"created\": \"2000-11-15T02:38:42.752Z\",\n      \"description\": \"string\",\n      \"email\": \"mwL1dL@oHuxiAPtXAwNjRuusXUkiYcYEZokZfrTE.qf\",\n      \"followers_count\": 8091,\n      \"following_count\": 238,\n      \"full_name\": \"string\",\n      \"html_url\": \"string\",\n      \"id\": 6778,\n      \"is_admin\": false,\n      \"language\": \"string\",\n      \"last_login\": \"1981-02-17T15:10:38.835Z\",\n      \"location\": \"string\",\n      \"login\": \"string\",\n      \"login_name\": \"empty\",\n      \"prohibit_login\": false,\n      \"pronouns\": \"string\",\n      \"restricted\": true,\n      \"source_id\": 6623,\n      \"starred_repos_count\": 8415,\n      \"visibility\": \"string\",\n      \"website\": \"string\"\n    },\n    \"repository\": {\n      \"allow_fast_forward_only_merge\": true,\n      \"allow_merge_commits\": true,\n      \"allow_rebase\": true,\n      \"allow_rebase_explicit\": false,\n      \"allow_rebase_update\": false,\n      \"allow_squash_merge\": true,\n      \"archived\": false,\n      \"archived_at\": \"1994-09-07T05:53:39.324Z\",\n      \"avatar_url\": \"string\",\n      \"clone_url\": \"string\",\n      \"created_at\": \"2003-07-25T23:32:30.667Z\",\n      \"default_allow_maintainer_edit\": false,\n      \"default_branch\": \"string\",\n      \"default_delete_branch_after_merge\": false,\n      \"default_merge_style\": \"string\",\n      \"default_update_style\": \"string\",\n      \"description\": \"string\",\n      \"empty\": false,\n      \"external_tracker\": {\n        \"external_tracker_format\": \"string\",\n        \"external_tracker_regexp_pattern\": \"string\",\n        \"external_tracker_style\": \"string\",\n        \"external_tracker_url\": \"string\"\n      },\n      \"external_wiki\": {\n        \"external_wiki_url\": \"string\"\n      },\n      \"fork\": false,\n      \"forks_count\": 7026,\n      \"full_name\": \"string\",\n      \"globally_editable_wiki\": true,\n      \"has_actions\": false,\n      \"has_issues\": true,\n      \"has_packages\": false,\n      \"has_projects\": false,\n      \"has_pull_requests\": false,\n      \"has_releases\": false,\n      \"has_wiki\": false,\n      \"has_wiki_contents\": false,\n      \"html_url\": \"string\",\n      \"id\": 666,\n      \"ignore_whitespace_conflicts\": true,\n      \"internal\": true,\n      \"internal_tracker\": {\n        \"allow_only_contributors_to_track_time\": true,\n        \"enable_issue_dependencies\": false,\n        \"enable_time_tracker\": false\n      },\n      \"language\": \"string\",\n      \"languages_url\": \"string\",\n      \"link\": \"string\",\n      \"mirror\": false,\n      \"mirror_interval\": \"string\",\n      \"mirror_updated\": \"1980-02-01T09:06:00.174Z\",\n      \"name\": \"string\",\n      \"object_format_name\": \"sha256\",\n      \"open_issues_count\": 8009,\n      \"open_pr_counter\": 5094,\n      \"original_url\": \"string\",\n      \"owner\": {\n        \"active\": true,\n        \"avatar_url\": \"string\",\n        \"created\": \"1998-10-01T02:44:50.281Z\",\n        \"description\": \"string\",\n        \"email\": \"F1W@ilHDMGxovQoypAcUB.awr\",\n        \"followers_count\": 1596,\n        \"following_count\": 3259,\n        \"full_name\": \"string\",\n        \"html_url\": \"string\",\n        \"id\": 9352,\n        \"is_admin\": false,\n        \"language\": \"string\",\n        \"last_login\": \"1987-09-20T19:35:04.975Z\",\n        \"location\": \"string\",\n        \"login\": \"string\",\n        \"login_name\": \"empty\",\n        \"prohibit_login\": false,\n        \"pronouns\": \"string\",\n        \"restricted\": true,\n        \"source_id\": 7398,\n        \"starred_repos_count\": 3565,\n        \"visibility\": \"string\",\n        \"website\": \"string\"\n      },\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/Repository detected>\"\n      },\n      \"permissions\": {\n        \"admin\": true,\n        \"pull\": false,\n        \"push\": true\n      },\n      \"private\": true,\n      \"release_counter\": 6739,\n      \"repo_transfer\": {\n        \"doer\": {\n          \"active\": true,\n          \"avatar_url\": \"string\",\n          \"created\": \"1969-07-17T09:10:01.549Z\",\n          \"description\": \"string\",\n          \"email\": \"Xdow@nDoAXjZiYFivLUlnIUWxdzht.sgqw\",\n          \"followers_count\": 8880,\n          \"following_count\": 4831,\n          \"full_name\": \"string\",\n          \"html_url\": \"string\",\n          \"id\": 6817,\n          \"is_admin\": true,\n          \"language\": \"string\",\n          \"last_login\": \"1957-05-17T21:03:31.689Z\",\n          \"location\": \"string\",\n          \"login\": \"string\",\n          \"login_name\": \"empty\",\n          \"prohibit_login\": false,\n          \"pronouns\": \"string\",\n          \"restricted\": false,\n          \"source_id\": 5285,\n          \"starred_repos_count\": 8611,\n          \"visibility\": \"string\",\n          \"website\": \"string\"\n        },\n        \"recipient\": {\n          \"active\": true,\n          \"avatar_url\": \"string\",\n          \"created\": \"1998-06-19T15:37:10.451Z\",\n          \"description\": \"string\",\n          \"email\": \"LTozDY@ukDatQOQkxQjTkBzGaydWKcsbYXyFS.ov\",\n          \"followers_count\": 5678,\n          \"following_count\": 3246,\n          \"full_name\": \"string\",\n          \"html_url\": \"string\",\n          \"id\": 8491,\n          \"is_admin\": false,\n          \"language\": \"string\",\n          \"last_login\": \"2003-08-27T06:05:30.010Z\",\n          \"location\": \"string\",\n          \"login\": \"string\",\n          \"login_name\": \"empty\",\n          \"prohibit_login\": true,\n          \"pronouns\": \"string\",\n          \"restricted\": false,\n          \"source_id\": 5178,\n          \"starred_repos_count\": 9377,\n          \"visibility\": \"string\",\n          \"website\": \"string\"\n        },\n        \"teams\": [\n          {\n            \"can_create_org_repo\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"includes_all_repositories\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"permission\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units_map\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"can_create_org_repo\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"includes_all_repositories\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"permission\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units_map\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"size\": 2789,\n      \"ssh_url\": \"string\",\n      \"stars_count\": 3111,\n      \"template\": false,\n      \"topics\": [\n        \"string\",\n        \"string\"\n      ],\n      \"updated_at\": \"1959-01-02T02:22:20.202Z\",\n      \"url\": \"string\",\n      \"watchers_count\": 7023,\n      \"website\": \"string\",\n      \"wiki_branch\": \"string\",\n      \"wiki_clone_url\": \"string\",\n      \"wiki_ssh_url\": \"string\"\n    },\n    \"type\": \"string\",\n    \"version\": \"string\"\n  },\n  {\n    \"created_at\": \"1986-03-01T21:44:02.908Z\",\n    \"creator\": {\n      \"active\": false,\n      \"avatar_url\": \"string\",\n      \"created\": \"1956-02-01T03:41:45.377Z\",\n      \"description\": \"string\",\n      \"email\": \"DACR4ZYIxz@udBmTzyTUyx.gpiu\",\n      \"followers_count\": 681,\n      \"following_count\": 8003,\n      \"full_name\": \"string\",\n      \"html_url\": \"string\",\n      \"id\": 3597,\n      \"is_admin\": true,\n      \"language\": \"string\",\n      \"last_login\": \"2014-01-05T13:47:39.239Z\",\n      \"location\": \"string\",\n      \"login\": \"string\",\n      \"login_name\": \"empty\",\n      \"prohibit_login\": true,\n      \"pronouns\": \"string\",\n      \"restricted\": true,\n      \"source_id\": 9981,\n      \"starred_repos_count\": 6014,\n      \"visibility\": \"string\",\n      \"website\": \"string\"\n    },\n    \"html_url\": \"string\",\n    \"id\": 7567,\n    \"name\": \"string\",\n    \"owner\": {\n      \"active\": false,\n      \"avatar_url\": \"string\",\n      \"created\": \"1989-05-17T00:24:44.053Z\",\n      \"description\": \"string\",\n      \"email\": \"q-s5cH@TlgZSbVQhlOicusFGDwFmuN.sjki\",\n      \"followers_count\": 8708,\n      \"following_count\": 91,\n      \"full_name\": \"string\",\n      \"html_url\": \"string\",\n      \"id\": 5629,\n      \"is_admin\": true,\n      \"language\": \"string\",\n      \"last_login\": \"1992-06-12T19:34:48.184Z\",\n      \"location\": \"string\",\n      \"login\": \"string\",\n      \"login_name\": \"empty\",\n      \"prohibit_login\": false,\n      \"pronouns\": \"string\",\n      \"restricted\": true,\n      \"source_id\": 3268,\n      \"starred_repos_count\": 1205,\n      \"visibility\": \"string\",\n      \"website\": \"string\"\n    },\n    \"repository\": {\n      \"allow_fast_forward_only_merge\": true,\n      \"allow_merge_commits\": false,\n      \"allow_rebase\": true,\n      \"allow_rebase_explicit\": true,\n      \"allow_rebase_update\": false,\n      \"allow_squash_merge\": false,\n      \"archived\": true,\n      \"archived_at\": \"1969-12-07T21:24:13.156Z\",\n      \"avatar_url\": \"string\",\n      \"clone_url\": \"string\",\n      \"created_at\": \"1956-03-09T23:32:43.837Z\",\n      \"default_allow_maintainer_edit\": false,\n      \"default_branch\": \"string\",\n      \"default_delete_branch_after_merge\": false,\n      \"default_merge_style\": \"string\",\n      \"default_update_style\": \"string\",\n      \"description\": \"string\",\n      \"empty\": false,\n      \"external_tracker\": {\n        \"external_tracker_format\": \"string\",\n        \"external_tracker_regexp_pattern\": \"string\",\n        \"external_tracker_style\": \"string\",\n        \"external_tracker_url\": \"string\"\n      },\n      \"external_wiki\": {\n        \"external_wiki_url\": \"string\"\n      },\n      \"fork\": false,\n      \"forks_count\": 6499,\n      \"full_name\": \"string\",\n      \"globally_editable_wiki\": false,\n      \"has_actions\": false,\n      \"has_issues\": false,\n      \"has_packages\": true,\n      \"has_projects\": false,\n      \"has_pull_requests\": true,\n      \"has_releases\": true,\n      \"has_wiki\": true,\n      \"has_wiki_contents\": true,\n      \"html_url\": \"string\",\n      \"id\": 6958,\n      \"ignore_whitespace_conflicts\": false,\n      \"internal\": false,\n      \"internal_tracker\": {\n        \"allow_only_contributors_to_track_time\": true,\n        \"enable_issue_dependencies\": false,\n        \"enable_time_tracker\": true\n      },\n      \"language\": \"string\",\n      \"languages_url\": \"string\",\n      \"link\": \"string\",\n      \"mirror\": true,\n      \"mirror_interval\": \"string\",\n      \"mirror_updated\": \"2009-07-07T15:54:48.846Z\",\n      \"name\": \"string\",\n      \"object_format_name\": \"sha1\",\n      \"open_issues_count\": 2899,\n      \"open_pr_counter\": 5747,\n      \"original_url\": \"string\",\n      \"owner\": {\n        \"active\": true,\n        \"avatar_url\": \"string\",\n        \"created\": \"2011-01-03T06:37:08.605Z\",\n        \"description\": \"string\",\n        \"email\": \"2VAWb1vjuYxvZ@OvlMLsvPYIwc.vrw\",\n        \"followers_count\": 3284,\n        \"following_count\": 9345,\n        \"full_name\": \"string\",\n        \"html_url\": \"string\",\n        \"id\": 466,\n        \"is_admin\": true,\n        \"language\": \"string\",\n        \"last_login\": \"1967-12-25T17:03:13.613Z\",\n        \"location\": \"string\",\n        \"login\": \"string\",\n        \"login_name\": \"empty\",\n        \"prohibit_login\": false,\n        \"pronouns\": \"string\",\n        \"restricted\": true,\n        \"source_id\": 9638,\n        \"starred_repos_count\": 4857,\n        \"visibility\": \"string\",\n        \"website\": \"string\"\n      },\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/Repository detected>\"\n      },\n      \"permissions\": {\n        \"admin\": false,\n        \"pull\": false,\n        \"push\": false\n      },\n      \"private\": false,\n      \"release_counter\": 6965,\n      \"repo_transfer\": {\n        \"doer\": {\n          \"active\": false,\n          \"avatar_url\": \"string\",\n          \"created\": \"1958-12-09T21:52:02.504Z\",\n          \"description\": \"string\",\n          \"email\": \"CUJWJTpN378krL@TOrGxWFqfuB.ak\",\n          \"followers_count\": 3619,\n          \"following_count\": 9890,\n          \"full_name\": \"string\",\n          \"html_url\": \"string\",\n          \"id\": 8652,\n          \"is_admin\": false,\n          \"language\": \"string\",\n          \"last_login\": \"2023-10-17T08:37:36.943Z\",\n          \"location\": \"string\",\n          \"login\": \"string\",\n          \"login_name\": \"empty\",\n          \"prohibit_login\": true,\n          \"pronouns\": \"string\",\n          \"restricted\": false,\n          \"source_id\": 6505,\n          \"starred_repos_count\": 7635,\n          \"visibility\": \"string\",\n          \"website\": \"string\"\n        },\n        \"recipient\": {\n          \"active\": true,\n          \"avatar_url\": \"string\",\n          \"created\": \"2009-05-13T18:35:06.543Z\",\n          \"description\": \"string\",\n          \"email\": \"H0lM@gIztJgwoWjpKiFBMYzaBuz.ygho\",\n          \"followers_count\": 1842,\n          \"following_count\": 7358,\n          \"full_name\": \"string\",\n          \"html_url\": \"string\",\n          \"id\": 7701,\n          \"is_admin\": false,\n          \"language\": \"string\",\n          \"last_login\": \"1982-04-01T00:56:56.858Z\",\n          \"location\": \"string\",\n          \"login\": \"string\",\n          \"login_name\": \"empty\",\n          \"prohibit_login\": false,\n          \"pronouns\": \"string\",\n          \"restricted\": true,\n          \"source_id\": 254,\n          \"starred_repos_count\": 5411,\n          \"visibility\": \"string\",\n          \"website\": \"string\"\n        },\n        \"teams\": [\n          {\n            \"can_create_org_repo\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"includes_all_repositories\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"permission\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units_map\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"can_create_org_repo\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"includes_all_repositories\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"permission\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"units_map\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"size\": 8989,\n      \"ssh_url\": \"string\",\n      \"stars_count\": 7122,\n      \"template\": true,\n      \"topics\": [\n        \"string\",\n        \"string\"\n      ],\n      \"updated_at\": \"1998-06-14T14:52:36.460Z\",\n      \"url\": \"string\",\n      \"watchers_count\": 8224,\n      \"website\": \"string\",\n      \"wiki_branch\": \"string\",\n      \"wiki_clone_url\": \"string\",\n      \"wiki_ssh_url\": \"string\"\n    },\n    \"type\": \"string\",\n    \"version\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8450e1f-1349-47c7-b39a-6081a35be1c9",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the packages"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19b517f5-25b6-4a45-9837-d3f701b55529",
+          "name": "Link a package to a repository",
+          "request": {
+            "name": "Link a package to a repository",
+            "description": {},
+            "url": {
+              "path": [
+                "packages",
+                ":owner",
+                ":type",
+                ":name",
+                "-",
+                "link",
+                ":repo_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) owner of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "type",
+                  "description": "(Required) type of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repo_name",
+                  "description": "(Required) name of the repository to link."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1cc8f118-69d6-4468-be8b-9a2fde7cc875",
+              "name": "APIEmpty is an empty response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    "-",
+                    "link",
+                    ":repo_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repo_name",
+                      "description": "(Required) name of the repository to link."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d248b8d-3244-4a6d-a86e-bf1c7f1d9583",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    "-",
+                    "link",
+                    ":repo_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repo_name",
+                      "description": "(Required) name of the repository to link."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02981d23-24f8-477f-b061-9d4cd49b87bd",
+          "name": "Unlink a package from a repository",
+          "request": {
+            "name": "Unlink a package from a repository",
+            "description": {},
+            "url": {
+              "path": [
+                "packages",
+                ":owner",
+                ":type",
+                ":name",
+                "-",
+                "unlink"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) owner of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "type",
+                  "description": "(Required) type of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the package"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7993196c-3726-42a3-847e-a00d2da3d268",
+              "name": "APIEmpty is an empty response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    "-",
+                    "unlink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "964b5e68-6379-46c7-9cdf-5de25d0d7986",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    "-",
+                    "unlink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03550562-01ee-45b6-b1f8-3c801d7056c5",
+          "name": "Gets a package",
+          "request": {
+            "name": "Gets a package",
+            "description": {},
+            "url": {
+              "path": [
+                "packages",
+                ":owner",
+                ":type",
+                ":name",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) owner of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "type",
+                  "description": "(Required) type of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) version of the package"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a788e51-c927-4436-bc2b-4b2dd9b04fce",
+              "name": "Package",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) version of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created_at\": \"2018-11-07T16:54:30.463Z\",\n  \"creator\": {\n    \"active\": true,\n    \"avatar_url\": \"string\",\n    \"created\": \"1956-05-01T08:33:34.798Z\",\n    \"description\": \"string\",\n    \"email\": \"9wsRognnPA@iXfhmCVoFkmjoNJiDVMHIqgHojo.gr\",\n    \"followers_count\": 8446,\n    \"following_count\": 238,\n    \"full_name\": \"string\",\n    \"html_url\": \"string\",\n    \"id\": 6199,\n    \"is_admin\": false,\n    \"language\": \"string\",\n    \"last_login\": \"2026-03-14T13:59:43.550Z\",\n    \"location\": \"string\",\n    \"login\": \"string\",\n    \"login_name\": \"empty\",\n    \"prohibit_login\": false,\n    \"pronouns\": \"string\",\n    \"restricted\": true,\n    \"source_id\": 2843,\n    \"starred_repos_count\": 5225,\n    \"visibility\": \"string\",\n    \"website\": \"string\"\n  },\n  \"html_url\": \"string\",\n  \"id\": 1806,\n  \"name\": \"string\",\n  \"owner\": {\n    \"active\": false,\n    \"avatar_url\": \"string\",\n    \"created\": \"1971-11-09T04:38:35.502Z\",\n    \"description\": \"string\",\n    \"email\": \"Ee9Wq0rfxvp@kpnOhUeQZ.lci\",\n    \"followers_count\": 6993,\n    \"following_count\": 7239,\n    \"full_name\": \"string\",\n    \"html_url\": \"string\",\n    \"id\": 1820,\n    \"is_admin\": false,\n    \"language\": \"string\",\n    \"last_login\": \"1965-07-13T06:04:52.801Z\",\n    \"location\": \"string\",\n    \"login\": \"string\",\n    \"login_name\": \"empty\",\n    \"prohibit_login\": true,\n    \"pronouns\": \"string\",\n    \"restricted\": true,\n    \"source_id\": 6580,\n    \"starred_repos_count\": 8259,\n    \"visibility\": \"string\",\n    \"website\": \"string\"\n  },\n  \"repository\": {\n    \"allow_fast_forward_only_merge\": true,\n    \"allow_merge_commits\": false,\n    \"allow_rebase\": true,\n    \"allow_rebase_explicit\": true,\n    \"allow_rebase_update\": false,\n    \"allow_squash_merge\": false,\n    \"archived\": false,\n    \"archived_at\": \"2015-10-01T08:50:42.991Z\",\n    \"avatar_url\": \"string\",\n    \"clone_url\": \"string\",\n    \"created_at\": \"1981-10-09T23:32:09.665Z\",\n    \"default_allow_maintainer_edit\": false,\n    \"default_branch\": \"string\",\n    \"default_delete_branch_after_merge\": false,\n    \"default_merge_style\": \"string\",\n    \"default_update_style\": \"string\",\n    \"description\": \"string\",\n    \"empty\": true,\n    \"external_tracker\": {\n      \"external_tracker_format\": \"string\",\n      \"external_tracker_regexp_pattern\": \"string\",\n      \"external_tracker_style\": \"string\",\n      \"external_tracker_url\": \"string\"\n    },\n    \"external_wiki\": {\n      \"external_wiki_url\": \"string\"\n    },\n    \"fork\": true,\n    \"forks_count\": 5750,\n    \"full_name\": \"string\",\n    \"globally_editable_wiki\": false,\n    \"has_actions\": true,\n    \"has_issues\": true,\n    \"has_packages\": false,\n    \"has_projects\": true,\n    \"has_pull_requests\": false,\n    \"has_releases\": false,\n    \"has_wiki\": true,\n    \"has_wiki_contents\": true,\n    \"html_url\": \"string\",\n    \"id\": 766,\n    \"ignore_whitespace_conflicts\": true,\n    \"internal\": false,\n    \"internal_tracker\": {\n      \"allow_only_contributors_to_track_time\": true,\n      \"enable_issue_dependencies\": true,\n      \"enable_time_tracker\": false\n    },\n    \"language\": \"string\",\n    \"languages_url\": \"string\",\n    \"link\": \"string\",\n    \"mirror\": false,\n    \"mirror_interval\": \"string\",\n    \"mirror_updated\": \"1969-04-19T10:48:38.493Z\",\n    \"name\": \"string\",\n    \"object_format_name\": \"sha1\",\n    \"open_issues_count\": 6299,\n    \"open_pr_counter\": 23,\n    \"original_url\": \"string\",\n    \"owner\": {\n      \"active\": false,\n      \"avatar_url\": \"string\",\n      \"created\": \"1949-08-12T17:35:44.250Z\",\n      \"description\": \"string\",\n      \"email\": \"0jTnzGkEUXFMi2@rZcbKIZeFapZSuAQDjptkodbmuUPP.get\",\n      \"followers_count\": 617,\n      \"following_count\": 4339,\n      \"full_name\": \"string\",\n      \"html_url\": \"string\",\n      \"id\": 6625,\n      \"is_admin\": true,\n      \"language\": \"string\",\n      \"last_login\": \"1946-11-23T16:04:13.448Z\",\n      \"location\": \"string\",\n      \"login\": \"string\",\n      \"login_name\": \"empty\",\n      \"prohibit_login\": false,\n      \"pronouns\": \"string\",\n      \"restricted\": true,\n      \"source_id\": 652,\n      \"starred_repos_count\": 3284,\n      \"visibility\": \"string\",\n      \"website\": \"string\"\n    },\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/Repository detected>\"\n    },\n    \"permissions\": {\n      \"admin\": false,\n      \"pull\": false,\n      \"push\": true\n    },\n    \"private\": true,\n    \"release_counter\": 640,\n    \"repo_transfer\": {\n      \"doer\": {\n        \"active\": false,\n        \"avatar_url\": \"string\",\n        \"created\": \"1950-05-10T21:03:01.446Z\",\n        \"description\": \"string\",\n        \"email\": \"BZm@iSQPOrQxWOXuBBAHjwPODfLrJMbNyoiHN.eox\",\n        \"followers_count\": 6986,\n        \"following_count\": 3058,\n        \"full_name\": \"string\",\n        \"html_url\": \"string\",\n        \"id\": 3518,\n        \"is_admin\": false,\n        \"language\": \"string\",\n        \"last_login\": \"2003-06-02T23:10:00.796Z\",\n        \"location\": \"string\",\n        \"login\": \"string\",\n        \"login_name\": \"empty\",\n        \"prohibit_login\": true,\n        \"pronouns\": \"string\",\n        \"restricted\": true,\n        \"source_id\": 6229,\n        \"starred_repos_count\": 2453,\n        \"visibility\": \"string\",\n        \"website\": \"string\"\n      },\n      \"recipient\": {\n        \"active\": false,\n        \"avatar_url\": \"string\",\n        \"created\": \"2011-04-05T08:09:45.422Z\",\n        \"description\": \"string\",\n        \"email\": \"2I1i@imxQF.xutr\",\n        \"followers_count\": 7854,\n        \"following_count\": 4011,\n        \"full_name\": \"string\",\n        \"html_url\": \"string\",\n        \"id\": 7758,\n        \"is_admin\": false,\n        \"language\": \"string\",\n        \"last_login\": \"2014-05-23T01:55:36.472Z\",\n        \"location\": \"string\",\n        \"login\": \"string\",\n        \"login_name\": \"empty\",\n        \"prohibit_login\": false,\n        \"pronouns\": \"string\",\n        \"restricted\": false,\n        \"source_id\": 832,\n        \"starred_repos_count\": 4376,\n        \"visibility\": \"string\",\n        \"website\": \"string\"\n      },\n      \"teams\": [\n        {\n          \"can_create_org_repo\": false,\n          \"description\": \"string\",\n          \"id\": 7544,\n          \"includes_all_repositories\": false,\n          \"name\": \"string\",\n          \"organization\": {\n            \"avatar_url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"full_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"repo_admin_change_team_access\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"visibility\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"website\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"permission\": \"read\",\n          \"units\": [\n            \"repo.code\",\n            \"repo.issues\",\n            \"repo.ext_issues\",\n            \"repo.wiki\",\n            \"repo.pulls\",\n            \"repo.releases\",\n            \"repo.projects\",\n            \"repo.ext_wiki\"\n          ],\n          \"units_map\": {\n            \"repo.actions\": \"none\",\n            \"repo.code\": \"read\",\n            \"repo.ext_issues\": \"none\",\n            \"repo.ext_wiki\": \"none\",\n            \"repo.issues\": \"write\",\n            \"repo.packages\": \"none\",\n            \"repo.projects\": \"none\",\n            \"repo.pulls\": \"owner\",\n            \"repo.releases\": \"none\",\n            \"repo.wiki\": \"admin\"\n          }\n        },\n        {\n          \"can_create_org_repo\": false,\n          \"description\": \"string\",\n          \"id\": 8287,\n          \"includes_all_repositories\": false,\n          \"name\": \"string\",\n          \"organization\": {\n            \"avatar_url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"full_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"repo_admin_change_team_access\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"visibility\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"website\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"permission\": \"admin\",\n          \"units\": [\n            \"repo.code\",\n            \"repo.issues\",\n            \"repo.ext_issues\",\n            \"repo.wiki\",\n            \"repo.pulls\",\n            \"repo.releases\",\n            \"repo.projects\",\n            \"repo.ext_wiki\"\n          ],\n          \"units_map\": {\n            \"repo.actions\": \"none\",\n            \"repo.code\": \"read\",\n            \"repo.ext_issues\": \"none\",\n            \"repo.ext_wiki\": \"none\",\n            \"repo.issues\": \"write\",\n            \"repo.packages\": \"none\",\n            \"repo.projects\": \"none\",\n            \"repo.pulls\": \"owner\",\n            \"repo.releases\": \"none\",\n            \"repo.wiki\": \"admin\"\n          }\n        }\n      ]\n    },\n    \"size\": 1280,\n    \"ssh_url\": \"string\",\n    \"stars_count\": 3403,\n    \"template\": false,\n    \"topics\": [\n      \"string\",\n      \"string\"\n    ],\n    \"updated_at\": \"1975-06-09T21:38:27.340Z\",\n    \"url\": \"string\",\n    \"watchers_count\": 1558,\n    \"website\": \"string\",\n    \"wiki_branch\": \"string\",\n    \"wiki_clone_url\": \"string\",\n    \"wiki_ssh_url\": \"string\"\n  },\n  \"type\": \"string\",\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f5805a1-ad05-4395-8969-6c1b8560fbad",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) version of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38ba9cec-c086-404a-bb8a-f889fb2b2e83",
+          "name": "Delete a package",
+          "request": {
+            "name": "Delete a package",
+            "description": {},
+            "url": {
+              "path": [
+                "packages",
+                ":owner",
+                ":type",
+                ":name",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) owner of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "type",
+                  "description": "(Required) type of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) version of the package"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78345b6b-d047-477c-acfb-b316db3154ca",
+              "name": "APIEmpty is an empty response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) version of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31887a3f-b777-4fcf-bc50-61c87d0cf31b",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) version of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4d1120d-5415-419e-8ba4-4a49db1c73d3",
+          "name": "Gets all files of a package",
+          "request": {
+            "name": "Gets all files of a package",
+            "description": {},
+            "url": {
+              "path": [
+                "packages",
+                ":owner",
+                ":type",
+                ":name",
+                ":version",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) owner of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "type",
+                  "description": "(Required) type of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the package"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) version of the package"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ef510f5-4d60-4d15-927d-f3428b8b443f",
+              "name": "PackageFileList",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    ":version",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) version of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Size\": 6591,\n    \"id\": 5062,\n    \"md5\": \"string\",\n    \"name\": \"string\",\n    \"sha1\": \"string\",\n    \"sha256\": \"string\",\n    \"sha512\": \"string\"\n  },\n  {\n    \"Size\": 8600,\n    \"id\": 1049,\n    \"md5\": \"string\",\n    \"name\": \"string\",\n    \"sha1\": \"string\",\n    \"sha256\": \"string\",\n    \"sha512\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f510b25a-8eb0-4417-8b9f-e5b8b44e858d",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "packages",
+                    ":owner",
+                    ":type",
+                    ":name",
+                    ":version",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) owner of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) type of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the package"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) version of the package"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8725d737-32c6-4d01-ba0b-ad756fec443c",
+    "name": "Forgejo activitypub package API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This documentation describes the Forgejo API.",
+      "type": "text/plain"
+    }
+  }
+}

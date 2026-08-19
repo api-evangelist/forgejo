@@ -1,0 +1,1071 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forgejo activitypub admin API",
+    "version": "16.0.0-dev-465-4b83448b7d+gitea-1.22.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all runners, no matter whether they are global runners or scoped to an organization, user, or repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/actions/runners",
+            "params": [
+              {
+                "name": "visible",
+                "value": "",
+                "type": "query",
+                "description": "whether to include all visible runners (true) or only those that are directly owned by the instance (false)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "Get all runners, no matter whether they are global runners or scoped to an organization, user, or repository"
+        },
+        {
+          "info": {
+            "name": "Register a new global runner",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/actions/runners"
+          },
+          "docs": "Register a new global runner"
+        },
+        {
+          "info": {
+            "name": "Get action run jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/actions/runners/jobs",
+            "params": [
+              {
+                "name": "labels",
+                "value": "",
+                "type": "query",
+                "description": "a comma separated list of labels to search for"
+              }
+            ]
+          },
+          "docs": "Get action run jobs"
+        },
+        {
+          "info": {
+            "name": "Get a runner registration token for registering global runners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/actions/runners/registration-token"
+          },
+          "docs": "This operation has been deprecated in Forgejo 15. Use the web UI or [`/admin/actions/runners`](#/admin/registerAdminRunner) instead.\n"
+        },
+        {
+          "info": {
+            "name": "Get a particular runner, no matter whether it is a global runner or scoped to an organization, user, or repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/actions/runners/:runner_id",
+            "params": [
+              {
+                "name": "runner_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the runner"
+              }
+            ]
+          },
+          "docs": "Get a particular runner, no matter whether it is a global runner or scoped to an organization, user, or repository"
+        },
+        {
+          "info": {
+            "name": "Delete a particular runner, no matter whether it is a global runner or scoped to an organization, user, or repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/actions/runners/:runner_id",
+            "params": [
+              {
+                "name": "runner_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the runner"
+              }
+            ]
+          },
+          "docs": "Delete a particular runner, no matter whether it is a global runner or scoped to an organization, user, or repository"
+        },
+        {
+          "info": {
+            "name": "List cron tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/cron",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "List cron tasks"
+        },
+        {
+          "info": {
+            "name": "Run cron task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/cron/:task",
+            "params": [
+              {
+                "name": "task",
+                "value": "",
+                "type": "path",
+                "description": "task to run"
+              }
+            ]
+          },
+          "docs": "Run cron task"
+        },
+        {
+          "info": {
+            "name": "List all users' email addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/emails",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "List all users' email addresses"
+        },
+        {
+          "info": {
+            "name": "Search users' email addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/emails/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "keyword"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "Search users' email addresses"
+        },
+        {
+          "info": {
+            "name": "List global (system) webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/hooks",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "List global (system) webhooks"
+        },
+        {
+          "info": {
+            "name": "Create a hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/hooks"
+          },
+          "docs": "Create a hook"
+        },
+        {
+          "info": {
+            "name": "Get a hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/hooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of the hook to get"
+              }
+            ]
+          },
+          "docs": "Get a hook"
+        },
+        {
+          "info": {
+            "name": "Update a hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/admin/hooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of the hook to update"
+              }
+            ]
+          },
+          "docs": "Update a hook"
+        },
+        {
+          "info": {
+            "name": "Delete a hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/hooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of the hook to delete"
+              }
+            ]
+          },
+          "docs": "Delete a hook"
+        },
+        {
+          "info": {
+            "name": "List all organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/orgs",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "List all organizations"
+        },
+        {
+          "info": {
+            "name": "List the available quota groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/quota/groups"
+          },
+          "docs": "List the available quota groups"
+        },
+        {
+          "info": {
+            "name": "Create a new quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/quota/groups"
+          },
+          "docs": "Create a new quota group"
+        },
+        {
+          "info": {
+            "name": "Get information about the quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to query"
+              }
+            ]
+          },
+          "docs": "Get information about the quota group"
+        },
+        {
+          "info": {
+            "name": "Delete a quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to delete"
+              }
+            ]
+          },
+          "docs": "Delete a quota group"
+        },
+        {
+          "info": {
+            "name": "Adds a rule to a quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup/rules/:quotarule",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to add a rule to"
+              },
+              {
+                "name": "quotarule",
+                "value": "",
+                "type": "path",
+                "description": "the name of the quota rule to add to the group"
+              }
+            ]
+          },
+          "docs": "Adds a rule to a quota group"
+        },
+        {
+          "info": {
+            "name": "Removes a rule from a quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup/rules/:quotarule",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to remove a rule from"
+              },
+              {
+                "name": "quotarule",
+                "value": "",
+                "type": "path",
+                "description": "the name of the quota rule to remove from the group"
+              }
+            ]
+          },
+          "docs": "Removes a rule from a quota group"
+        },
+        {
+          "info": {
+            "name": "List users in a quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup/users",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to list members of"
+              }
+            ]
+          },
+          "docs": "List users in a quota group"
+        },
+        {
+          "info": {
+            "name": "Add a user to a quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup/users/:username",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to add the user to"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of the user to add to the quota group"
+              }
+            ]
+          },
+          "docs": "Add a user to a quota group"
+        },
+        {
+          "info": {
+            "name": "Remove a user from a quota group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/quota/groups/:quotagroup/users/:username",
+            "params": [
+              {
+                "name": "quotagroup",
+                "value": "",
+                "type": "path",
+                "description": "quota group to remove a user from"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of the user to remove from the quota group"
+              }
+            ]
+          },
+          "docs": "Remove a user from a quota group"
+        },
+        {
+          "info": {
+            "name": "List the available quota rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/quota/rules"
+          },
+          "docs": "List the available quota rules"
+        },
+        {
+          "info": {
+            "name": "Create a new quota rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/quota/rules"
+          },
+          "docs": "Create a new quota rule"
+        },
+        {
+          "info": {
+            "name": "Get information about a quota rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/quota/rules/:quotarule",
+            "params": [
+              {
+                "name": "quotarule",
+                "value": "",
+                "type": "path",
+                "description": "quota rule to query"
+              }
+            ]
+          },
+          "docs": "Get information about a quota rule"
+        },
+        {
+          "info": {
+            "name": "Change an existing quota rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/admin/quota/rules/:quotarule",
+            "params": [
+              {
+                "name": "quotarule",
+                "value": "",
+                "type": "path",
+                "description": "Quota rule to change"
+              }
+            ]
+          },
+          "docs": "Change an existing quota rule"
+        },
+        {
+          "info": {
+            "name": "Deletes a quota rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/quota/rules/:quotarule",
+            "params": [
+              {
+                "name": "quotarule",
+                "value": "",
+                "type": "path",
+                "description": "quota rule to delete"
+              }
+            ]
+          },
+          "docs": "Deletes a quota rule"
+        },
+        {
+          "info": {
+            "name": "Search action jobs according to filter conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/runners/jobs",
+            "params": [
+              {
+                "name": "labels",
+                "value": "",
+                "type": "query",
+                "description": "a comma separated list of run job labels to search for"
+              }
+            ]
+          },
+          "docs": "This operation has been deprecated in Forgejo 15. Use [`/admin/actions/runners/jobs`](#/admin/adminGetActionRunJobs) instead.\n"
+        },
+        {
+          "info": {
+            "name": "Get a runner registration token for registering global runners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/runners/registration-token"
+          },
+          "docs": "This operation has been deprecated in Forgejo 15. Use the web UI or [`/admin/actions/runners`](#/admin/registerAdminRunner) instead.\n"
+        },
+        {
+          "info": {
+            "name": "List unadopted repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/unadopted",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              },
+              {
+                "name": "pattern",
+                "value": "",
+                "type": "query",
+                "description": "pattern of repositories to search for"
+              }
+            ]
+          },
+          "docs": "List unadopted repositories"
+        },
+        {
+          "info": {
+            "name": "Adopt unadopted files as a repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/unadopted/:owner/:repo",
+            "params": [
+              {
+                "name": "owner",
+                "value": "",
+                "type": "path",
+                "description": "owner of the repo"
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "name of the repo"
+              }
+            ]
+          },
+          "docs": "Adopt unadopted files as a repository"
+        },
+        {
+          "info": {
+            "name": "Delete unadopted files",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/unadopted/:owner/:repo",
+            "params": [
+              {
+                "name": "owner",
+                "value": "",
+                "type": "path",
+                "description": "owner of the repo"
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "name of the repo"
+              }
+            ]
+          },
+          "docs": "Delete unadopted files"
+        },
+        {
+          "info": {
+            "name": "Search users according filter conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/users",
+            "params": [
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the user's login source to search for"
+              },
+              {
+                "name": "login_name",
+                "value": "",
+                "type": "query",
+                "description": "user's login name to search for"
+              },
+              {
+                "name": "is_2fa_enabled",
+                "value": "",
+                "type": "query",
+                "description": "whether or not to filter users with the 2fa enabled"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "sort order of results"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "Search users according filter conditions"
+        },
+        {
+          "info": {
+            "name": "Create a user account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users"
+          },
+          "docs": "Create a user account"
+        },
+        {
+          "info": {
+            "name": "Edit an existing user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/admin/users/:username",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user to edit"
+              }
+            ]
+          },
+          "docs": "Edit an existing user"
+        },
+        {
+          "info": {
+            "name": "Delete user account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/users/:username",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user to delete"
+              },
+              {
+                "name": "purge",
+                "value": "",
+                "type": "query",
+                "description": "purge the user from the system completely"
+              }
+            ]
+          },
+          "docs": "Delete user account"
+        },
+        {
+          "info": {
+            "name": "List all email addresses for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/users/:username/emails",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user to get email addresses of"
+              }
+            ]
+          },
+          "docs": "List all email addresses for a user"
+        },
+        {
+          "info": {
+            "name": "Delete email addresses from a user's account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/users/:username/emails",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user to delete email addresses from"
+              }
+            ]
+          },
+          "docs": "Delete email addresses from a user's account"
+        },
+        {
+          "info": {
+            "name": "Add an SSH public key to user's account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users/:username/keys",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of the user"
+              }
+            ]
+          },
+          "docs": "Add an SSH public key to user's account"
+        },
+        {
+          "info": {
+            "name": "Remove a public key from user's account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/users/:username/keys/:id",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of the key to delete"
+              }
+            ]
+          },
+          "docs": "Remove a public key from user's account"
+        },
+        {
+          "info": {
+            "name": "Create an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users/:username/orgs",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of the user that will own the created organization"
+              }
+            ]
+          },
+          "docs": "Create an organization"
+        },
+        {
+          "info": {
+            "name": "Get the user's quota info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/users/:username/quota",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user to query"
+              }
+            ]
+          },
+          "docs": "Get the user's quota info"
+        },
+        {
+          "info": {
+            "name": "Set the user's quota groups to a given list.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users/:username/quota/groups",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of the user to modify the quota groups from"
+              }
+            ]
+          },
+          "docs": "Set the user's quota groups to a given list."
+        },
+        {
+          "info": {
+            "name": "Rename a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users/:username/rename",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "existing username of user"
+              }
+            ]
+          },
+          "docs": "Rename a user"
+        },
+        {
+          "info": {
+            "name": "Create a repository on behalf of a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users/:username/repos",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of the user. This user will own the created repository"
+              }
+            ]
+          },
+          "docs": "Create a repository on behalf of a user"
+        },
+        {
+          "info": {
+            "name": "List the specified user's access tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/users/:username/tokens",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number of results to return (1-based)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "page size of results"
+              }
+            ]
+          },
+          "docs": "List the specified user's access tokens"
+        },
+        {
+          "info": {
+            "name": "Create an access token for the specified user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/users/:username/tokens",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user"
+              }
+            ]
+          },
+          "docs": "Create an access token for the specified user"
+        },
+        {
+          "info": {
+            "name": "Delete an access token for the specified user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/users/:username/tokens/:token",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "username of user"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "token to be deleted, identified by ID and if not available by name"
+              }
+            ]
+          },
+          "docs": "Delete an access token for the specified user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

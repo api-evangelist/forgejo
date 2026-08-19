@@ -1,0 +1,353 @@
+{
+  "item": [
+    {
+      "id": "06ad8c41-8a76-4d5f-b4af-83411f1a65d0",
+      "name": "settings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3ed4669b-707d-4afa-93bb-089b0615771b",
+          "name": "Get instance's global settings for api",
+          "request": {
+            "name": "Get instance's global settings for api",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "api"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bde09e13-672b-4190-8b0b-617229ef3f00",
+              "name": "GeneralAPISettings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "api"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"default_git_trees_per_page\": 3465,\n  \"default_max_blob_size\": 1720,\n  \"default_paging_num\": 567,\n  \"max_response_items\": 6181\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "339ba875-d532-43a4-a18d-aa026d41dd20",
+          "name": "Get instance's global settings for Attachment",
+          "request": {
+            "name": "Get instance's global settings for Attachment",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "attachment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d225749-f762-4c26-97cb-0b104c11c13e",
+              "name": "GeneralAttachmentSettings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "attachment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"allowed_types\": \"string\",\n  \"enabled\": true,\n  \"max_files\": 3142,\n  \"max_size\": 3581\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e63eef0d-917b-4fe0-8ddf-5aabdb32f71f",
+          "name": "Get instance's global settings for repositories",
+          "request": {
+            "name": "Get instance's global settings for repositories",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "repository"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfe99c5f-3326-4838-9df9-3a384eb67cd4",
+              "name": "GeneralRepoSettings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "repository"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"forks_disabled\": false,\n  \"http_git_disabled\": true,\n  \"lfs_disabled\": true,\n  \"migrations_disabled\": false,\n  \"mirrors_disabled\": false,\n  \"stars_disabled\": true,\n  \"time_tracking_disabled\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78bc5fdb-53bf-4d25-af9b-9871c56874e3",
+          "name": "Get instance's global settings for ui",
+          "request": {
+            "name": "Get instance's global settings for ui",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "ui"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c88ef447-8f4d-485e-8949-9c11ae200d22",
+              "name": "GeneralUISettings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "ui"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"allowed_reactions\": [\n    \"string\",\n    \"string\"\n  ],\n  \"custom_emojis\": [\n    \"string\",\n    \"string\"\n  ],\n  \"default_theme\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7e0b42ad-2012-4a39-bb1b-a97b6573c92c",
+    "name": "Forgejo activitypub settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This documentation describes the Forgejo API.",
+      "type": "text/plain"
+    }
+  }
+}

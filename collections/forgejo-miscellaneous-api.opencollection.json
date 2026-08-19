@@ -1,0 +1,196 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forgejo activitypub miscellaneous API",
+    "version": "16.0.0-dev-465-4b83448b7d+gitea-1.22.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "miscellaneous",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a workflow run associated with a token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/actions/run"
+          },
+          "docs": "The automatic actions token must be used as the authentication mechanism (<code>Authorization: Bearer $&#x7b;&#x7b; forgejo.token &#x7d;&#x7d;</code>); other types of tokens cannot be used. The token is associated with the job, which must be still running for the request to this endpoint to succeed.\n"
+        },
+        {
+          "info": {
+            "name": "Returns a list of all gitignore templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gitignore/templates"
+          },
+          "docs": "Returns a list of all gitignore templates"
+        },
+        {
+          "info": {
+            "name": "Returns information about a gitignore template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gitignore/templates/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "name of the template"
+              }
+            ]
+          },
+          "docs": "Returns information about a gitignore template"
+        },
+        {
+          "info": {
+            "name": "Returns a list of all label templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/label/templates"
+          },
+          "docs": "Returns a list of all label templates"
+        },
+        {
+          "info": {
+            "name": "Returns all labels in a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/label/templates/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "name of the template"
+              }
+            ]
+          },
+          "docs": "Returns all labels in a template"
+        },
+        {
+          "info": {
+            "name": "Returns a list of all license templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/licenses"
+          },
+          "docs": "Returns a list of all license templates"
+        },
+        {
+          "info": {
+            "name": "Returns information about a license template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/licenses/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "name of the license"
+              }
+            ]
+          },
+          "docs": "Returns information about a license template"
+        },
+        {
+          "info": {
+            "name": "Render a markdown document as HTML",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/markdown"
+          },
+          "docs": "Render a markdown document as HTML"
+        },
+        {
+          "info": {
+            "name": "Render raw markdown as HTML",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/markdown/raw"
+          },
+          "docs": "Render raw markdown as HTML"
+        },
+        {
+          "info": {
+            "name": "Render a markup document as HTML",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/markup"
+          },
+          "docs": "Render a markup document as HTML"
+        },
+        {
+          "info": {
+            "name": "Returns the nodeinfo of the Forgejo application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/nodeinfo"
+          },
+          "docs": "Returns the nodeinfo of the Forgejo application"
+        },
+        {
+          "info": {
+            "name": "Get default signing-key.gpg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/signing-key.gpg"
+          },
+          "docs": "Get default signing-key.gpg"
+        },
+        {
+          "info": {
+            "name": "Get default signing-key.ssh",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/signing-key.ssh"
+          },
+          "docs": "Get default signing-key.ssh"
+        },
+        {
+          "info": {
+            "name": "Returns the version of the running application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/version"
+          },
+          "docs": "Returns the version of the running application"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

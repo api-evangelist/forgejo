@@ -1,0 +1,1567 @@
+{
+  "item": [
+    {
+      "id": "201a49ea-283d-4e9e-8568-c73ef079e86a",
+      "name": "miscellaneous",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f91027c3-a69e-460d-89d2-e9540169c950",
+          "name": "Get a workflow run associated with a token",
+          "request": {
+            "name": "Get a workflow run associated with a token",
+            "description": {
+              "content": "The automatic actions token must be used as the authentication mechanism (<code>Authorization: Bearer $&#x7b;&#x7b; forgejo.token &#x7d;&#x7d;</code>); other types of tokens cannot be used. The token is associated with the job, which must be still running for the request to this endpoint to succeed.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actions",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbdd3ddf-87ad-4a6d-8eac-ef418f64245a",
+              "name": "ActionRun",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actions",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ScheduleID\": 6372,\n  \"approved_by\": 100,\n  \"commit_sha\": \"string\",\n  \"created\": \"2011-02-03T06:44:47.440Z\",\n  \"duration\": 6856,\n  \"event\": \"string\",\n  \"event_payload\": \"string\",\n  \"html_url\": \"string\",\n  \"id\": 1863,\n  \"index_in_repo\": 4207,\n  \"is_fork_pull_request\": true,\n  \"is_ref_deleted\": true,\n  \"need_approval\": true,\n  \"prettyref\": \"string\",\n  \"repository\": {\n    \"allow_fast_forward_only_merge\": true,\n    \"allow_merge_commits\": true,\n    \"allow_rebase\": false,\n    \"allow_rebase_explicit\": false,\n    \"allow_rebase_update\": true,\n    \"allow_squash_merge\": true,\n    \"archived\": true,\n    \"archived_at\": \"1998-07-11T15:10:30.193Z\",\n    \"avatar_url\": \"string\",\n    \"clone_url\": \"string\",\n    \"created_at\": \"2013-12-21T03:45:14.305Z\",\n    \"default_allow_maintainer_edit\": false,\n    \"default_branch\": \"string\",\n    \"default_delete_branch_after_merge\": false,\n    \"default_merge_style\": \"string\",\n    \"default_update_style\": \"string\",\n    \"description\": \"string\",\n    \"empty\": true,\n    \"external_tracker\": {\n      \"external_tracker_format\": \"string\",\n      \"external_tracker_regexp_pattern\": \"string\",\n      \"external_tracker_style\": \"string\",\n      \"external_tracker_url\": \"string\"\n    },\n    \"external_wiki\": {\n      \"external_wiki_url\": \"string\"\n    },\n    \"fork\": false,\n    \"forks_count\": 437,\n    \"full_name\": \"string\",\n    \"globally_editable_wiki\": false,\n    \"has_actions\": true,\n    \"has_issues\": false,\n    \"has_packages\": false,\n    \"has_projects\": true,\n    \"has_pull_requests\": true,\n    \"has_releases\": false,\n    \"has_wiki\": true,\n    \"has_wiki_contents\": false,\n    \"html_url\": \"string\",\n    \"id\": 2357,\n    \"ignore_whitespace_conflicts\": false,\n    \"internal\": true,\n    \"internal_tracker\": {\n      \"allow_only_contributors_to_track_time\": false,\n      \"enable_issue_dependencies\": true,\n      \"enable_time_tracker\": true\n    },\n    \"language\": \"string\",\n    \"languages_url\": \"string\",\n    \"link\": \"string\",\n    \"mirror\": false,\n    \"mirror_interval\": \"string\",\n    \"mirror_updated\": \"1967-01-21T01:07:39.239Z\",\n    \"name\": \"string\",\n    \"object_format_name\": \"sha256\",\n    \"open_issues_count\": 5605,\n    \"open_pr_counter\": 5501,\n    \"original_url\": \"string\",\n    \"owner\": {\n      \"active\": true,\n      \"avatar_url\": \"string\",\n      \"created\": \"1962-10-27T13:18:12.969Z\",\n      \"description\": \"string\",\n      \"email\": \"6OwG@E.pne\",\n      \"followers_count\": 6488,\n      \"following_count\": 4085,\n      \"full_name\": \"string\",\n      \"html_url\": \"string\",\n      \"id\": 2641,\n      \"is_admin\": false,\n      \"language\": \"string\",\n      \"last_login\": \"2014-09-27T23:52:11.419Z\",\n      \"location\": \"string\",\n      \"login\": \"string\",\n      \"login_name\": \"empty\",\n      \"prohibit_login\": false,\n      \"pronouns\": \"string\",\n      \"restricted\": false,\n      \"source_id\": 830,\n      \"starred_repos_count\": 7660,\n      \"visibility\": \"string\",\n      \"website\": \"string\"\n    },\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/Repository detected>\"\n    },\n    \"permissions\": {\n      \"admin\": true,\n      \"pull\": false,\n      \"push\": true\n    },\n    \"private\": false,\n    \"release_counter\": 400,\n    \"repo_transfer\": {\n      \"doer\": {\n        \"active\": true,\n        \"avatar_url\": \"string\",\n        \"created\": \"1987-04-13T04:29:19.982Z\",\n        \"description\": \"string\",\n        \"email\": \"IYN8kT9u@KziRhGXJBJfAxalUemeGTUfVrEWJu.lu\",\n        \"followers_count\": 9915,\n        \"following_count\": 2843,\n        \"full_name\": \"string\",\n        \"html_url\": \"string\",\n        \"id\": 4287,\n        \"is_admin\": true,\n        \"language\": \"string\",\n        \"last_login\": \"2002-12-05T21:56:39.246Z\",\n        \"location\": \"string\",\n        \"login\": \"string\",\n        \"login_name\": \"empty\",\n        \"prohibit_login\": true,\n        \"pronouns\": \"string\",\n        \"restricted\": false,\n        \"source_id\": 9827,\n        \"starred_repos_count\": 7327,\n        \"visibility\": \"string\",\n        \"website\": \"string\"\n      },\n      \"recipient\": {\n        \"active\": false,\n        \"avatar_url\": \"string\",\n        \"created\": \"2023-12-20T20:59:45.243Z\",\n        \"description\": \"string\",\n        \"email\": \"YXoF@ApIGnnaUnAYonFiZDpxKFBN.vy\",\n        \"followers_count\": 2995,\n        \"following_count\": 1336,\n        \"full_name\": \"string\",\n        \"html_url\": \"string\",\n        \"id\": 5140,\n        \"is_admin\": true,\n        \"language\": \"string\",\n        \"last_login\": \"2008-05-25T16:33:00.924Z\",\n        \"location\": \"string\",\n        \"login\": \"string\",\n        \"login_name\": \"empty\",\n        \"prohibit_login\": true,\n        \"pronouns\": \"string\",\n        \"restricted\": true,\n        \"source_id\": 8679,\n        \"starred_repos_count\": 2498,\n        \"visibility\": \"string\",\n        \"website\": \"string\"\n      },\n      \"teams\": [\n        {\n          \"can_create_org_repo\": true,\n          \"description\": \"string\",\n          \"id\": 2920,\n          \"includes_all_repositories\": true,\n          \"name\": \"string\",\n          \"organization\": {\n            \"avatar_url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"full_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"repo_admin_change_team_access\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"visibility\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"website\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"permission\": \"write\",\n          \"units\": [\n            \"repo.code\",\n            \"repo.issues\",\n            \"repo.ext_issues\",\n            \"repo.wiki\",\n            \"repo.pulls\",\n            \"repo.releases\",\n            \"repo.projects\",\n            \"repo.ext_wiki\"\n          ],\n          \"units_map\": {\n            \"repo.actions\": \"none\",\n            \"repo.code\": \"read\",\n            \"repo.ext_issues\": \"none\",\n            \"repo.ext_wiki\": \"none\",\n            \"repo.issues\": \"write\",\n            \"repo.packages\": \"none\",\n            \"repo.projects\": \"none\",\n            \"repo.pulls\": \"owner\",\n            \"repo.releases\": \"none\",\n            \"repo.wiki\": \"admin\"\n          }\n        },\n        {\n          \"can_create_org_repo\": true,\n          \"description\": \"string\",\n          \"id\": 4522,\n          \"includes_all_repositories\": true,\n          \"name\": \"string\",\n          \"organization\": {\n            \"avatar_url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"full_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"repo_admin_change_team_access\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"username\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"visibility\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"website\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"permission\": \"owner\",\n          \"units\": [\n            \"repo.code\",\n            \"repo.issues\",\n            \"repo.ext_issues\",\n            \"repo.wiki\",\n            \"repo.pulls\",\n            \"repo.releases\",\n            \"repo.projects\",\n            \"repo.ext_wiki\"\n          ],\n          \"units_map\": {\n            \"repo.actions\": \"none\",\n            \"repo.code\": \"read\",\n            \"repo.ext_issues\": \"none\",\n            \"repo.ext_wiki\": \"none\",\n            \"repo.issues\": \"write\",\n            \"repo.packages\": \"none\",\n            \"repo.projects\": \"none\",\n            \"repo.pulls\": \"owner\",\n            \"repo.releases\": \"none\",\n            \"repo.wiki\": \"admin\"\n          }\n        }\n      ]\n    },\n    \"size\": 9716,\n    \"ssh_url\": \"string\",\n    \"stars_count\": 1828,\n    \"template\": true,\n    \"topics\": [\n      \"string\",\n      \"string\"\n    ],\n    \"updated_at\": \"1975-09-06T20:17:42.671Z\",\n    \"url\": \"string\",\n    \"watchers_count\": 6407,\n    \"website\": \"string\",\n    \"wiki_branch\": \"string\",\n    \"wiki_clone_url\": \"string\",\n    \"wiki_ssh_url\": \"string\"\n  },\n  \"started\": \"1947-12-07T10:51:22.160Z\",\n  \"status\": \"string\",\n  \"stopped\": \"1974-08-02T14:35:45.341Z\",\n  \"title\": \"string\",\n  \"trigger_event\": \"string\",\n  \"trigger_user\": {\n    \"active\": true,\n    \"avatar_url\": \"string\",\n    \"created\": \"2014-08-09T08:08:54.456Z\",\n    \"description\": \"string\",\n    \"email\": \"T6Pfhli27ow@gRXlxFG.guig\",\n    \"followers_count\": 5278,\n    \"following_count\": 3606,\n    \"full_name\": \"string\",\n    \"html_url\": \"string\",\n    \"id\": 9184,\n    \"is_admin\": true,\n    \"language\": \"string\",\n    \"last_login\": \"2017-03-03T10:44:31.202Z\",\n    \"location\": \"string\",\n    \"login\": \"string\",\n    \"login_name\": \"empty\",\n    \"prohibit_login\": true,\n    \"pronouns\": \"string\",\n    \"restricted\": true,\n    \"source_id\": 2761,\n    \"starred_repos_count\": 6758,\n    \"visibility\": \"string\",\n    \"website\": \"string\"\n  },\n  \"updated\": \"1993-03-10T20:34:25.560Z\",\n  \"workflow_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d03aced-b24b-423c-817d-392d786c0ed2",
+          "name": "Returns a list of all gitignore templates",
+          "request": {
+            "name": "Returns a list of all gitignore templates",
+            "description": {},
+            "url": {
+              "path": [
+                "gitignore",
+                "templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74c5e888-fbf1-4b48-b185-527f506faf6c",
+              "name": "GitignoreTemplateList",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gitignore",
+                    "templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a70c80b5-c412-48a3-866e-59efda645490",
+          "name": "Returns information about a gitignore template",
+          "request": {
+            "name": "Returns information about a gitignore template",
+            "description": {},
+            "url": {
+              "path": [
+                "gitignore",
+                "templates",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the template"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75a35e92-15be-4a32-abff-05dafa672eaa",
+              "name": "GitignoreTemplateInfo",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gitignore",
+                    "templates",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the template"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"source\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b88218d-3ddb-4d81-ae35-ff9865156288",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gitignore",
+                    "templates",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the template"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d17e510-cbdf-4872-b8d0-af88bb4a8079",
+          "name": "Returns a list of all label templates",
+          "request": {
+            "name": "Returns a list of all label templates",
+            "description": {},
+            "url": {
+              "path": [
+                "label",
+                "templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebfe2e52-0b7b-4ce2-86f6-3a44764ec3e4",
+              "name": "LabelTemplateList",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "label",
+                    "templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d48a9bae-df6b-421d-bd12-7301c9e20401",
+          "name": "Returns all labels in a template",
+          "request": {
+            "name": "Returns all labels in a template",
+            "description": {},
+            "url": {
+              "path": [
+                "label",
+                "templates",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the template"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4cc1e172-e92a-4e8f-bbe5-bfe09d0ff9ee",
+              "name": "LabelTemplateInfo",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "label",
+                    "templates",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the template"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"color\": \"00aabb\",\n    \"description\": \"string\",\n    \"exclusive\": false,\n    \"name\": \"string\"\n  },\n  {\n    \"color\": \"00aabb\",\n    \"description\": \"string\",\n    \"exclusive\": false,\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab6a5c47-23cd-4901-8cfe-ed621544c569",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "label",
+                    "templates",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the template"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e634b3df-7e8c-4bb7-b515-54073e63266e",
+          "name": "Returns a list of all license templates",
+          "request": {
+            "name": "Returns a list of all license templates",
+            "description": {},
+            "url": {
+              "path": [
+                "licenses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94edd171-8757-4820-aa06-37f2bdeb9c95",
+              "name": "LicenseTemplateList",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "licenses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"url\": \"string\"\n  },\n  {\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"url\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "917606e8-d4bf-4c82-b3e8-ae7ff533c977",
+          "name": "Returns information about a license template",
+          "request": {
+            "name": "Returns information about a license template",
+            "description": {},
+            "url": {
+              "path": [
+                "licenses",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) name of the license"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df111d6c-b8ca-4652-9d63-4b399170cdec",
+              "name": "LicenseTemplateInfo",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "licenses",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the license"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"body\": \"string\",\n  \"implementation\": \"string\",\n  \"key\": \"string\",\n  \"name\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a2abcef-52d7-4498-88bc-1a1d6fdefc9c",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "licenses",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) name of the license"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b66ffca4-74da-4e3f-b656-a51e3ead89fc",
+          "name": "Render a markdown document as HTML",
+          "request": {
+            "name": "Render a markdown document as HTML",
+            "description": {},
+            "url": {
+              "path": [
+                "markdown"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Context\": \"<string>\",\n  \"Mode\": \"<string>\",\n  \"Text\": \"<string>\",\n  \"Wiki\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4d8c9934-b6cf-41f9-97bc-0e59be55073b",
+              "name": "MarkdownRender is a rendered markdown document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "markdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Context\": \"<string>\",\n  \"Mode\": \"<string>\",\n  \"Text\": \"<string>\",\n  \"Wiki\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c0632515-8342-44c8-841e-10b12efe4233",
+              "name": "APIValidationError is error format response related to input validation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "markdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Context\": \"<string>\",\n  \"Mode\": \"<string>\",\n  \"Text\": \"<string>\",\n  \"Wiki\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01b4863b-f9e8-4094-8515-37f50d200859",
+          "name": "Render raw markdown as HTML",
+          "request": {
+            "name": "Render raw markdown as HTML",
+            "description": {},
+            "url": {
+              "path": [
+                "markdown",
+                "raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "c9fb5e47-8d73-4d19-9685-09e0faf061ff",
+              "name": "MarkdownRender is a rendered markdown document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "markdown",
+                    "raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03264f0c-1d91-4a43-ac5b-0f3755746f84",
+              "name": "APIValidationError is error format response related to input validation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "markdown",
+                    "raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e708641-22f4-45db-b23c-7de5bbb5e93c",
+          "name": "Render a markup document as HTML",
+          "request": {
+            "name": "Render a markup document as HTML",
+            "description": {},
+            "url": {
+              "path": [
+                "markup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"BranchPath\": \"<string>\",\n  \"Context\": \"<string>\",\n  \"FilePath\": \"<string>\",\n  \"Mode\": \"<string>\",\n  \"Text\": \"<string>\",\n  \"Wiki\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2934f2b7-6893-466b-84e5-cc28bf6e4ee8",
+              "name": "MarkupRender is a rendered markup document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "markup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"BranchPath\": \"<string>\",\n  \"Context\": \"<string>\",\n  \"FilePath\": \"<string>\",\n  \"Mode\": \"<string>\",\n  \"Text\": \"<string>\",\n  \"Wiki\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3cb60cb-b47b-4c94-8367-1d68466c5875",
+              "name": "APIValidationError is error format response related to input validation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "markup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"BranchPath\": \"<string>\",\n  \"Context\": \"<string>\",\n  \"FilePath\": \"<string>\",\n  \"Mode\": \"<string>\",\n  \"Text\": \"<string>\",\n  \"Wiki\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1b5c0a9-f203-415e-a509-21c1668f2a02",
+          "name": "Returns the nodeinfo of the Forgejo application",
+          "request": {
+            "name": "Returns the nodeinfo of the Forgejo application",
+            "description": {},
+            "url": {
+              "path": [
+                "nodeinfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b229e436-38af-48bc-89b7-4edf08e7677f",
+              "name": "NodeInfo",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nodeinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metadata\": {},\n  \"openRegistrations\": false,\n  \"protocols\": [\n    \"string\",\n    \"string\"\n  ],\n  \"services\": {\n    \"inbound\": [\n      \"string\",\n      \"string\"\n    ],\n    \"outbound\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"software\": {\n    \"homepage\": \"string\",\n    \"name\": \"string\",\n    \"repository\": \"string\",\n    \"version\": \"string\"\n  },\n  \"usage\": {\n    \"localComments\": 707,\n    \"localPosts\": 8846,\n    \"users\": {\n      \"activeHalfyear\": 2693,\n      \"activeMonth\": 9180,\n      \"total\": 6450\n    }\n  },\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93d049a6-b991-4e91-8a26-f586a9960180",
+          "name": "Get default signing-key.gpg",
+          "request": {
+            "name": "Get default signing-key.gpg",
+            "description": {},
+            "url": {
+              "path": [
+                "signing-key.gpg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1509be10-92c8-4944-be40-0f22b034456e",
+              "name": "GPG armored public key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signing-key.gpg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68b4934b-6e0e-4fd1-b66b-1e48edc46145",
+          "name": "Get default signing-key.ssh",
+          "request": {
+            "name": "Get default signing-key.ssh",
+            "description": {},
+            "url": {
+              "path": [
+                "signing-key.ssh"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e144b3a-35ad-4d07-aaff-e1f5a8a81bbf",
+              "name": "SSH public key in OpenSSH authorized key format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signing-key.ssh"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0d7e2c45-b4c8-4ef7-b84f-a442b985882d",
+              "name": "APINotFound is a not found error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signing-key.ssh"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"message\": \"string\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aba72223-4a89-4d85-8a5c-fedfc389eae4",
+          "name": "Returns the version of the running application",
+          "request": {
+            "name": "Returns the version of the running application",
+            "description": {},
+            "url": {
+              "path": [
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c81ead0b-38ba-433b-aea5-1a29828da711",
+              "name": "ServerVersion",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "30c9dee9-0c64-41ba-a0bf-53f7c7eedbd8",
+    "name": "Forgejo activitypub miscellaneous API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This documentation describes the Forgejo API.",
+      "type": "text/plain"
+    }
+  }
+}
