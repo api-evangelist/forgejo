@@ -92,7 +92,7 @@ apis:
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
   tags:
-  - Issue
+  - issue
   tags_raw:
   - issue
   properties:
@@ -171,7 +171,7 @@ apis:
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
   tags:
-  - Repository
+  - repository
   tags_raw:
   - repository
   properties:
