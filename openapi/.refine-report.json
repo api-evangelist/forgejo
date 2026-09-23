@@ -1,16 +1,7 @@
 {
   "provider": "forgejo",
   "sources": [
-    "forgejo-activitypub-api-openapi.yml",
-    "forgejo-admin-api-openapi.yml",
-    "forgejo-issue-api-openapi.yml",
-    "forgejo-miscellaneous-api-openapi.yml",
-    "forgejo-notification-api-openapi.yml",
-    "forgejo-organization-api-openapi.yml",
-    "forgejo-package-api-openapi.yml",
-    "forgejo-repository-api-openapi.yml",
-    "forgejo-settings-api-openapi.yml",
-    "forgejo-user-api-openapi.yml"
+    "_original/openapi.json"
   ],
   "outputs": [
     "forgejo-activitypub-api-openapi.yml",
@@ -27,6 +18,31 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "openapi.json: declared missing tag: activitypub",
+    "openapi.json: declared missing tag: admin",
+    "openapi.json: declared missing tag: issue",
+    "openapi.json: declared missing tag: miscellaneous",
+    "openapi.json: declared missing tag: notification",
+    "openapi.json: declared missing tag: organization",
+    "openapi.json: declared missing tag: package",
+    "openapi.json: declared missing tag: repository",
+    "openapi.json: declared missing tag: settings",
+    "openapi.json: declared missing tag: user",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "forgejo-activitypub-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-admin-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-issue-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-miscellaneous-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-notification-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-package-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-repository-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-settings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forgejo-user-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

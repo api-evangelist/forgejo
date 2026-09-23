@@ -1,21 +1,13 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: This documentation describes the Forgejo API.
-  title: Forgejo activitypub settings API
+  title: Forgejo Settings API
   license:
     name: This file is distributed under the MIT license for the purpose of interoperability
     url: http://opensource.org/licenses/MIT
   version: 16.0.0-dev-465-4b83448b7d+gitea-1.22.0
-basePath: /api/v1
-schemes:
-- https
-- http
-consumes:
-- application/json
-- text/plain
-produces:
-- application/json
-- text/html
+servers:
+- url: /api/v1
 security:
 - BasicAuth: []
 - AuthorizationHeaderToken: []
@@ -23,174 +15,188 @@ security:
 - SudoHeader: []
 - TOTPHeader: []
 tags:
-- name: settings
+- name: Settings
 paths:
   /settings/api:
     get:
-      produces:
-      - application/json
       tags:
-      - settings
+      - Settings
       summary: Get instance's global settings for api
       operationId: getGeneralAPISettings
       responses:
         '200':
-          $ref: '#/responses/GeneralAPISettings'
+          $ref: '#/components/responses/GeneralAPISettings'
   /settings/attachment:
     get:
-      produces:
-      - application/json
       tags:
-      - settings
+      - Settings
       summary: Get instance's global settings for Attachment
       operationId: getGeneralAttachmentSettings
       responses:
         '200':
-          $ref: '#/responses/GeneralAttachmentSettings'
+          $ref: '#/components/responses/GeneralAttachmentSettings'
   /settings/repository:
     get:
-      produces:
-      - application/json
       tags:
-      - settings
+      - Settings
       summary: Get instance's global settings for repositories
       operationId: getGeneralRepositorySettings
       responses:
         '200':
-          $ref: '#/responses/GeneralRepoSettings'
+          $ref: '#/components/responses/GeneralRepoSettings'
   /settings/ui:
     get:
-      produces:
-      - application/json
       tags:
-      - settings
+      - Settings
       summary: Get instance's global settings for ui
       operationId: getGeneralUISettings
       responses:
         '200':
-          $ref: '#/responses/GeneralUISettings'
-definitions:
-  GeneralAPISettings:
-    description: GeneralAPISettings contains global api settings exposed by it
-    type: object
-    properties:
-      default_git_trees_per_page:
-        type: integer
-        format: int64
-        x-go-name: DefaultGitTreesPerPage
-      default_max_blob_size:
-        type: integer
-        format: int64
-        x-go-name: DefaultMaxBlobSize
-      default_paging_num:
-        type: integer
-        format: int64
-        x-go-name: DefaultPagingNum
-      max_response_items:
-        type: integer
-        format: int64
-        x-go-name: MaxResponseItems
-    x-go-package: forgejo.org/modules/structs
-  GeneralRepoSettings:
-    description: GeneralRepoSettings contains global repository settings exposed by API
-    type: object
-    properties:
-      forks_disabled:
-        type: boolean
-        x-go-name: ForksDisabled
-      http_git_disabled:
-        type: boolean
-        x-go-name: HTTPGitDisabled
-      lfs_disabled:
-        type: boolean
-        x-go-name: LFSDisabled
-      migrations_disabled:
-        type: boolean
-        x-go-name: MigrationsDisabled
-      mirrors_disabled:
-        type: boolean
-        x-go-name: MirrorsDisabled
-      stars_disabled:
-        type: boolean
-        x-go-name: StarsDisabled
-      time_tracking_disabled:
-        type: boolean
-        x-go-name: TimeTrackingDisabled
-    x-go-package: forgejo.org/modules/structs
-  GeneralUISettings:
-    description: GeneralUISettings contains global ui settings exposed by API
-    type: object
-    properties:
-      allowed_reactions:
-        type: array
-        items:
+          $ref: '#/components/responses/GeneralUISettings'
+components:
+  responses:
+    GeneralRepoSettings:
+      description: GeneralRepoSettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralRepoSettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralRepoSettings'
+    GeneralUISettings:
+      description: GeneralUISettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralUISettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralUISettings'
+    GeneralAPISettings:
+      description: GeneralAPISettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralAPISettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralAPISettings'
+    GeneralAttachmentSettings:
+      description: GeneralAttachmentSettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralAttachmentSettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralAttachmentSettings'
+  schemas:
+    GeneralAttachmentSettings:
+      description: GeneralAttachmentSettings contains global Attachment settings exposed by API
+      type: object
+      properties:
+        allowed_types:
           type: string
-        x-go-name: AllowedReactions
-      custom_emojis:
-        type: array
-        items:
+          x-go-name: AllowedTypes
+        enabled:
+          type: boolean
+          x-go-name: Enabled
+        max_files:
+          type: integer
+          format: int64
+          x-go-name: MaxFiles
+        max_size:
+          type: integer
+          format: int64
+          x-go-name: MaxSize
+      x-go-package: forgejo.org/modules/structs
+    GeneralRepoSettings:
+      description: GeneralRepoSettings contains global repository settings exposed by API
+      type: object
+      properties:
+        forks_disabled:
+          type: boolean
+          x-go-name: ForksDisabled
+        http_git_disabled:
+          type: boolean
+          x-go-name: HTTPGitDisabled
+        lfs_disabled:
+          type: boolean
+          x-go-name: LFSDisabled
+        migrations_disabled:
+          type: boolean
+          x-go-name: MigrationsDisabled
+        mirrors_disabled:
+          type: boolean
+          x-go-name: MirrorsDisabled
+        stars_disabled:
+          type: boolean
+          x-go-name: StarsDisabled
+        time_tracking_disabled:
+          type: boolean
+          x-go-name: TimeTrackingDisabled
+      x-go-package: forgejo.org/modules/structs
+    GeneralUISettings:
+      description: GeneralUISettings contains global ui settings exposed by API
+      type: object
+      properties:
+        allowed_reactions:
+          type: array
+          items:
+            type: string
+          x-go-name: AllowedReactions
+        custom_emojis:
+          type: array
+          items:
+            type: string
+          x-go-name: CustomEmojis
+        default_theme:
           type: string
-        x-go-name: CustomEmojis
-      default_theme:
-        type: string
-        x-go-name: DefaultTheme
-    x-go-package: forgejo.org/modules/structs
-  GeneralAttachmentSettings:
-    description: GeneralAttachmentSettings contains global Attachment settings exposed by API
-    type: object
-    properties:
-      allowed_types:
-        type: string
-        x-go-name: AllowedTypes
-      enabled:
-        type: boolean
-        x-go-name: Enabled
-      max_files:
-        type: integer
-        format: int64
-        x-go-name: MaxFiles
-      max_size:
-        type: integer
-        format: int64
-        x-go-name: MaxSize
-    x-go-package: forgejo.org/modules/structs
-responses:
-  GeneralUISettings:
-    description: GeneralUISettings
-    schema:
-      $ref: '#/definitions/GeneralUISettings'
-  GeneralAttachmentSettings:
-    description: GeneralAttachmentSettings
-    schema:
-      $ref: '#/definitions/GeneralAttachmentSettings'
-  GeneralAPISettings:
-    description: GeneralAPISettings
-    schema:
-      $ref: '#/definitions/GeneralAPISettings'
-  GeneralRepoSettings:
-    description: GeneralRepoSettings
-    schema:
-      $ref: '#/definitions/GeneralRepoSettings'
-securityDefinitions:
-  AuthorizationHeaderToken:
-    description: API tokens must be prepended with "token" followed by a space.
-    type: apiKey
-    name: Authorization
-    in: header
-  BasicAuth:
-    type: basic
-  SudoHeader:
-    description: Sudo API request as the user provided as the key. Admin privileges are required.
-    type: apiKey
-    name: Sudo
-    in: header
-  SudoParam:
-    description: Sudo API request as the user provided as the key. Admin privileges are required.
-    type: apiKey
-    name: sudo
-    in: query
-  TOTPHeader:
-    description: Must be used in combination with BasicAuth if two-factor authentication is enabled.
-    type: apiKey
-    name: X-FORGEJO-OTP
-    in: header
+          x-go-name: DefaultTheme
+      x-go-package: forgejo.org/modules/structs
+    GeneralAPISettings:
+      description: GeneralAPISettings contains global api settings exposed by it
+      type: object
+      properties:
+        default_git_trees_per_page:
+          type: integer
+          format: int64
+          x-go-name: DefaultGitTreesPerPage
+        default_max_blob_size:
+          type: integer
+          format: int64
+          x-go-name: DefaultMaxBlobSize
+        default_paging_num:
+          type: integer
+          format: int64
+          x-go-name: DefaultPagingNum
+        max_response_items:
+          type: integer
+          format: int64
+          x-go-name: MaxResponseItems
+      x-go-package: forgejo.org/modules/structs
+  securitySchemes:
+    AuthorizationHeaderToken:
+      description: API tokens must be prepended with "token" followed by a space.
+      type: apiKey
+      name: Authorization
+      in: header
+    BasicAuth:
+      type: http
+      scheme: basic
+    SudoHeader:
+      description: Sudo API request as the user provided as the key. Admin privileges are required.
+      type: apiKey
+      name: Sudo
+      in: header
+    SudoParam:
+      description: Sudo API request as the user provided as the key. Admin privileges are required.
+      type: apiKey
+      name: sudo
+      in: query
+    TOTPHeader:
+      description: Must be used in combination with BasicAuth if two-factor authentication is enabled.
+      type: apiKey
+      name: X-FORGEJO-OTP
+      in: header
