@@ -38,7 +38,7 @@ tags:
   - Self-Hosted
   - DevOps
   - CI/CD
-  - Open-Source
+  - Open Source
   - Forge
   - Repositories
   - Issues
@@ -54,9 +54,10 @@ tags_raw:
   - Repositories
   - Issues
   - Pull Requests
+  - Open-Source
 apis:
 - aid: forgejo:forgejo-activitypub-api
-  name: Forgejo activitypub API
+  name: Forgejo Activitypub API
   description: The activitypub API from Forgejo — 11 operation(s) for activitypub.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -72,7 +73,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-admin-api
-  name: Forgejo admin API
+  name: Forgejo Admin API
   description: The admin API from Forgejo — 34 operation(s) for admin.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -88,7 +89,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-issue-api
-  name: Forgejo issue API
+  name: Forgejo Issue API
   description: The issue API from Forgejo — 33 operation(s) for issue.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -104,7 +105,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-miscellaneous-api
-  name: Forgejo miscellaneous API
+  name: Forgejo Miscellaneous API
   description: The miscellaneous API from Forgejo — 14 operation(s) for miscellaneous.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -119,7 +120,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-notification-api
-  name: Forgejo notification API
+  name: Forgejo Notification API
   description: The notification API from Forgejo — 4 operation(s) for notification.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -135,7 +136,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-organization-api
-  name: Forgejo organization API
+  name: Forgejo Organization API
   description: The organization API from Forgejo — 42 operation(s) for organization.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -151,7 +152,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-package-api
-  name: Forgejo package API
+  name: Forgejo Package API
   description: The package API from Forgejo — 5 operation(s) for package.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -167,7 +168,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-repository-api
-  name: Forgejo repository API
+  name: Forgejo Repository API
   description: The repository API from Forgejo — 126 operation(s) for repository.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -183,7 +184,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-settings-api
-  name: Forgejo settings API
+  name: Forgejo Settings API
   description: The settings API from Forgejo — 4 operation(s) for settings.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1
@@ -199,7 +200,7 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 - aid: forgejo:forgejo-user-api
-  name: Forgejo user API
+  name: Forgejo User API
   description: The user API from Forgejo — 54 operation(s) for user.
   humanURL: https://forgejo.org/docs/latest/user/api-usage/
   baseURL: https://code.forgejo.org/api/v1

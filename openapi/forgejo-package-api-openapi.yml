@@ -252,37 +252,6 @@ paths:
           $ref: '#/components/responses/notFound'
 components:
   schemas:
-    Package:
-      description: Package represents a package
-      type: object
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          x-go-name: CreatedAt
-        creator:
-          $ref: '#/components/schemas/User'
-        html_url:
-          type: string
-          x-go-name: HTMLURL
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        name:
-          type: string
-          x-go-name: Name
-        owner:
-          $ref: '#/components/schemas/User'
-        repository:
-          $ref: '#/components/schemas/Repository'
-        type:
-          type: string
-          x-go-name: Type
-        version:
-          type: string
-          x-go-name: Version
-      x-go-package: forgejo.org/modules/structs
     Team:
       description: Team represents a team in an organization
       type: object
@@ -345,19 +314,36 @@ components:
             repo.releases: none
             repo.wiki: admin
       x-go-package: forgejo.org/modules/structs
-    Permission:
-      description: Permission represents a set of permissions
+    Package:
+      description: Package represents a package
       type: object
       properties:
-        admin:
-          type: boolean
-          x-go-name: Admin
-        pull:
-          type: boolean
-          x-go-name: Pull
-        push:
-          type: boolean
-          x-go-name: Push
+        created_at:
+          type: string
+          format: date-time
+          x-go-name: CreatedAt
+        creator:
+          $ref: '#/components/schemas/User'
+        html_url:
+          type: string
+          x-go-name: HTMLURL
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        name:
+          type: string
+          x-go-name: Name
+        owner:
+          $ref: '#/components/schemas/User'
+        repository:
+          $ref: '#/components/schemas/Repository'
+        type:
+          type: string
+          x-go-name: Type
+        version:
+          type: string
+          x-go-name: Version
       x-go-package: forgejo.org/modules/structs
     InternalTracker:
       description: InternalTracker represents settings for internal tracker
@@ -375,6 +361,187 @@ components:
           description: Enable time tracking (Built-in issue tracker)
           type: boolean
           x-go-name: EnableTimeTracker
+      x-go-package: forgejo.org/modules/structs
+    ExternalWiki:
+      description: ExternalWiki represents setting for external wiki
+      type: object
+      properties:
+        external_wiki_url:
+          description: URL of external wiki.
+          type: string
+          x-go-name: ExternalWikiURL
+      x-go-package: forgejo.org/modules/structs
+    PackageFile:
+      description: PackageFile represents a package file
+      type: object
+      properties:
+        Size:
+          type: integer
+          format: int64
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        md5:
+          type: string
+          x-go-name: HashMD5
+        name:
+          type: string
+          x-go-name: Name
+        sha1:
+          type: string
+          x-go-name: HashSHA1
+        sha256:
+          type: string
+          x-go-name: HashSHA256
+        sha512:
+          type: string
+          x-go-name: HashSHA512
+      x-go-package: forgejo.org/modules/structs
+    User:
+      description: User represents a user
+      type: object
+      properties:
+        active:
+          description: Is user active
+          type: boolean
+          x-go-name: IsActive
+        avatar_url:
+          description: URL to the user's avatar
+          type: string
+          x-go-name: AvatarURL
+        created:
+          type: string
+          format: date-time
+          x-go-name: Created
+        description:
+          description: the user's description
+          type: string
+          x-go-name: Description
+        email:
+          type: string
+          format: email
+          x-go-name: Email
+        followers_count:
+          description: user counts
+          type: integer
+          format: int64
+          x-go-name: Followers
+        following_count:
+          type: integer
+          format: int64
+          x-go-name: Following
+        full_name:
+          description: the user's full name
+          type: string
+          x-go-name: FullName
+        html_url:
+          description: URL to the user's profile page
+          type: string
+          x-go-name: HTMLURL
+        id:
+          description: the user's id
+          type: integer
+          format: int64
+          x-go-name: ID
+        is_admin:
+          description: Is the user an administrator
+          type: boolean
+          x-go-name: IsAdmin
+        language:
+          description: User locale
+          type: string
+          x-go-name: Language
+        last_login:
+          type: string
+          format: date-time
+          x-go-name: LastLogin
+        location:
+          description: the user's location
+          type: string
+          x-go-name: Location
+        login:
+          description: the user's username
+          type: string
+          x-go-name: UserName
+        login_name:
+          description: the user's authentication sign-in name.
+          type: string
+          default: empty
+          x-go-name: LoginName
+        prohibit_login:
+          description: Is user login prohibited
+          type: boolean
+          x-go-name: ProhibitLogin
+        pronouns:
+          description: the user's pronouns
+          type: string
+          x-go-name: Pronouns
+        restricted:
+          description: Is user restricted
+          type: boolean
+          x-go-name: Restricted
+        source_id:
+          description: The ID of the user's Authentication Source
+          type: integer
+          format: int64
+          x-go-name: SourceID
+        starred_repos_count:
+          type: integer
+          format: int64
+          x-go-name: StarredRepos
+        visibility:
+          description: 'User visibility level option: public, limited, private'
+          type: string
+          x-go-name: Visibility
+        website:
+          description: the user's website
+          type: string
+          x-go-name: Website
+      x-go-package: forgejo.org/modules/structs
+    Organization:
+      description: Organization represents an organization
+      type: object
+      properties:
+        avatar_url:
+          type: string
+          x-go-name: AvatarURL
+        created:
+          type: string
+          format: date-time
+          x-go-name: Created
+        description:
+          type: string
+          x-go-name: Description
+        email:
+          type: string
+          x-go-name: Email
+        full_name:
+          type: string
+          x-go-name: FullName
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        location:
+          type: string
+          x-go-name: Location
+        name:
+          type: string
+          x-go-name: Name
+        repo_admin_change_team_access:
+          type: boolean
+          x-go-name: RepoAdminChangeTeamAccess
+        username:
+          description: deprecated
+          type: string
+          x-go-name: UserName
+        visibility:
+          type: string
+          x-go-name: Visibility
+        website:
+          type: string
+          x-go-name: Website
       x-go-package: forgejo.org/modules/structs
     Repository:
       description: Repository represents a repository
@@ -592,6 +759,21 @@ components:
           type: string
           x-go-name: WikiSSHURL
       x-go-package: forgejo.org/modules/structs
+    APINotFound:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: string
+          x-go-name: Errors
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/services/context
     RepoTransfer:
       description: RepoTransfer represents a pending repo transfer
       type: object
@@ -605,6 +787,20 @@ components:
           items:
             $ref: '#/components/schemas/Team'
           x-go-name: Teams
+      x-go-package: forgejo.org/modules/structs
+    Permission:
+      description: Permission represents a set of permissions
+      type: object
+      properties:
+        admin:
+          type: boolean
+          x-go-name: Admin
+        pull:
+          type: boolean
+          x-go-name: Pull
+        push:
+          type: boolean
+          x-go-name: Push
       x-go-package: forgejo.org/modules/structs
     ExternalTracker:
       description: ExternalTracker represents settings for external tracker
@@ -627,216 +823,7 @@ components:
           type: string
           x-go-name: ExternalTrackerURL
       x-go-package: forgejo.org/modules/structs
-    ExternalWiki:
-      description: ExternalWiki represents setting for external wiki
-      type: object
-      properties:
-        external_wiki_url:
-          description: URL of external wiki.
-          type: string
-          x-go-name: ExternalWikiURL
-      x-go-package: forgejo.org/modules/structs
-    Organization:
-      description: Organization represents an organization
-      type: object
-      properties:
-        avatar_url:
-          type: string
-          x-go-name: AvatarURL
-        created:
-          type: string
-          format: date-time
-          x-go-name: Created
-        description:
-          type: string
-          x-go-name: Description
-        email:
-          type: string
-          x-go-name: Email
-        full_name:
-          type: string
-          x-go-name: FullName
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        location:
-          type: string
-          x-go-name: Location
-        name:
-          type: string
-          x-go-name: Name
-        repo_admin_change_team_access:
-          type: boolean
-          x-go-name: RepoAdminChangeTeamAccess
-        username:
-          description: deprecated
-          type: string
-          x-go-name: UserName
-        visibility:
-          type: string
-          x-go-name: Visibility
-        website:
-          type: string
-          x-go-name: Website
-      x-go-package: forgejo.org/modules/structs
-    PackageFile:
-      description: PackageFile represents a package file
-      type: object
-      properties:
-        Size:
-          type: integer
-          format: int64
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        md5:
-          type: string
-          x-go-name: HashMD5
-        name:
-          type: string
-          x-go-name: Name
-        sha1:
-          type: string
-          x-go-name: HashSHA1
-        sha256:
-          type: string
-          x-go-name: HashSHA256
-        sha512:
-          type: string
-          x-go-name: HashSHA512
-      x-go-package: forgejo.org/modules/structs
-    APINotFound:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: string
-          x-go-name: Errors
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/services/context
-    User:
-      description: User represents a user
-      type: object
-      properties:
-        active:
-          description: Is user active
-          type: boolean
-          x-go-name: IsActive
-        avatar_url:
-          description: URL to the user's avatar
-          type: string
-          x-go-name: AvatarURL
-        created:
-          type: string
-          format: date-time
-          x-go-name: Created
-        description:
-          description: the user's description
-          type: string
-          x-go-name: Description
-        email:
-          type: string
-          format: email
-          x-go-name: Email
-        followers_count:
-          description: user counts
-          type: integer
-          format: int64
-          x-go-name: Followers
-        following_count:
-          type: integer
-          format: int64
-          x-go-name: Following
-        full_name:
-          description: the user's full name
-          type: string
-          x-go-name: FullName
-        html_url:
-          description: URL to the user's profile page
-          type: string
-          x-go-name: HTMLURL
-        id:
-          description: the user's id
-          type: integer
-          format: int64
-          x-go-name: ID
-        is_admin:
-          description: Is the user an administrator
-          type: boolean
-          x-go-name: IsAdmin
-        language:
-          description: User locale
-          type: string
-          x-go-name: Language
-        last_login:
-          type: string
-          format: date-time
-          x-go-name: LastLogin
-        location:
-          description: the user's location
-          type: string
-          x-go-name: Location
-        login:
-          description: the user's username
-          type: string
-          x-go-name: UserName
-        login_name:
-          description: the user's authentication sign-in name.
-          type: string
-          default: empty
-          x-go-name: LoginName
-        prohibit_login:
-          description: Is user login prohibited
-          type: boolean
-          x-go-name: ProhibitLogin
-        pronouns:
-          description: the user's pronouns
-          type: string
-          x-go-name: Pronouns
-        restricted:
-          description: Is user restricted
-          type: boolean
-          x-go-name: Restricted
-        source_id:
-          description: The ID of the user's Authentication Source
-          type: integer
-          format: int64
-          x-go-name: SourceID
-        starred_repos_count:
-          type: integer
-          format: int64
-          x-go-name: StarredRepos
-        visibility:
-          description: 'User visibility level option: public, limited, private'
-          type: string
-          x-go-name: Visibility
-        website:
-          description: the user's website
-          type: string
-          x-go-name: Website
-      x-go-package: forgejo.org/modules/structs
   responses:
-    PackageFileList:
-      description: PackageFileList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/PackageFile'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/PackageFile'
     empty:
       description: APIEmpty is an empty response
     PackageList:
@@ -858,15 +845,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Package'
-    Package:
-      description: Package
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Package'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Package'
     notFound:
       description: APINotFound is a not found error response
       content:
@@ -876,6 +854,28 @@ components:
         text/html:
           schema:
             $ref: '#/components/schemas/APINotFound'
+    PackageFileList:
+      description: PackageFileList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/PackageFile'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/PackageFile'
+    Package:
+      description: Package
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Package'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Package'
   securitySchemes:
     AuthorizationHeaderToken:
       description: API tokens must be prepended with "token" followed by a space.

@@ -206,82 +206,6 @@ paths:
           $ref: '#/components/responses/ServerVersion'
 components:
   schemas:
-    Team:
-      description: Team represents a team in an organization
-      type: object
-      properties:
-        can_create_org_repo:
-          type: boolean
-          x-go-name: CanCreateOrgRepo
-        description:
-          type: string
-          x-go-name: Description
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        includes_all_repositories:
-          type: boolean
-          x-go-name: IncludesAllRepositories
-        name:
-          type: string
-          x-go-name: Name
-        organization:
-          $ref: '#/components/schemas/Organization'
-        permission:
-          type: string
-          enum:
-          - none
-          - read
-          - write
-          - admin
-          - owner
-          x-go-name: Permission
-        units:
-          type: array
-          items:
-            type: string
-          x-go-name: Units
-          example:
-          - repo.code
-          - repo.issues
-          - repo.ext_issues
-          - repo.wiki
-          - repo.pulls
-          - repo.releases
-          - repo.projects
-          - repo.ext_wiki
-        units_map:
-          type: object
-          additionalProperties:
-            type: string
-          x-go-name: UnitsMap
-          example:
-            repo.actions: none
-            repo.code: read
-            repo.ext_issues: none
-            repo.ext_wiki: none
-            repo.issues: write
-            repo.packages: none
-            repo.projects: none
-            repo.pulls: owner
-            repo.releases: none
-            repo.wiki: admin
-      x-go-package: forgejo.org/modules/structs
-    Permission:
-      description: Permission represents a set of permissions
-      type: object
-      properties:
-        admin:
-          type: boolean
-          x-go-name: Admin
-        pull:
-          type: boolean
-          x-go-name: Pull
-        push:
-          type: boolean
-          x-go-name: Push
-      x-go-package: forgejo.org/modules/structs
     InternalTracker:
       description: InternalTracker represents settings for internal tracker
       type: object
@@ -299,125 +223,6 @@ components:
           type: boolean
           x-go-name: EnableTimeTracker
       x-go-package: forgejo.org/modules/structs
-    ActionRun:
-      description: ActionRun represents an action run
-      type: object
-      properties:
-        ScheduleID:
-          description: the cron id for the schedule trigger
-          type: integer
-          format: int64
-        approved_by:
-          description: who approved this action run
-          type: integer
-          format: int64
-          x-go-name: ApprovedBy
-        commit_sha:
-          description: the commit sha the action run ran on
-          type: string
-          x-go-name: CommitSHA
-        created:
-          description: when the action run was created
-          type: string
-          format: date-time
-          x-go-name: Created
-        duration:
-          $ref: '#/components/schemas/Duration'
-        event:
-          description: the webhook event that causes the workflow to run
-          type: string
-          x-go-name: Event
-        event_payload:
-          description: the payload of the webhook event that causes the workflow to run
-          type: string
-          x-go-name: EventPayload
-        html_url:
-          description: the url of this action run
-          type: string
-          x-go-name: HTMLURL
-        id:
-          description: the action run id
-          type: integer
-          format: int64
-          x-go-name: ID
-        index_in_repo:
-          description: a unique number for each run of a repository
-          type: integer
-          format: int64
-          x-go-name: Index
-        is_fork_pull_request:
-          description: If this is triggered by a PR from a forked repository or an untrusted user, we need to check if it is approved and limit permissions when running the workflow.
-          type: boolean
-          x-go-name: IsForkPullRequest
-        is_ref_deleted:
-          description: has the commit/tag/… the action run ran on been deleted
-          type: boolean
-          x-go-name: IsRefDeleted
-        need_approval:
-          description: may need approval if it's a fork pull request
-          type: boolean
-          x-go-name: NeedApproval
-        prettyref:
-          description: the commit/tag/… the action run ran on
-          type: string
-          x-go-name: PrettyRef
-        repository:
-          $ref: '#/components/schemas/Repository'
-        started:
-          description: when the action run was started
-          type: string
-          format: date-time
-          x-go-name: Started
-        status:
-          description: the current status of this run
-          type: string
-          x-go-name: Status
-        stopped:
-          description: when the action run was stopped
-          type: string
-          format: date-time
-          x-go-name: Stopped
-        title:
-          description: the action run's title
-          type: string
-          x-go-name: Title
-        trigger_event:
-          description: the trigger event defined in the `on` configuration of the triggered workflow
-          type: string
-          x-go-name: TriggerEvent
-        trigger_user:
-          $ref: '#/components/schemas/User'
-        updated:
-          description: when the action run was last updated
-          type: string
-          format: date-time
-          x-go-name: Updated
-        workflow_id:
-          description: the name of workflow file
-          type: string
-          x-go-name: WorkflowID
-      x-go-package: forgejo.org/modules/structs
-    ExternalTracker:
-      description: ExternalTracker represents settings for external tracker
-      type: object
-      properties:
-        external_tracker_format:
-          description: External Issue Tracker URL Format. Use the placeholders {user}, {repo} and {index} for the username, repository name and issue index.
-          type: string
-          x-go-name: ExternalTrackerFormat
-        external_tracker_regexp_pattern:
-          description: External Issue Tracker issue regular expression
-          type: string
-          x-go-name: ExternalTrackerRegexpPattern
-        external_tracker_style:
-          description: External Issue Tracker Number Format, either `numeric`, `alphanumeric`, or `regexp`
-          type: string
-          x-go-name: ExternalTrackerStyle
-        external_tracker_url:
-          description: URL of external issue tracker.
-          type: string
-          x-go-name: ExternalTrackerURL
-      x-go-package: forgejo.org/modules/structs
     ExternalWiki:
       description: ExternalWiki represents setting for external wiki
       type: object
@@ -427,64 +232,28 @@ components:
           type: string
           x-go-name: ExternalWikiURL
       x-go-package: forgejo.org/modules/structs
-    LicenseTemplateInfo:
-      description: LicensesInfo contains information about a License
+    MarkupOption:
+      description: MarkupOption markup options
       type: object
       properties:
-        body:
+        BranchPath:
+          description: The current branch path where the form gets posted
           type: string
-          x-go-name: Body
-        implementation:
+        Context:
+          description: Context to render
           type: string
-          x-go-name: Implementation
-        key:
+        FilePath:
+          description: File path for detecting extension in file mode
           type: string
-          x-go-name: Key
-        name:
+        Mode:
+          description: Mode to render (comment, gfm, markdown, file)
           type: string
-          x-go-name: Name
-        url:
+        Text:
+          description: Text markup to render
           type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/modules/structs
-    APINotFound:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: string
-          x-go-name: Errors
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/services/context
-    Duration:
-      description: 'A Duration represents the elapsed time between two instants
-
-        as an int64 nanosecond count. The representation limits the
-
-        largest representable duration to approximately 290 years.'
-      type: integer
-      format: int64
-      x-go-package: time
-    NodeInfoServices:
-      description: NodeInfoServices contains the third party sites this server can connect to via their application API
-      type: object
-      properties:
-        inbound:
-          type: array
-          items:
-            type: string
-          x-go-name: Inbound
-        outbound:
-          type: array
-          items:
-            type: string
-          x-go-name: Outbound
+        Wiki:
+          description: Is it a wiki page ?
+          type: boolean
       x-go-package: forgejo.org/modules/structs
     Repository:
       description: Repository represents a repository
@@ -702,46 +471,6 @@ components:
           type: string
           x-go-name: WikiSSHURL
       x-go-package: forgejo.org/modules/structs
-    NodeInfoSoftware:
-      description: NodeInfoSoftware contains Metadata about server software in use
-      type: object
-      properties:
-        homepage:
-          type: string
-          x-go-name: Homepage
-        name:
-          type: string
-          x-go-name: Name
-        repository:
-          type: string
-          x-go-name: Repository
-        version:
-          type: string
-          x-go-name: Version
-      x-go-package: forgejo.org/modules/structs
-    MarkupOption:
-      description: MarkupOption markup options
-      type: object
-      properties:
-        BranchPath:
-          description: The current branch path where the form gets posted
-          type: string
-        Context:
-          description: Context to render
-          type: string
-        FilePath:
-          description: File path for detecting extension in file mode
-          type: string
-        Mode:
-          description: Mode to render (comment, gfm, markdown, file)
-          type: string
-        Text:
-          description: Text markup to render
-          type: string
-        Wiki:
-          description: Is it a wiki page ?
-          type: boolean
-      x-go-package: forgejo.org/modules/structs
     MarkdownOption:
       description: MarkdownOption markdown options
       type: object
@@ -758,104 +487,6 @@ components:
         Wiki:
           description: Is it a wiki page ?
           type: boolean
-      x-go-package: forgejo.org/modules/structs
-    GitignoreTemplateInfo:
-      description: GitignoreTemplateInfo name and text of a gitignore template
-      type: object
-      properties:
-        name:
-          type: string
-          x-go-name: Name
-        source:
-          type: string
-          x-go-name: Source
-      x-go-package: forgejo.org/modules/structs
-    ServerVersion:
-      description: ServerVersion wraps the version of the server
-      type: object
-      properties:
-        version:
-          type: string
-          x-go-name: Version
-      x-go-package: forgejo.org/modules/structs
-    NodeInfoUsage:
-      description: NodeInfoUsage contains usage statistics for this server
-      type: object
-      properties:
-        localComments:
-          type: integer
-          format: int64
-          x-go-name: LocalComments
-        localPosts:
-          type: integer
-          format: int64
-          x-go-name: LocalPosts
-        users:
-          $ref: '#/components/schemas/NodeInfoUsageUsers'
-      x-go-package: forgejo.org/modules/structs
-    LicensesTemplateListEntry:
-      description: LicensesListEntry is used for the API
-      type: object
-      properties:
-        key:
-          type: string
-          x-go-name: Key
-        name:
-          type: string
-          x-go-name: Name
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/modules/structs
-    LabelTemplate:
-      description: LabelTemplate info of a Label template
-      type: object
-      properties:
-        color:
-          type: string
-          x-go-name: Color
-          example: 00aabb
-        description:
-          type: string
-          x-go-name: Description
-        exclusive:
-          type: boolean
-          x-go-name: Exclusive
-          example: false
-        name:
-          type: string
-          x-go-name: Name
-      x-go-package: forgejo.org/modules/structs
-    NodeInfoUsageUsers:
-      description: NodeInfoUsageUsers contains statistics about the users of this server
-      type: object
-      properties:
-        activeHalfyear:
-          type: integer
-          format: int64
-          x-go-name: ActiveHalfyear
-        activeMonth:
-          type: integer
-          format: int64
-          x-go-name: ActiveMonth
-        total:
-          type: integer
-          format: int64
-          x-go-name: Total
-      x-go-package: forgejo.org/modules/structs
-    RepoTransfer:
-      description: RepoTransfer represents a pending repo transfer
-      type: object
-      properties:
-        doer:
-          $ref: '#/components/schemas/User'
-        recipient:
-          $ref: '#/components/schemas/User'
-        teams:
-          type: array
-          items:
-            $ref: '#/components/schemas/Team'
-          x-go-name: Teams
       x-go-package: forgejo.org/modules/structs
     Organization:
       description: Organization represents an organization
@@ -901,31 +532,58 @@ components:
           type: string
           x-go-name: Website
       x-go-package: forgejo.org/modules/structs
-    NodeInfo:
-      description: NodeInfo contains standardized way of exposing metadata about a server running one of the distributed social networks
+    RepoTransfer:
+      description: RepoTransfer represents a pending repo transfer
       type: object
       properties:
-        metadata:
-          type: object
-          x-go-name: Metadata
-        openRegistrations:
-          type: boolean
-          x-go-name: OpenRegistrations
-        protocols:
+        doer:
+          $ref: '#/components/schemas/User'
+        recipient:
+          $ref: '#/components/schemas/User'
+        teams:
           type: array
           items:
-            type: string
-          x-go-name: Protocols
-        services:
-          $ref: '#/components/schemas/NodeInfoServices'
-        software:
-          $ref: '#/components/schemas/NodeInfoSoftware'
-        usage:
-          $ref: '#/components/schemas/NodeInfoUsage'
+            $ref: '#/components/schemas/Team'
+          x-go-name: Teams
+      x-go-package: forgejo.org/modules/structs
+    LicenseTemplateInfo:
+      description: LicensesInfo contains information about a License
+      type: object
+      properties:
+        body:
+          type: string
+          x-go-name: Body
+        implementation:
+          type: string
+          x-go-name: Implementation
+        key:
+          type: string
+          x-go-name: Key
+        name:
+          type: string
+          x-go-name: Name
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/modules/structs
+    ServerVersion:
+      description: ServerVersion wraps the version of the server
+      type: object
+      properties:
         version:
           type: string
           x-go-name: Version
       x-go-package: forgejo.org/modules/structs
+    APIValidationError:
+      type: object
+      properties:
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/services/context
     User:
       description: User represents a user
       type: object
@@ -1027,9 +685,154 @@ components:
           type: string
           x-go-name: Website
       x-go-package: forgejo.org/modules/structs
-    APIValidationError:
+    Permission:
+      description: Permission represents a set of permissions
       type: object
       properties:
+        admin:
+          type: boolean
+          x-go-name: Admin
+        pull:
+          type: boolean
+          x-go-name: Pull
+        push:
+          type: boolean
+          x-go-name: Push
+      x-go-package: forgejo.org/modules/structs
+    NodeInfoUsage:
+      description: NodeInfoUsage contains usage statistics for this server
+      type: object
+      properties:
+        localComments:
+          type: integer
+          format: int64
+          x-go-name: LocalComments
+        localPosts:
+          type: integer
+          format: int64
+          x-go-name: LocalPosts
+        users:
+          $ref: '#/components/schemas/NodeInfoUsageUsers'
+      x-go-package: forgejo.org/modules/structs
+    ExternalTracker:
+      description: ExternalTracker represents settings for external tracker
+      type: object
+      properties:
+        external_tracker_format:
+          description: External Issue Tracker URL Format. Use the placeholders {user}, {repo} and {index} for the username, repository name and issue index.
+          type: string
+          x-go-name: ExternalTrackerFormat
+        external_tracker_regexp_pattern:
+          description: External Issue Tracker issue regular expression
+          type: string
+          x-go-name: ExternalTrackerRegexpPattern
+        external_tracker_style:
+          description: External Issue Tracker Number Format, either `numeric`, `alphanumeric`, or `regexp`
+          type: string
+          x-go-name: ExternalTrackerStyle
+        external_tracker_url:
+          description: URL of external issue tracker.
+          type: string
+          x-go-name: ExternalTrackerURL
+      x-go-package: forgejo.org/modules/structs
+    Team:
+      description: Team represents a team in an organization
+      type: object
+      properties:
+        can_create_org_repo:
+          type: boolean
+          x-go-name: CanCreateOrgRepo
+        description:
+          type: string
+          x-go-name: Description
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        includes_all_repositories:
+          type: boolean
+          x-go-name: IncludesAllRepositories
+        name:
+          type: string
+          x-go-name: Name
+        organization:
+          $ref: '#/components/schemas/Organization'
+        permission:
+          type: string
+          enum:
+          - none
+          - read
+          - write
+          - admin
+          - owner
+          x-go-name: Permission
+        units:
+          type: array
+          items:
+            type: string
+          x-go-name: Units
+          example:
+          - repo.code
+          - repo.issues
+          - repo.ext_issues
+          - repo.wiki
+          - repo.pulls
+          - repo.releases
+          - repo.projects
+          - repo.ext_wiki
+        units_map:
+          type: object
+          additionalProperties:
+            type: string
+          x-go-name: UnitsMap
+          example:
+            repo.actions: none
+            repo.code: read
+            repo.ext_issues: none
+            repo.ext_wiki: none
+            repo.issues: write
+            repo.packages: none
+            repo.projects: none
+            repo.pulls: owner
+            repo.releases: none
+            repo.wiki: admin
+      x-go-package: forgejo.org/modules/structs
+    LabelTemplate:
+      description: LabelTemplate info of a Label template
+      type: object
+      properties:
+        color:
+          type: string
+          x-go-name: Color
+          example: 00aabb
+        description:
+          type: string
+          x-go-name: Description
+        exclusive:
+          type: boolean
+          x-go-name: Exclusive
+          example: false
+        name:
+          type: string
+          x-go-name: Name
+      x-go-package: forgejo.org/modules/structs
+    Duration:
+      description: 'A Duration represents the elapsed time between two instants
+
+        as an int64 nanosecond count. The representation limits the
+
+        largest representable duration to approximately 290 years.'
+      type: integer
+      format: int64
+      x-go-package: time
+    APINotFound:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: string
+          x-go-name: Errors
         message:
           type: string
           x-go-name: Message
@@ -1037,122 +840,204 @@ components:
           type: string
           x-go-name: URL
       x-go-package: forgejo.org/services/context
-  responses:
     GitignoreTemplateInfo:
-      description: GitignoreTemplateInfo
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GitignoreTemplateInfo'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/GitignoreTemplateInfo'
-    LicenseTemplateList:
-      description: LicenseTemplateList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/LicensesTemplateListEntry'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/LicensesTemplateListEntry'
-    MarkupRender:
-      description: MarkupRender is a rendered markup document
-      content:
-        application/json:
-          schema:
+      description: GitignoreTemplateInfo name and text of a gitignore template
+      type: object
+      properties:
+        name:
+          type: string
+          x-go-name: Name
+        source:
+          type: string
+          x-go-name: Source
+      x-go-package: forgejo.org/modules/structs
+    NodeInfo:
+      description: NodeInfo contains standardized way of exposing metadata about a server running one of the distributed social networks
+      type: object
+      properties:
+        metadata:
+          type: object
+          x-go-name: Metadata
+        openRegistrations:
+          type: boolean
+          x-go-name: OpenRegistrations
+        protocols:
+          type: array
+          items:
             type: string
-        text/html:
-          schema:
-            type: string
-    MarkdownRender:
-      description: MarkdownRender is a rendered markdown document
-      content:
-        application/json:
-          schema:
-            type: string
-        text/html:
-          schema:
-            type: string
-    GitignoreTemplateList:
-      description: GitignoreTemplateList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              type: string
-        text/html:
-          schema:
-            type: array
-            items:
-              type: string
-    validationError:
-      description: APIValidationError is error format response related to input validation
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIValidationError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIValidationError'
-    LabelTemplateList:
-      description: LabelTemplateList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              type: string
-        text/html:
-          schema:
-            type: array
-            items:
-              type: string
-    ServerVersion:
-      description: ServerVersion
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ServerVersion'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/ServerVersion'
-    LicenseTemplateInfo:
-      description: LicenseTemplateInfo
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/LicenseTemplateInfo'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/LicenseTemplateInfo'
+          x-go-name: Protocols
+        services:
+          $ref: '#/components/schemas/NodeInfoServices'
+        software:
+          $ref: '#/components/schemas/NodeInfoSoftware'
+        usage:
+          $ref: '#/components/schemas/NodeInfoUsage'
+        version:
+          type: string
+          x-go-name: Version
+      x-go-package: forgejo.org/modules/structs
     ActionRun:
-      description: ActionRun
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ActionRun'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/ActionRun'
-    LabelTemplateInfo:
-      description: LabelTemplateInfo
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/LabelTemplate'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/LabelTemplate'
+      description: ActionRun represents an action run
+      type: object
+      properties:
+        ScheduleID:
+          description: the cron id for the schedule trigger
+          type: integer
+          format: int64
+        approved_by:
+          description: who approved this action run
+          type: integer
+          format: int64
+          x-go-name: ApprovedBy
+        commit_sha:
+          description: the commit sha the action run ran on
+          type: string
+          x-go-name: CommitSHA
+        created:
+          description: when the action run was created
+          type: string
+          format: date-time
+          x-go-name: Created
+        duration:
+          $ref: '#/components/schemas/Duration'
+        event:
+          description: the webhook event that causes the workflow to run
+          type: string
+          x-go-name: Event
+        event_payload:
+          description: the payload of the webhook event that causes the workflow to run
+          type: string
+          x-go-name: EventPayload
+        html_url:
+          description: the url of this action run
+          type: string
+          x-go-name: HTMLURL
+        id:
+          description: the action run id
+          type: integer
+          format: int64
+          x-go-name: ID
+        index_in_repo:
+          description: a unique number for each run of a repository
+          type: integer
+          format: int64
+          x-go-name: Index
+        is_fork_pull_request:
+          description: If this is triggered by a PR from a forked repository or an untrusted user, we need to check if it is approved and limit permissions when running the workflow.
+          type: boolean
+          x-go-name: IsForkPullRequest
+        is_ref_deleted:
+          description: has the commit/tag/… the action run ran on been deleted
+          type: boolean
+          x-go-name: IsRefDeleted
+        need_approval:
+          description: may need approval if it's a fork pull request
+          type: boolean
+          x-go-name: NeedApproval
+        prettyref:
+          description: the commit/tag/… the action run ran on
+          type: string
+          x-go-name: PrettyRef
+        repository:
+          $ref: '#/components/schemas/Repository'
+        started:
+          description: when the action run was started
+          type: string
+          format: date-time
+          x-go-name: Started
+        status:
+          description: the current status of this run
+          type: string
+          x-go-name: Status
+        stopped:
+          description: when the action run was stopped
+          type: string
+          format: date-time
+          x-go-name: Stopped
+        title:
+          description: the action run's title
+          type: string
+          x-go-name: Title
+        trigger_event:
+          description: the trigger event defined in the `on` configuration of the triggered workflow
+          type: string
+          x-go-name: TriggerEvent
+        trigger_user:
+          $ref: '#/components/schemas/User'
+        updated:
+          description: when the action run was last updated
+          type: string
+          format: date-time
+          x-go-name: Updated
+        workflow_id:
+          description: the name of workflow file
+          type: string
+          x-go-name: WorkflowID
+      x-go-package: forgejo.org/modules/structs
+    LicensesTemplateListEntry:
+      description: LicensesListEntry is used for the API
+      type: object
+      properties:
+        key:
+          type: string
+          x-go-name: Key
+        name:
+          type: string
+          x-go-name: Name
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/modules/structs
+    NodeInfoServices:
+      description: NodeInfoServices contains the third party sites this server can connect to via their application API
+      type: object
+      properties:
+        inbound:
+          type: array
+          items:
+            type: string
+          x-go-name: Inbound
+        outbound:
+          type: array
+          items:
+            type: string
+          x-go-name: Outbound
+      x-go-package: forgejo.org/modules/structs
+    NodeInfoUsageUsers:
+      description: NodeInfoUsageUsers contains statistics about the users of this server
+      type: object
+      properties:
+        activeHalfyear:
+          type: integer
+          format: int64
+          x-go-name: ActiveHalfyear
+        activeMonth:
+          type: integer
+          format: int64
+          x-go-name: ActiveMonth
+        total:
+          type: integer
+          format: int64
+          x-go-name: Total
+      x-go-package: forgejo.org/modules/structs
+    NodeInfoSoftware:
+      description: NodeInfoSoftware contains Metadata about server software in use
+      type: object
+      properties:
+        homepage:
+          type: string
+          x-go-name: Homepage
+        name:
+          type: string
+          x-go-name: Name
+        repository:
+          type: string
+          x-go-name: Repository
+        version:
+          type: string
+          x-go-name: Version
+      x-go-package: forgejo.org/modules/structs
+  responses:
     NodeInfo:
       description: NodeInfo
       content:
@@ -1171,6 +1056,121 @@ components:
         text/html:
           schema:
             $ref: '#/components/schemas/APINotFound'
+    LabelTemplateList:
+      description: LabelTemplateList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+        text/html:
+          schema:
+            type: array
+            items:
+              type: string
+    LicenseTemplateList:
+      description: LicenseTemplateList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/LicensesTemplateListEntry'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/LicensesTemplateListEntry'
+    ServerVersion:
+      description: ServerVersion
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ServerVersion'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/ServerVersion'
+    MarkdownRender:
+      description: MarkdownRender is a rendered markdown document
+      content:
+        application/json:
+          schema:
+            type: string
+        text/html:
+          schema:
+            type: string
+    LicenseTemplateInfo:
+      description: LicenseTemplateInfo
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LicenseTemplateInfo'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/LicenseTemplateInfo'
+    GitignoreTemplateList:
+      description: GitignoreTemplateList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+        text/html:
+          schema:
+            type: array
+            items:
+              type: string
+    LabelTemplateInfo:
+      description: LabelTemplateInfo
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/LabelTemplate'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/LabelTemplate'
+    MarkupRender:
+      description: MarkupRender is a rendered markup document
+      content:
+        application/json:
+          schema:
+            type: string
+        text/html:
+          schema:
+            type: string
+    validationError:
+      description: APIValidationError is error format response related to input validation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIValidationError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIValidationError'
+    GitignoreTemplateInfo:
+      description: GitignoreTemplateInfo
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GitignoreTemplateInfo'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GitignoreTemplateInfo'
+    ActionRun:
+      description: ActionRun
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ActionRun'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/ActionRun'
   securitySchemes:
     AuthorizationHeaderToken:
       description: API tokens must be prepended with "token" followed by a space.
