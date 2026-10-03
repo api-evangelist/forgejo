@@ -2803,7 +2803,404 @@ paths:
             schema:
               $ref: '#/components/schemas/EditMilestoneOption'
 components:
+  responses:
+    TrackedTimeList:
+      description: TrackedTimeList
+      headers:
+        X-Total-Count:
+          description: The total number of tracked times
+          schema:
+            type: integer
+            format: int64
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TrackedTime'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TrackedTime'
+    CommentList:
+      description: CommentList
+      headers:
+        X-Total-Count:
+          description: The total number of comments
+          schema:
+            type: integer
+            format: int64
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Comment'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Comment'
+    IssueDeadline:
+      description: IssueDeadline
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssueDeadline'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/IssueDeadline'
+    Comment:
+      description: Comment
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Comment'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Comment'
+    LabelListWithoutPagination:
+      description: LabelListWithoutPagination - Labels for a specific issue (no pagination headers)
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Label'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Label'
+    quotaExceeded:
+      description: QuotaExceeded
+      headers:
+        message:
+          schema:
+            type: string
+        user_id:
+          schema:
+            type: integer
+            format: int64
+        username:
+          schema:
+            type: string
+    WatchInfo:
+      description: WatchInfo
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/WatchInfo'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/WatchInfo'
+    notFound:
+      description: APINotFound is a not found error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APINotFound'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APINotFound'
+    ReactionListWithoutPagination:
+      description: ReactionListWithoutPagination - Reactions for a specific comment (no pagination headers)
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Reaction'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Reaction'
+    IssueList:
+      description: IssueList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Issue'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Issue'
+    forbidden:
+      description: APIForbiddenError is a forbidden error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIForbiddenError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIForbiddenError'
+    Issue:
+      description: Issue
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Issue'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Issue'
+    Attachment:
+      description: Attachment
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Attachment'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Attachment'
+    UserList:
+      description: UserList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+    TrackedTime:
+      description: TrackedTime
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TrackedTime'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/TrackedTime'
+    ReactionList:
+      description: ReactionList
+      headers:
+        X-Total-Count:
+          description: The total number of reactions
+          schema:
+            type: integer
+            format: int64
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Reaction'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Reaction'
+    MilestoneList:
+      description: MilestoneList
+      headers:
+        X-Total-Count:
+          description: The total number of milestones
+          schema:
+            type: integer
+            format: int64
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Milestone'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Milestone'
+    empty:
+      description: APIEmpty is an empty response
+    internalServerError:
+      description: APIInternalServerError is an error that is raised when an internal server error occurs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIInternalServerError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIInternalServerError'
+    AttachmentList:
+      description: AttachmentList
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Attachment'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Attachment'
+    error:
+      description: APIError is error format response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIError'
+    repoArchivedError:
+      description: APIRepoArchivedError is an error that is raised when an archived repo should be modified
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIRepoArchivedError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIRepoArchivedError'
+    Reaction:
+      description: Reaction
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Reaction'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Reaction'
+    Label:
+      description: Label
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Label'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Label'
+    IssueListWithoutPagination:
+      description: IssueListWithoutPagination - Issues without pagination headers (used for pinned issues, dependencies, etc.)
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Issue'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Issue'
+    LabelList:
+      description: LabelList
+      headers:
+        X-Total-Count:
+          description: The total number of labels
+          schema:
+            type: integer
+            format: int64
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Label'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Label'
+    TimelineList:
+      description: TimelineList
+      headers:
+        X-Total-Count:
+          description: The total number of timeline comments
+          schema:
+            type: integer
+            format: int64
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TimelineComment'
+        text/html:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TimelineComment'
+    Milestone:
+      description: Milestone
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Milestone'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/Milestone'
+    validationError:
+      description: APIValidationError is error format response related to input validation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIValidationError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIValidationError'
   schemas:
+    DeleteLabelsOption:
+      description: DeleteLabelOption options for deleting a label
+      type: object
+      properties:
+        updated_at:
+          type: string
+          format: date-time
+          x-go-name: Updated
+      x-go-package: forgejo.org/modules/structs
+    EditReactionOption:
+      description: EditReactionOption contain the reaction type
+      type: object
+      properties:
+        content:
+          type: string
+          x-go-name: Reaction
+      x-go-package: forgejo.org/modules/structs
+    CreateIssueCommentOption:
+      description: CreateIssueCommentOption options for creating a comment on an issue
+      type: object
+      required:
+      - body
+      properties:
+        body:
+          description: The body of the comment
+          type: string
+          x-go-name: Body
+        updated_at:
+          description: The time of the comment's update, needs admin or repository owner permission
+          type: string
+          format: date-time
+          x-go-name: Updated
+      x-go-package: forgejo.org/modules/structs
+    APIError:
+      description: APIError is an api error with a message
+      type: object
+      properties:
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/modules/structs
+    APIRepoArchivedError:
+      type: object
+      properties:
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/services/context
     CreateMilestoneOption:
       description: CreateMilestoneOption options for creating a milestone
       type: object
@@ -2824,265 +3221,6 @@ components:
         title:
           type: string
           x-go-name: Title
-      x-go-package: forgejo.org/modules/structs
-    TimelineComment:
-      description: TimelineComment represents a timeline comment (comment of any type) on a commit or issue
-      type: object
-      properties:
-        assignee:
-          $ref: '#/components/schemas/User'
-        assignee_team:
-          $ref: '#/components/schemas/Team'
-        body:
-          type: string
-          x-go-name: Body
-        created_at:
-          type: string
-          format: date-time
-          x-go-name: Created
-        dependent_issue:
-          $ref: '#/components/schemas/Issue'
-        html_url:
-          type: string
-          x-go-name: HTMLURL
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        issue_url:
-          type: string
-          x-go-name: IssueURL
-        label:
-          $ref: '#/components/schemas/Label'
-        milestone:
-          $ref: '#/components/schemas/Milestone'
-        new_ref:
-          type: string
-          x-go-name: NewRef
-        new_title:
-          type: string
-          x-go-name: NewTitle
-        old_milestone:
-          $ref: '#/components/schemas/Milestone'
-        old_project_id:
-          type: integer
-          format: int64
-          x-go-name: OldProjectID
-        old_ref:
-          type: string
-          x-go-name: OldRef
-        old_title:
-          type: string
-          x-go-name: OldTitle
-        project_id:
-          type: integer
-          format: int64
-          x-go-name: ProjectID
-        pull_request_url:
-          type: string
-          x-go-name: PRURL
-        ref_action:
-          type: string
-          x-go-name: RefAction
-        ref_comment:
-          $ref: '#/components/schemas/Comment'
-        ref_commit_sha:
-          description: commit SHA where issue/PR was referenced
-          type: string
-          x-go-name: RefCommitSHA
-        ref_issue:
-          $ref: '#/components/schemas/Issue'
-        removed_assignee:
-          description: whether the assignees were removed or added
-          type: boolean
-          x-go-name: RemovedAssignee
-        resolve_doer:
-          $ref: '#/components/schemas/User'
-        review_id:
-          type: integer
-          format: int64
-          x-go-name: ReviewID
-        tracked_time:
-          $ref: '#/components/schemas/TrackedTime'
-        type:
-          type: string
-          x-go-name: Type
-        updated_at:
-          type: string
-          format: date-time
-          x-go-name: Updated
-        user:
-          $ref: '#/components/schemas/User'
-      x-go-package: forgejo.org/modules/structs
-    APIInternalServerError:
-      type: object
-      properties:
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/services/context
-    APIForbiddenError:
-      type: object
-      properties:
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/services/context
-    APIError:
-      description: APIError is an api error with a message
-      type: object
-      properties:
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/modules/structs
-    TrackedTime:
-      description: TrackedTime worked time for an issue / pr
-      type: object
-      properties:
-        created:
-          type: string
-          format: date-time
-          x-go-name: Created
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        issue:
-          $ref: '#/components/schemas/Issue'
-        issue_id:
-          description: deprecated (only for backwards compatibility)
-          type: integer
-          format: int64
-          x-go-name: IssueID
-        time:
-          description: Time in seconds
-          type: integer
-          format: int64
-          x-go-name: Time
-        user_id:
-          description: deprecated (only for backwards compatibility)
-          type: integer
-          format: int64
-          x-go-name: UserID
-        user_name:
-          type: string
-          x-go-name: UserName
-      x-go-package: forgejo.org/modules/structs
-    IssueLabelsOption:
-      description: IssueLabelsOption a collection of labels
-      type: object
-      properties:
-        labels:
-          description: 'Labels can be a list of integers representing label IDs
-
-            or a list of strings representing label names'
-          type: array
-          items: {}
-          x-go-name: Labels
-        updated_at:
-          type: string
-          format: date-time
-          x-go-name: Updated
-      x-go-package: forgejo.org/modules/structs
-    APIRepoArchivedError:
-      type: object
-      properties:
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/services/context
-    RepositoryMeta:
-      description: RepositoryMeta basic repository information
-      type: object
-      properties:
-        full_name:
-          type: string
-          x-go-name: FullName
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        name:
-          type: string
-          x-go-name: Name
-        owner:
-          type: string
-          x-go-name: Owner
-      x-go-package: forgejo.org/modules/structs
-    EditMilestoneOption:
-      description: EditMilestoneOption options for editing a milestone
-      type: object
-      properties:
-        description:
-          type: string
-          x-go-name: Description
-        due_on:
-          type: string
-          format: date-time
-          x-go-name: Deadline
-        state:
-          type: string
-          x-go-name: State
-        title:
-          type: string
-          x-go-name: Title
-      x-go-package: forgejo.org/modules/structs
-    Organization:
-      description: Organization represents an organization
-      type: object
-      properties:
-        avatar_url:
-          type: string
-          x-go-name: AvatarURL
-        created:
-          type: string
-          format: date-time
-          x-go-name: Created
-        description:
-          type: string
-          x-go-name: Description
-        email:
-          type: string
-          x-go-name: Email
-        full_name:
-          type: string
-          x-go-name: FullName
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        location:
-          type: string
-          x-go-name: Location
-        name:
-          type: string
-          x-go-name: Name
-        repo_admin_change_team_access:
-          type: boolean
-          x-go-name: RepoAdminChangeTeamAccess
-        username:
-          description: deprecated
-          type: string
-          x-go-name: UserName
-        visibility:
-          type: string
-          x-go-name: Visibility
-        website:
-          type: string
-          x-go-name: Website
       x-go-package: forgejo.org/modules/structs
     Issue:
       description: Issue represents an issue in a repository
@@ -3173,22 +3311,37 @@ components:
         user:
           $ref: '#/components/schemas/User'
       x-go-package: forgejo.org/modules/structs
-    CreateIssueCommentOption:
-      description: CreateIssueCommentOption options for creating a comment on an issue
+    IssueLabelsOption:
+      description: IssueLabelsOption a collection of labels
       type: object
-      required:
-      - body
       properties:
-        body:
-          description: The body of the comment
-          type: string
-          x-go-name: Body
+        labels:
+          description: 'Labels can be a list of integers representing label IDs
+
+            or a list of strings representing label names'
+          type: array
+          items: {}
+          x-go-name: Labels
         updated_at:
-          description: The time of the comment's update, needs admin or repository owner permission
           type: string
           format: date-time
           x-go-name: Updated
       x-go-package: forgejo.org/modules/structs
+    APINotFound:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: string
+          x-go-name: Errors
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/services/context
     EditIssueOption:
       description: EditIssueOption options for editing an issue
       type: object
@@ -3230,17 +3383,205 @@ components:
           format: date-time
           x-go-name: Updated
       x-go-package: forgejo.org/modules/structs
-    EditAttachmentOptions:
-      description: EditAttachmentOptions options for editing attachments
+    Label:
+      description: Label a label to an issue or a pr
       type: object
       properties:
-        browser_download_url:
-          description: (Can only be set if existing attachment is of external type)
+        color:
           type: string
-          x-go-name: DownloadURL
+          x-go-name: Color
+          example: 00aabb
+        description:
+          type: string
+          x-go-name: Description
+        exclusive:
+          type: boolean
+          x-go-name: Exclusive
+          example: false
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        is_archived:
+          type: boolean
+          x-go-name: IsArchived
+          example: false
         name:
           type: string
           x-go-name: Name
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/modules/structs
+    EditMilestoneOption:
+      description: EditMilestoneOption options for editing a milestone
+      type: object
+      properties:
+        description:
+          type: string
+          x-go-name: Description
+        due_on:
+          type: string
+          format: date-time
+          x-go-name: Deadline
+        state:
+          type: string
+          x-go-name: State
+        title:
+          type: string
+          x-go-name: Title
+      x-go-package: forgejo.org/modules/structs
+    StateType:
+      description: StateType issue state type
+      type: string
+      x-go-package: forgejo.org/modules/structs
+    EditIssueCommentOption:
+      description: EditIssueCommentOption options for editing a comment
+      type: object
+      required:
+      - body
+      properties:
+        body:
+          description: The body of the comment
+          type: string
+          x-go-name: Body
+        updated_at:
+          description: The time of the comment's update, needs admin or repository owner permission
+          type: string
+          format: date-time
+          x-go-name: Updated
+      x-go-package: forgejo.org/modules/structs
+    CreateLabelOption:
+      description: CreateLabelOption options for creating a label
+      type: object
+      required:
+      - name
+      - color
+      properties:
+        color:
+          type: string
+          x-go-name: Color
+          example: '#00aabb'
+        description:
+          type: string
+          x-go-name: Description
+        exclusive:
+          type: boolean
+          x-go-name: Exclusive
+          example: false
+        is_archived:
+          type: boolean
+          x-go-name: IsArchived
+          example: false
+        name:
+          type: string
+          x-go-name: Name
+      x-go-package: forgejo.org/modules/structs
+    TrackedTime:
+      description: TrackedTime worked time for an issue / pr
+      type: object
+      properties:
+        created:
+          type: string
+          format: date-time
+          x-go-name: Created
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        issue:
+          $ref: '#/components/schemas/Issue'
+        issue_id:
+          description: deprecated (only for backwards compatibility)
+          type: integer
+          format: int64
+          x-go-name: IssueID
+        time:
+          description: Time in seconds
+          type: integer
+          format: int64
+          x-go-name: Time
+        user_id:
+          description: deprecated (only for backwards compatibility)
+          type: integer
+          format: int64
+          x-go-name: UserID
+        user_name:
+          type: string
+          x-go-name: UserName
+      x-go-package: forgejo.org/modules/structs
+    CreateIssueOption:
+      description: CreateIssueOption options to create one issue
+      type: object
+      required:
+      - title
+      properties:
+        assignee:
+          description: deprecated
+          type: string
+          x-go-name: Assignee
+        assignees:
+          type: array
+          items:
+            type: string
+          x-go-name: Assignees
+        body:
+          type: string
+          x-go-name: Body
+        closed:
+          type: boolean
+          x-go-name: Closed
+        due_date:
+          type: string
+          format: date-time
+          x-go-name: Deadline
+        labels:
+          description: list of label ids
+          type: array
+          items:
+            type: integer
+            format: int64
+          x-go-name: Labels
+        milestone:
+          description: milestone id
+          type: integer
+          format: int64
+          x-go-name: Milestone
+        ref:
+          type: string
+          x-go-name: Ref
+        title:
+          type: string
+          x-go-name: Title
+      x-go-package: forgejo.org/modules/structs
+    IssueMeta:
+      description: IssueMeta basic issue information
+      type: object
+      properties:
+        index:
+          type: integer
+          format: int64
+          x-go-name: Index
+        owner:
+          type: string
+          x-go-name: Owner
+        repo:
+          type: string
+          x-go-name: Name
+      x-go-package: forgejo.org/modules/structs
+    Reaction:
+      description: Reaction contain one reaction
+      type: object
+      properties:
+        content:
+          type: string
+          x-go-name: Reaction
+        created_at:
+          type: string
+          format: date-time
+          x-go-name: Created
+        user:
+          $ref: '#/components/schemas/User'
       x-go-package: forgejo.org/modules/structs
     WatchInfo:
       description: WatchInfo represents an API watch status of one repository
@@ -3366,81 +3707,79 @@ components:
           type: string
           x-go-name: Website
       x-go-package: forgejo.org/modules/structs
-    EditReactionOption:
-      description: EditReactionOption contain the reaction type
+    RepositoryMeta:
+      description: RepositoryMeta basic repository information
       type: object
       properties:
-        content:
+        full_name:
           type: string
-          x-go-name: Reaction
+          x-go-name: FullName
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        name:
+          type: string
+          x-go-name: Name
+        owner:
+          type: string
+          x-go-name: Owner
       x-go-package: forgejo.org/modules/structs
-    Reaction:
-      description: Reaction contain one reaction
+    PullRequestMeta:
+      description: PullRequestMeta PR info if an issue is a PR
       type: object
       properties:
-        content:
+        draft:
+          type: boolean
+          x-go-name: IsWorkInProgress
+        html_url:
           type: string
-          x-go-name: Reaction
+          x-go-name: HTMLURL
+        merged:
+          type: boolean
+          x-go-name: HasMerged
+        merged_at:
+          type: string
+          format: date-time
+          x-go-name: Merged
+      x-go-package: forgejo.org/modules/structs
+    Milestone:
+      description: Milestone milestone is a collection of issues on one repository
+      type: object
+      properties:
+        closed_at:
+          type: string
+          format: date-time
+          x-go-name: Closed
+        closed_issues:
+          type: integer
+          format: int64
+          x-go-name: ClosedIssues
         created_at:
           type: string
           format: date-time
           x-go-name: Created
-        user:
-          $ref: '#/components/schemas/User'
-      x-go-package: forgejo.org/modules/structs
-    CreateLabelOption:
-      description: CreateLabelOption options for creating a label
-      type: object
-      required:
-      - name
-      - color
-      properties:
-        color:
-          type: string
-          x-go-name: Color
-          example: '#00aabb'
         description:
           type: string
           x-go-name: Description
-        exclusive:
-          type: boolean
-          x-go-name: Exclusive
-          example: false
-        is_archived:
-          type: boolean
-          x-go-name: IsArchived
-          example: false
-        name:
-          type: string
-          x-go-name: Name
-      x-go-package: forgejo.org/modules/structs
-    StateType:
-      description: StateType issue state type
-      type: string
-      x-go-package: forgejo.org/modules/structs
-    EditDeadlineOption:
-      description: EditDeadlineOption options for creating a deadline
-      type: object
-      required:
-      - due_date
-      properties:
-        due_date:
+        due_on:
           type: string
           format: date-time
           x-go-name: Deadline
-      x-go-package: forgejo.org/modules/structs
-    EditIssueCommentOption:
-      description: EditIssueCommentOption options for editing a comment
-      type: object
-      required:
-      - body
-      properties:
-        body:
-          description: The body of the comment
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        open_issues:
+          type: integer
+          format: int64
+          x-go-name: OpenIssues
+        state:
+          $ref: '#/components/schemas/StateType'
+        title:
           type: string
-          x-go-name: Body
+          x-go-name: Title
         updated_at:
-          description: The time of the comment's update, needs admin or repository owner permission
           type: string
           format: date-time
           x-go-name: Updated
@@ -3468,6 +3807,71 @@ components:
           type: string
           x-go-name: Name
       x-go-package: forgejo.org/modules/structs
+    EditAttachmentOptions:
+      description: EditAttachmentOptions options for editing attachments
+      type: object
+      properties:
+        browser_download_url:
+          description: (Can only be set if existing attachment is of external type)
+          type: string
+          x-go-name: DownloadURL
+        name:
+          type: string
+          x-go-name: Name
+      x-go-package: forgejo.org/modules/structs
+    Organization:
+      description: Organization represents an organization
+      type: object
+      properties:
+        avatar_url:
+          type: string
+          x-go-name: AvatarURL
+        created:
+          type: string
+          format: date-time
+          x-go-name: Created
+        description:
+          type: string
+          x-go-name: Description
+        email:
+          type: string
+          x-go-name: Email
+        full_name:
+          type: string
+          x-go-name: FullName
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        location:
+          type: string
+          x-go-name: Location
+        name:
+          type: string
+          x-go-name: Name
+        repo_admin_change_team_access:
+          type: boolean
+          x-go-name: RepoAdminChangeTeamAccess
+        username:
+          description: deprecated
+          type: string
+          x-go-name: UserName
+        visibility:
+          type: string
+          x-go-name: Visibility
+        website:
+          type: string
+          x-go-name: Website
+      x-go-package: forgejo.org/modules/structs
+    IssueDeadline:
+      description: IssueDeadline represents an issue deadline
+      type: object
+      properties:
+        due_date:
+          type: string
+          format: date-time
+          x-go-name: Deadline
+      x-go-package: forgejo.org/modules/structs
     AddTimeOption:
       description: AddTimeOption options for adding time to an issue
       type: object
@@ -3488,49 +3892,204 @@ components:
           type: string
           x-go-name: User
       x-go-package: forgejo.org/modules/structs
-    CreateIssueOption:
-      description: CreateIssueOption options to create one issue
+    APIForbiddenError:
+      type: object
+      properties:
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/services/context
+    EditDeadlineOption:
+      description: EditDeadlineOption options for creating a deadline
       type: object
       required:
-      - title
+      - due_date
       properties:
-        assignee:
-          description: deprecated
-          type: string
-          x-go-name: Assignee
-        assignees:
-          type: array
-          items:
-            type: string
-          x-go-name: Assignees
-        body:
-          type: string
-          x-go-name: Body
-        closed:
-          type: boolean
-          x-go-name: Closed
         due_date:
           type: string
           format: date-time
           x-go-name: Deadline
-        labels:
-          description: list of label ids
+      x-go-package: forgejo.org/modules/structs
+    Comment:
+      description: Comment represents a comment on a commit or issue
+      type: object
+      properties:
+        assets:
+          description: The attachments to the comment
           type: array
           items:
-            type: integer
-            format: int64
-          x-go-name: Labels
-        milestone:
-          description: milestone id
+            $ref: '#/components/schemas/Attachment'
+          x-go-name: Attachments
+        body:
+          description: The body of the comment
+          type: string
+          x-go-name: Body
+        created_at:
+          description: The time of the comment's creation
+          type: string
+          format: date-time
+          x-go-name: Created
+        html_url:
+          description: The HTML URL of the comment
+          type: string
+          x-go-name: HTMLURL
+        id:
+          description: The identifier of the comment
           type: integer
           format: int64
-          x-go-name: Milestone
-        ref:
+          x-go-name: ID
+        issue_url:
+          description: The HTML URL of the issue if the comment is posted on an issue, else empty string
           type: string
-          x-go-name: Ref
-        title:
+          x-go-name: IssueURL
+        original_author:
+          description: The original author that posted the comment if it was not posted locally, else empty string
           type: string
-          x-go-name: Title
+          x-go-name: OriginalAuthor
+        original_author_id:
+          description: The ID of the original author that posted the comment if it was not posted locally, else 0
+          type: integer
+          format: int64
+          x-go-name: OriginalAuthorID
+        pull_request_url:
+          description: The HTML URL of the pull request if the comment is posted on a pull request, else empty string
+          type: string
+          x-go-name: PRURL
+        updated_at:
+          description: The time of the comment's update
+          type: string
+          format: date-time
+          x-go-name: Updated
+        user:
+          $ref: '#/components/schemas/User'
+      x-go-package: forgejo.org/modules/structs
+    Attachment:
+      description: Attachment a generic attachment
+      type: object
+      properties:
+        browser_download_url:
+          type: string
+          x-go-name: DownloadURL
+        created_at:
+          type: string
+          format: date-time
+          x-go-name: Created
+        download_count:
+          type: integer
+          format: int64
+          x-go-name: DownloadCount
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        name:
+          type: string
+          x-go-name: Name
+        size:
+          type: integer
+          format: int64
+          x-go-name: Size
+        type:
+          type: string
+          enum:
+          - attachment
+          - external
+          x-go-name: Type
+        uuid:
+          type: string
+          x-go-name: UUID
+      x-go-package: forgejo.org/modules/structs
+    TimelineComment:
+      description: TimelineComment represents a timeline comment (comment of any type) on a commit or issue
+      type: object
+      properties:
+        assignee:
+          $ref: '#/components/schemas/User'
+        assignee_team:
+          $ref: '#/components/schemas/Team'
+        body:
+          type: string
+          x-go-name: Body
+        created_at:
+          type: string
+          format: date-time
+          x-go-name: Created
+        dependent_issue:
+          $ref: '#/components/schemas/Issue'
+        html_url:
+          type: string
+          x-go-name: HTMLURL
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        issue_url:
+          type: string
+          x-go-name: IssueURL
+        label:
+          $ref: '#/components/schemas/Label'
+        milestone:
+          $ref: '#/components/schemas/Milestone'
+        new_ref:
+          type: string
+          x-go-name: NewRef
+        new_title:
+          type: string
+          x-go-name: NewTitle
+        old_milestone:
+          $ref: '#/components/schemas/Milestone'
+        old_project_id:
+          type: integer
+          format: int64
+          x-go-name: OldProjectID
+        old_ref:
+          type: string
+          x-go-name: OldRef
+        old_title:
+          type: string
+          x-go-name: OldTitle
+        project_id:
+          type: integer
+          format: int64
+          x-go-name: ProjectID
+        pull_request_url:
+          type: string
+          x-go-name: PRURL
+        ref_action:
+          type: string
+          x-go-name: RefAction
+        ref_comment:
+          $ref: '#/components/schemas/Comment'
+        ref_commit_sha:
+          description: commit SHA where issue/PR was referenced
+          type: string
+          x-go-name: RefCommitSHA
+        ref_issue:
+          $ref: '#/components/schemas/Issue'
+        removed_assignee:
+          description: whether the assignees were removed or added
+          type: boolean
+          x-go-name: RemovedAssignee
+        resolve_doer:
+          $ref: '#/components/schemas/User'
+        review_id:
+          type: integer
+          format: int64
+          x-go-name: ReviewID
+        tracked_time:
+          $ref: '#/components/schemas/TrackedTime'
+        type:
+          type: string
+          x-go-name: Type
+        updated_at:
+          type: string
+          format: date-time
+          x-go-name: Updated
+        user:
+          $ref: '#/components/schemas/User'
       x-go-package: forgejo.org/modules/structs
     Team:
       description: Team represents a team in an organization
@@ -3594,118 +4153,9 @@ components:
             repo.releases: none
             repo.wiki: admin
       x-go-package: forgejo.org/modules/structs
-    PullRequestMeta:
-      description: PullRequestMeta PR info if an issue is a PR
+    APIInternalServerError:
       type: object
       properties:
-        draft:
-          type: boolean
-          x-go-name: IsWorkInProgress
-        html_url:
-          type: string
-          x-go-name: HTMLURL
-        merged:
-          type: boolean
-          x-go-name: HasMerged
-        merged_at:
-          type: string
-          format: date-time
-          x-go-name: Merged
-      x-go-package: forgejo.org/modules/structs
-    Attachment:
-      description: Attachment a generic attachment
-      type: object
-      properties:
-        browser_download_url:
-          type: string
-          x-go-name: DownloadURL
-        created_at:
-          type: string
-          format: date-time
-          x-go-name: Created
-        download_count:
-          type: integer
-          format: int64
-          x-go-name: DownloadCount
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        name:
-          type: string
-          x-go-name: Name
-        size:
-          type: integer
-          format: int64
-          x-go-name: Size
-        type:
-          type: string
-          enum:
-          - attachment
-          - external
-          x-go-name: Type
-        uuid:
-          type: string
-          x-go-name: UUID
-      x-go-package: forgejo.org/modules/structs
-    IssueDeadline:
-      description: IssueDeadline represents an issue deadline
-      type: object
-      properties:
-        due_date:
-          type: string
-          format: date-time
-          x-go-name: Deadline
-      x-go-package: forgejo.org/modules/structs
-    Milestone:
-      description: Milestone milestone is a collection of issues on one repository
-      type: object
-      properties:
-        closed_at:
-          type: string
-          format: date-time
-          x-go-name: Closed
-        closed_issues:
-          type: integer
-          format: int64
-          x-go-name: ClosedIssues
-        created_at:
-          type: string
-          format: date-time
-          x-go-name: Created
-        description:
-          type: string
-          x-go-name: Description
-        due_on:
-          type: string
-          format: date-time
-          x-go-name: Deadline
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        open_issues:
-          type: integer
-          format: int64
-          x-go-name: OpenIssues
-        state:
-          $ref: '#/components/schemas/StateType'
-        title:
-          type: string
-          x-go-name: Title
-        updated_at:
-          type: string
-          format: date-time
-          x-go-name: Updated
-      x-go-package: forgejo.org/modules/structs
-    APINotFound:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: string
-          x-go-name: Errors
         message:
           type: string
           x-go-name: Message
@@ -3713,113 +4163,6 @@ components:
           type: string
           x-go-name: URL
       x-go-package: forgejo.org/services/context
-    Label:
-      description: Label a label to an issue or a pr
-      type: object
-      properties:
-        color:
-          type: string
-          x-go-name: Color
-          example: 00aabb
-        description:
-          type: string
-          x-go-name: Description
-        exclusive:
-          type: boolean
-          x-go-name: Exclusive
-          example: false
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        is_archived:
-          type: boolean
-          x-go-name: IsArchived
-          example: false
-        name:
-          type: string
-          x-go-name: Name
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/modules/structs
-    IssueMeta:
-      description: IssueMeta basic issue information
-      type: object
-      properties:
-        index:
-          type: integer
-          format: int64
-          x-go-name: Index
-        owner:
-          type: string
-          x-go-name: Owner
-        repo:
-          type: string
-          x-go-name: Name
-      x-go-package: forgejo.org/modules/structs
-    Comment:
-      description: Comment represents a comment on a commit or issue
-      type: object
-      properties:
-        assets:
-          description: The attachments to the comment
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
-          x-go-name: Attachments
-        body:
-          description: The body of the comment
-          type: string
-          x-go-name: Body
-        created_at:
-          description: The time of the comment's creation
-          type: string
-          format: date-time
-          x-go-name: Created
-        html_url:
-          description: The HTML URL of the comment
-          type: string
-          x-go-name: HTMLURL
-        id:
-          description: The identifier of the comment
-          type: integer
-          format: int64
-          x-go-name: ID
-        issue_url:
-          description: The HTML URL of the issue if the comment is posted on an issue, else empty string
-          type: string
-          x-go-name: IssueURL
-        original_author:
-          description: The original author that posted the comment if it was not posted locally, else empty string
-          type: string
-          x-go-name: OriginalAuthor
-        original_author_id:
-          description: The ID of the original author that posted the comment if it was not posted locally, else 0
-          type: integer
-          format: int64
-          x-go-name: OriginalAuthorID
-        pull_request_url:
-          description: The HTML URL of the pull request if the comment is posted on a pull request, else empty string
-          type: string
-          x-go-name: PRURL
-        updated_at:
-          description: The time of the comment's update
-          type: string
-          format: date-time
-          x-go-name: Updated
-        user:
-          $ref: '#/components/schemas/User'
-      x-go-package: forgejo.org/modules/structs
-    DeleteLabelsOption:
-      description: DeleteLabelOption options for deleting a label
-      type: object
-      properties:
-        updated_at:
-          type: string
-          format: date-time
-          x-go-name: Updated
-      x-go-package: forgejo.org/modules/structs
     APIValidationError:
       type: object
       properties:
@@ -3830,349 +4173,6 @@ components:
           type: string
           x-go-name: URL
       x-go-package: forgejo.org/services/context
-  responses:
-    internalServerError:
-      description: APIInternalServerError is an error that is raised when an internal server error occurs
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIInternalServerError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIInternalServerError'
-    Milestone:
-      description: Milestone
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Milestone'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Milestone'
-    Label:
-      description: Label
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Label'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Label'
-    IssueListWithoutPagination:
-      description: IssueListWithoutPagination - Issues without pagination headers (used for pinned issues, dependencies, etc.)
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Issue'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Issue'
-    notFound:
-      description: APINotFound is a not found error response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APINotFound'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APINotFound'
-    TimelineList:
-      description: TimelineList
-      headers:
-        X-Total-Count:
-          description: The total number of timeline comments
-          schema:
-            type: integer
-            format: int64
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/TimelineComment'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/TimelineComment'
-    Issue:
-      description: Issue
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Issue'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Issue'
-    WatchInfo:
-      description: WatchInfo
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/WatchInfo'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/WatchInfo'
-    repoArchivedError:
-      description: APIRepoArchivedError is an error that is raised when an archived repo should be modified
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIRepoArchivedError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIRepoArchivedError'
-    MilestoneList:
-      description: MilestoneList
-      headers:
-        X-Total-Count:
-          description: The total number of milestones
-          schema:
-            type: integer
-            format: int64
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Milestone'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Milestone'
-    LabelListWithoutPagination:
-      description: LabelListWithoutPagination - Labels for a specific issue (no pagination headers)
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Label'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Label'
-    IssueList:
-      description: IssueList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Issue'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Issue'
-    Attachment:
-      description: Attachment
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Attachment'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Attachment'
-    ReactionListWithoutPagination:
-      description: ReactionListWithoutPagination - Reactions for a specific comment (no pagination headers)
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Reaction'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Reaction'
-    forbidden:
-      description: APIForbiddenError is a forbidden error response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIForbiddenError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIForbiddenError'
-    error:
-      description: APIError is error format response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIError'
-    LabelList:
-      description: LabelList
-      headers:
-        X-Total-Count:
-          description: The total number of labels
-          schema:
-            type: integer
-            format: int64
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Label'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Label'
-    UserList:
-      description: UserList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/User'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/User'
-    IssueDeadline:
-      description: IssueDeadline
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/IssueDeadline'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/IssueDeadline'
-    ReactionList:
-      description: ReactionList
-      headers:
-        X-Total-Count:
-          description: The total number of reactions
-          schema:
-            type: integer
-            format: int64
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Reaction'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Reaction'
-    TrackedTime:
-      description: TrackedTime
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TrackedTime'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/TrackedTime'
-    TrackedTimeList:
-      description: TrackedTimeList
-      headers:
-        X-Total-Count:
-          description: The total number of tracked times
-          schema:
-            type: integer
-            format: int64
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/TrackedTime'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/TrackedTime'
-    Reaction:
-      description: Reaction
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Reaction'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Reaction'
-    empty:
-      description: APIEmpty is an empty response
-    quotaExceeded:
-      description: QuotaExceeded
-      headers:
-        message:
-          schema:
-            type: string
-        user_id:
-          schema:
-            type: integer
-            format: int64
-        username:
-          schema:
-            type: string
-    CommentList:
-      description: CommentList
-      headers:
-        X-Total-Count:
-          description: The total number of comments
-          schema:
-            type: integer
-            format: int64
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Comment'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Comment'
-    AttachmentList:
-      description: AttachmentList
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Attachment'
-        text/html:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Attachment'
-    validationError:
-      description: APIValidationError is error format response related to input validation
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIValidationError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIValidationError'
-    Comment:
-      description: Comment
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Comment'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/Comment'
   securitySchemes:
     AuthorizationHeaderToken:
       description: API tokens must be prepended with "token" followed by a space.

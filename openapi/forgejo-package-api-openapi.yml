@@ -252,67 +252,32 @@ paths:
           $ref: '#/components/responses/notFound'
 components:
   schemas:
-    Team:
-      description: Team represents a team in an organization
+    PackageFile:
+      description: PackageFile represents a package file
       type: object
       properties:
-        can_create_org_repo:
-          type: boolean
-          x-go-name: CanCreateOrgRepo
-        description:
-          type: string
-          x-go-name: Description
+        Size:
+          type: integer
+          format: int64
         id:
           type: integer
           format: int64
           x-go-name: ID
-        includes_all_repositories:
-          type: boolean
-          x-go-name: IncludesAllRepositories
+        md5:
+          type: string
+          x-go-name: HashMD5
         name:
           type: string
           x-go-name: Name
-        organization:
-          $ref: '#/components/schemas/Organization'
-        permission:
+        sha1:
           type: string
-          enum:
-          - none
-          - read
-          - write
-          - admin
-          - owner
-          x-go-name: Permission
-        units:
-          type: array
-          items:
-            type: string
-          x-go-name: Units
-          example:
-          - repo.code
-          - repo.issues
-          - repo.ext_issues
-          - repo.wiki
-          - repo.pulls
-          - repo.releases
-          - repo.projects
-          - repo.ext_wiki
-        units_map:
-          type: object
-          additionalProperties:
-            type: string
-          x-go-name: UnitsMap
-          example:
-            repo.actions: none
-            repo.code: read
-            repo.ext_issues: none
-            repo.ext_wiki: none
-            repo.issues: write
-            repo.packages: none
-            repo.projects: none
-            repo.pulls: owner
-            repo.releases: none
-            repo.wiki: admin
+          x-go-name: HashSHA1
+        sha256:
+          type: string
+          x-go-name: HashSHA256
+        sha512:
+          type: string
+          x-go-name: HashSHA512
       x-go-package: forgejo.org/modules/structs
     Package:
       description: Package represents a package
@@ -344,59 +309,6 @@ components:
         version:
           type: string
           x-go-name: Version
-      x-go-package: forgejo.org/modules/structs
-    InternalTracker:
-      description: InternalTracker represents settings for internal tracker
-      type: object
-      properties:
-        allow_only_contributors_to_track_time:
-          description: Let only contributors track time (Built-in issue tracker)
-          type: boolean
-          x-go-name: AllowOnlyContributorsToTrackTime
-        enable_issue_dependencies:
-          description: Enable dependencies for issues and pull requests (Built-in issue tracker)
-          type: boolean
-          x-go-name: EnableIssueDependencies
-        enable_time_tracker:
-          description: Enable time tracking (Built-in issue tracker)
-          type: boolean
-          x-go-name: EnableTimeTracker
-      x-go-package: forgejo.org/modules/structs
-    ExternalWiki:
-      description: ExternalWiki represents setting for external wiki
-      type: object
-      properties:
-        external_wiki_url:
-          description: URL of external wiki.
-          type: string
-          x-go-name: ExternalWikiURL
-      x-go-package: forgejo.org/modules/structs
-    PackageFile:
-      description: PackageFile represents a package file
-      type: object
-      properties:
-        Size:
-          type: integer
-          format: int64
-        id:
-          type: integer
-          format: int64
-          x-go-name: ID
-        md5:
-          type: string
-          x-go-name: HashMD5
-        name:
-          type: string
-          x-go-name: Name
-        sha1:
-          type: string
-          x-go-name: HashSHA1
-        sha256:
-          type: string
-          x-go-name: HashSHA256
-        sha512:
-          type: string
-          x-go-name: HashSHA512
       x-go-package: forgejo.org/modules/structs
     User:
       description: User represents a user
@@ -499,6 +411,29 @@ components:
           type: string
           x-go-name: Website
       x-go-package: forgejo.org/modules/structs
+    RepoTransfer:
+      description: RepoTransfer represents a pending repo transfer
+      type: object
+      properties:
+        doer:
+          $ref: '#/components/schemas/User'
+        recipient:
+          $ref: '#/components/schemas/User'
+        teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
+          x-go-name: Teams
+      x-go-package: forgejo.org/modules/structs
+    ExternalWiki:
+      description: ExternalWiki represents setting for external wiki
+      type: object
+      properties:
+        external_wiki_url:
+          description: URL of external wiki.
+          type: string
+          x-go-name: ExternalWikiURL
+      x-go-package: forgejo.org/modules/structs
     Organization:
       description: Organization represents an organization
       type: object
@@ -542,6 +477,120 @@ components:
         website:
           type: string
           x-go-name: Website
+      x-go-package: forgejo.org/modules/structs
+    Permission:
+      description: Permission represents a set of permissions
+      type: object
+      properties:
+        admin:
+          type: boolean
+          x-go-name: Admin
+        pull:
+          type: boolean
+          x-go-name: Pull
+        push:
+          type: boolean
+          x-go-name: Push
+      x-go-package: forgejo.org/modules/structs
+    Team:
+      description: Team represents a team in an organization
+      type: object
+      properties:
+        can_create_org_repo:
+          type: boolean
+          x-go-name: CanCreateOrgRepo
+        description:
+          type: string
+          x-go-name: Description
+        id:
+          type: integer
+          format: int64
+          x-go-name: ID
+        includes_all_repositories:
+          type: boolean
+          x-go-name: IncludesAllRepositories
+        name:
+          type: string
+          x-go-name: Name
+        organization:
+          $ref: '#/components/schemas/Organization'
+        permission:
+          type: string
+          enum:
+          - none
+          - read
+          - write
+          - admin
+          - owner
+          x-go-name: Permission
+        units:
+          type: array
+          items:
+            type: string
+          x-go-name: Units
+          example:
+          - repo.code
+          - repo.issues
+          - repo.ext_issues
+          - repo.wiki
+          - repo.pulls
+          - repo.releases
+          - repo.projects
+          - repo.ext_wiki
+        units_map:
+          type: object
+          additionalProperties:
+            type: string
+          x-go-name: UnitsMap
+          example:
+            repo.actions: none
+            repo.code: read
+            repo.ext_issues: none
+            repo.ext_wiki: none
+            repo.issues: write
+            repo.packages: none
+            repo.projects: none
+            repo.pulls: owner
+            repo.releases: none
+            repo.wiki: admin
+      x-go-package: forgejo.org/modules/structs
+    InternalTracker:
+      description: InternalTracker represents settings for internal tracker
+      type: object
+      properties:
+        allow_only_contributors_to_track_time:
+          description: Let only contributors track time (Built-in issue tracker)
+          type: boolean
+          x-go-name: AllowOnlyContributorsToTrackTime
+        enable_issue_dependencies:
+          description: Enable dependencies for issues and pull requests (Built-in issue tracker)
+          type: boolean
+          x-go-name: EnableIssueDependencies
+        enable_time_tracker:
+          description: Enable time tracking (Built-in issue tracker)
+          type: boolean
+          x-go-name: EnableTimeTracker
+      x-go-package: forgejo.org/modules/structs
+    ExternalTracker:
+      description: ExternalTracker represents settings for external tracker
+      type: object
+      properties:
+        external_tracker_format:
+          description: External Issue Tracker URL Format. Use the placeholders {user}, {repo} and {index} for the username, repository name and issue index.
+          type: string
+          x-go-name: ExternalTrackerFormat
+        external_tracker_regexp_pattern:
+          description: External Issue Tracker issue regular expression
+          type: string
+          x-go-name: ExternalTrackerRegexpPattern
+        external_tracker_style:
+          description: External Issue Tracker Number Format, either `numeric`, `alphanumeric`, or `regexp`
+          type: string
+          x-go-name: ExternalTrackerStyle
+        external_tracker_url:
+          description: URL of external issue tracker.
+          type: string
+          x-go-name: ExternalTrackerURL
       x-go-package: forgejo.org/modules/structs
     Repository:
       description: Repository represents a repository
@@ -774,58 +823,18 @@ components:
           type: string
           x-go-name: URL
       x-go-package: forgejo.org/services/context
-    RepoTransfer:
-      description: RepoTransfer represents a pending repo transfer
-      type: object
-      properties:
-        doer:
-          $ref: '#/components/schemas/User'
-        recipient:
-          $ref: '#/components/schemas/User'
-        teams:
-          type: array
-          items:
-            $ref: '#/components/schemas/Team'
-          x-go-name: Teams
-      x-go-package: forgejo.org/modules/structs
-    Permission:
-      description: Permission represents a set of permissions
-      type: object
-      properties:
-        admin:
-          type: boolean
-          x-go-name: Admin
-        pull:
-          type: boolean
-          x-go-name: Pull
-        push:
-          type: boolean
-          x-go-name: Push
-      x-go-package: forgejo.org/modules/structs
-    ExternalTracker:
-      description: ExternalTracker represents settings for external tracker
-      type: object
-      properties:
-        external_tracker_format:
-          description: External Issue Tracker URL Format. Use the placeholders {user}, {repo} and {index} for the username, repository name and issue index.
-          type: string
-          x-go-name: ExternalTrackerFormat
-        external_tracker_regexp_pattern:
-          description: External Issue Tracker issue regular expression
-          type: string
-          x-go-name: ExternalTrackerRegexpPattern
-        external_tracker_style:
-          description: External Issue Tracker Number Format, either `numeric`, `alphanumeric`, or `regexp`
-          type: string
-          x-go-name: ExternalTrackerStyle
-        external_tracker_url:
-          description: URL of external issue tracker.
-          type: string
-          x-go-name: ExternalTrackerURL
-      x-go-package: forgejo.org/modules/structs
   responses:
     empty:
       description: APIEmpty is an empty response
+    notFound:
+      description: APINotFound is a not found error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APINotFound'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APINotFound'
     PackageList:
       description: PackageList
       headers:
@@ -845,15 +854,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Package'
-    notFound:
-      description: APINotFound is a not found error response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APINotFound'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APINotFound'
     PackageFileList:
       description: PackageFileList
       content:

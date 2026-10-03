@@ -201,17 +201,6 @@ paths:
           $ref: '#/components/responses/forbidden'
 components:
   responses:
-    empty:
-      description: APIEmpty is an empty response
-    forbidden:
-      description: APIForbiddenError is a forbidden error response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIForbiddenError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIForbiddenError'
     ActivityPub:
       description: ActivityPub
       content:
@@ -221,6 +210,8 @@ components:
         text/html:
           schema:
             $ref: '#/components/schemas/ActivityPub'
+    empty:
+      description: APIEmpty is an empty response
     Outbox:
       description: Outbox
       content:
@@ -230,21 +221,16 @@ components:
         text/html:
           schema:
             $ref: '#/components/schemas/ForgeOutbox'
+    forbidden:
+      description: APIForbiddenError is a forbidden error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIForbiddenError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIForbiddenError'
   schemas:
-    APIForbiddenError:
-      type: object
-      properties:
-        message:
-          type: string
-          x-go-name: Message
-        url:
-          type: string
-          x-go-name: URL
-      x-go-package: forgejo.org/services/context
-    ForgeLike:
-      description: ForgeLike activity data type
-      type: object
-      x-go-package: forgejo.org/modules/forgefed
     ForgeOutbox:
       description: ActivityStream OrderedCollection of activities
       type: object
@@ -257,6 +243,20 @@ components:
           type: string
           x-go-name: Context
       x-go-package: forgejo.org/modules/structs
+    ForgeLike:
+      description: ForgeLike activity data type
+      type: object
+      x-go-package: forgejo.org/modules/forgefed
+    APIForbiddenError:
+      type: object
+      properties:
+        message:
+          type: string
+          x-go-name: Message
+        url:
+          type: string
+          x-go-name: URL
+      x-go-package: forgejo.org/services/context
   securitySchemes:
     AuthorizationHeaderToken:
       description: API tokens must be prepended with "token" followed by a space.
