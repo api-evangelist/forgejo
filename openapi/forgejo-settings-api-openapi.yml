@@ -54,7 +54,65 @@ paths:
         '200':
           $ref: '#/components/responses/GeneralUISettings'
 components:
+  responses:
+    GeneralAttachmentSettings:
+      description: GeneralAttachmentSettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralAttachmentSettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralAttachmentSettings'
+    GeneralAPISettings:
+      description: GeneralAPISettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralAPISettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralAPISettings'
+    GeneralUISettings:
+      description: GeneralUISettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralUISettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralUISettings'
+    GeneralRepoSettings:
+      description: GeneralRepoSettings
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralRepoSettings'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/GeneralRepoSettings'
   schemas:
+    GeneralAPISettings:
+      description: GeneralAPISettings contains global api settings exposed by it
+      type: object
+      properties:
+        default_git_trees_per_page:
+          type: integer
+          format: int64
+          x-go-name: DefaultGitTreesPerPage
+        default_max_blob_size:
+          type: integer
+          format: int64
+          x-go-name: DefaultMaxBlobSize
+        default_paging_num:
+          type: integer
+          format: int64
+          x-go-name: DefaultPagingNum
+        max_response_items:
+          type: integer
+          format: int64
+          x-go-name: MaxResponseItems
+      x-go-package: forgejo.org/modules/structs
     GeneralAttachmentSettings:
       description: GeneralAttachmentSettings contains global Attachment settings exposed by API
       type: object
@@ -118,64 +176,6 @@ components:
           type: string
           x-go-name: DefaultTheme
       x-go-package: forgejo.org/modules/structs
-    GeneralAPISettings:
-      description: GeneralAPISettings contains global api settings exposed by it
-      type: object
-      properties:
-        default_git_trees_per_page:
-          type: integer
-          format: int64
-          x-go-name: DefaultGitTreesPerPage
-        default_max_blob_size:
-          type: integer
-          format: int64
-          x-go-name: DefaultMaxBlobSize
-        default_paging_num:
-          type: integer
-          format: int64
-          x-go-name: DefaultPagingNum
-        max_response_items:
-          type: integer
-          format: int64
-          x-go-name: MaxResponseItems
-      x-go-package: forgejo.org/modules/structs
-  responses:
-    GeneralRepoSettings:
-      description: GeneralRepoSettings
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GeneralRepoSettings'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/GeneralRepoSettings'
-    GeneralAttachmentSettings:
-      description: GeneralAttachmentSettings
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GeneralAttachmentSettings'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/GeneralAttachmentSettings'
-    GeneralAPISettings:
-      description: GeneralAPISettings
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GeneralAPISettings'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/GeneralAPISettings'
-    GeneralUISettings:
-      description: GeneralUISettings
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GeneralUISettings'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/GeneralUISettings'
   securitySchemes:
     AuthorizationHeaderToken:
       description: API tokens must be prepended with "token" followed by a space.

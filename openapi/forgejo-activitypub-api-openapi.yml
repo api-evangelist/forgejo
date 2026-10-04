@@ -200,39 +200,13 @@ paths:
         '403':
           $ref: '#/components/responses/forbidden'
 components:
-  responses:
-    ActivityPub:
-      description: ActivityPub
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ActivityPub'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/ActivityPub'
-    empty:
-      description: APIEmpty is an empty response
-    Outbox:
-      description: Outbox
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ForgeOutbox'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/ForgeOutbox'
-    forbidden:
-      description: APIForbiddenError is a forbidden error response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/APIForbiddenError'
-        text/html:
-          schema:
-            $ref: '#/components/schemas/APIForbiddenError'
   schemas:
     ForgeOutbox:
       description: ActivityStream OrderedCollection of activities
+      type: object
+      x-go-package: forgejo.org/modules/forgefed
+    ForgeLike:
+      description: ForgeLike activity data type
       type: object
       x-go-package: forgejo.org/modules/forgefed
     ActivityPub:
@@ -243,10 +217,6 @@ components:
           type: string
           x-go-name: Context
       x-go-package: forgejo.org/modules/structs
-    ForgeLike:
-      description: ForgeLike activity data type
-      type: object
-      x-go-package: forgejo.org/modules/forgefed
     APIForbiddenError:
       type: object
       properties:
@@ -257,6 +227,36 @@ components:
           type: string
           x-go-name: URL
       x-go-package: forgejo.org/services/context
+  responses:
+    empty:
+      description: APIEmpty is an empty response
+    ActivityPub:
+      description: ActivityPub
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ActivityPub'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/ActivityPub'
+    forbidden:
+      description: APIForbiddenError is a forbidden error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIForbiddenError'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/APIForbiddenError'
+    Outbox:
+      description: Outbox
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ForgeOutbox'
+        text/html:
+          schema:
+            $ref: '#/components/schemas/ForgeOutbox'
   securitySchemes:
     AuthorizationHeaderToken:
       description: API tokens must be prepended with "token" followed by a space.
