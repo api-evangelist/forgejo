@@ -1,0 +1,37 @@
+slug: forgejo
+provider: Forgejo
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Repository
+  spec_file: forgejo-repository-api-openapi.yml
+  capability_id: BC-4200.40
+  capability_id_l1: BC-4200
+  capability_name: Software Construction Management
+  confidence: 0.8
+  evidence: 'GET /repos/{owner}/{repo}  repoGet  Get a repository; schemas: PullReviewComment, CreatePullReviewCommentOptions,
+    CreateBranchRepoOption, CommitStatus'
+  reason: 'Core git source-control surface: repository CRUD/migration/search, branches, commits, pull
+    request reviews — i.e. source control and code review practice, which is Software Construction Management.
+    Some operations are CI artefacts/runners, hence 0.8 not higher.'
+- tag: Issue
+  spec_file: forgejo-issue-api-openapi.yml
+  capability_id: BC-4200.50
+  capability_id_l1: BC-4200
+  capability_name: Software Quality Engineering
+  confidence: 0.75
+  evidence: POST /repos/{owner}/{repo}/issues issueCreateIssue 'Create an issue.'; schemas 'Issue', 'Label',
+    'CreateMilestoneOption', 'TrackedTime'
+  reason: Issue tracking with labels, milestones, comments and tracked time in a software forge supports
+    defect/work-item management within software quality engineering. Ambiguity exists (issues also serve
+    backlog management BC-4200.10 or project tracking), so confidence is moderate.

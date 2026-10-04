@@ -216,6 +216,9 @@ apis:
   - type: Swagger
     url: https://code.forgejo.org/api/swagger
 common:
+  - type: CapabilityMap
+    url: capabilities/forgejo-capability-edges.yml
+    name: Forgejo Business Capability Map
   - type: AgenticAccess
     url: agentic-access/forgejo-agentic-access.yml
   - type: VulnerabilityDisclosure
