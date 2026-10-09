@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-13 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-13'
 name: Forgejo Plans and Pricing
 description: Forgejo is a Free and Open Source Software (FOSS) project with no commercial pricing tiers. The software itself is freely available under the GPL v3.0+ license (MIT for versions prior to v9.0). Deployment costs are determined entirely by the infrastructure you choose to self-host on. Codeberg.org is the primary hosted instance operated by Codeberg e.V., a non-profit that accepts donations.
 url: https://forgejo.org
@@ -42,3 +47,22 @@ notes:
   - The project is funded via donations at https://liberapay.com/forgejo and through Codeberg e.V. memberships.
   - Professional services and support can be obtained from independent vendors in the community.
   - Hosting costs depend entirely on your chosen infrastructure provider (VPS, cloud, on-premises).
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Self-Hosted (Free)
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Codeberg.org (Hosted, Donation-Supported)
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []

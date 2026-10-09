@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-13 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-13'
 name: Forgejo API Rate Limits
 description: Forgejo's rate limiting behavior is configurable by instance administrators and is not fixed at the software level. Self-hosted instances can be tuned via the app.ini configuration file. Hosted instances like Codeberg.org apply their own limits. The API uses token-based authentication and supports pagination for large result sets.
 url: https://forgejo.org/docs/latest/user/api-usage/
