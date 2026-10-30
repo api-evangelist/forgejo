@@ -1,4 +1,4 @@
-# Forgejo (forgejo)
+# Forgejo
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,72 +66,192 @@
 
 Forgejo is a self-hosted lightweight software forge and open-source Git service (a Gitea fork) managed by the non-profit Codeberg e.V. It provides a comprehensive REST API for managing repositories, users, organizations, issues, pull requests, CI/CD workflows via Actions, and package registries. Forgejo emphasizes privacy, low resource usage, and community ownership as a Free Software alternative to centralized code hosting platforms.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/forgejo/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/forgejo/refs/heads/main/apis.yml)
+**Areas:** Git · Version Control · Self-Hosted · DevOps · CI/CD · Open Source · Forge · Repositories · Issues · Pull Requests
 
-## Tags
+## Forgejo on APIs.io
 
-- Git
-- Source Code Management
-- Self-Hosted
-- DevOps
-- CI/CD
-- Open Source
-- Forge
-- Repositories
-- Issues
-- Pull Requests
+Everything profiled for Forgejo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/forgejo/](https://apis.io/providers/forgejo/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (10)
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+- [Forgejo Activitypub API](https://apis.io/apis/forgejo/forgejo-activitypub-api/) — The activitypub API from Forgejo — 11 operation(s) for activitypub.
+- [Forgejo Admin API](https://apis.io/apis/forgejo/forgejo-admin-api/) — The admin API from Forgejo — 34 operation(s) for admin.
+- [Forgejo Issue API](https://apis.io/apis/forgejo/forgejo-issue-api/) — The issue API from Forgejo — 33 operation(s) for issue.
+- [Forgejo Miscellaneous API](https://apis.io/apis/forgejo/forgejo-miscellaneous-api/) — The miscellaneous API from Forgejo — 14 operation(s) for miscellaneous.
+- [Forgejo Notification API](https://apis.io/apis/forgejo/forgejo-notification-api/) — The notification API from Forgejo — 4 operation(s) for notification.
+- [Forgejo Organization API](https://apis.io/apis/forgejo/forgejo-organization-api/) — The organization API from Forgejo — 42 operation(s) for organization.
+- [Forgejo Package API](https://apis.io/apis/forgejo/forgejo-package-api/) — The package API from Forgejo — 5 operation(s) for package.
+- [Forgejo Repository API](https://apis.io/apis/forgejo/forgejo-repository-api/) — The repository API from Forgejo — 126 operation(s) for repository.
+- [Forgejo Settings API](https://apis.io/apis/forgejo/forgejo-settings-api/) — The settings API from Forgejo — 4 operation(s) for settings.
+- [Forgejo User API](https://apis.io/apis/forgejo/forgejo-user-api/) — The user API from Forgejo — 54 operation(s) for user.
 
-## APIs
+### Published properties
 
-### Forgejo REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Forgejo REST API (v1) provides programmatic access to all forge functionality including repository management, user and organization administration, issues, pull requests, CI/CD Actions runners, package registries, webhooks, notifications, and ActivityPub federation endpoints. The API is documented via Swagger (OpenAPI v2) and accessible on any Forgejo instance at /api/v1.
+#### Agentic access (1)
 
-- **Human URL:** [https://forgejo.org/docs/latest/user/api-usage/](https://forgejo.org/docs/latest/user/api-usage/)
-- **Base URL:** `https://code.forgejo.org/api/v1`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Forgejo Agentic Access](https://apis.io/agentic-access/forgejo/forgejo-agentic-access/)
 
-- Git
-- Repositories
-- Users
-- Organizations
-- Issues
-- Pull Requests
-- CI/CD
-- Packages
-- Webhooks
-- Notifications
-- ActivityPub
+#### JSON Schema (246)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://forgejo.org/docs/latest/user/api-usage/)
-- [OpenAPI](https://code.forgejo.org/swagger.v1.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Swagger](https://code.forgejo.org/api/swagger)
+- [AccessToken represents an API access token.](https://apis.io/schemas/forgejo/accesstoken/)
+- [ActionArtifact](https://apis.io/schemas/forgejo/actionartifact/)
+- [ActionRun](https://apis.io/schemas/forgejo/actionrun/)
+- [ActionRunJob](https://apis.io/schemas/forgejo/actionrunjob/)
+- [ActionRunner](https://apis.io/schemas/forgejo/actionrunner/)
+- [ActionTask](https://apis.io/schemas/forgejo/actiontask/)
+- [ActionTaskResponse](https://apis.io/schemas/forgejo/actiontaskresponse/)
+- [ActionVariable](https://apis.io/schemas/forgejo/actionvariable/)
+- [Activity](https://apis.io/schemas/forgejo/activity/)
+- [ActivityPub](https://apis.io/schemas/forgejo/activitypub/)
+- [AddCollaboratorOption](https://apis.io/schemas/forgejo/addcollaboratoroption/)
+- [AddTimeOption](https://apis.io/schemas/forgejo/addtimeoption/)
+- [AnnotatedTag](https://apis.io/schemas/forgejo/annotatedtag/)
+- [AnnotatedTagObject](https://apis.io/schemas/forgejo/annotatedtagobject/)
+- [APIError](https://apis.io/schemas/forgejo/apierror/)
+- [APIForbiddenError](https://apis.io/schemas/forgejo/apiforbiddenerror/)
+- [APIInternalServerError](https://apis.io/schemas/forgejo/apiinternalservererror/)
+- [APIInvalidTopicsError](https://apis.io/schemas/forgejo/apiinvalidtopicserror/)
+- [APINotFound](https://apis.io/schemas/forgejo/apinotfound/)
+- [APIRepoArchivedError](https://apis.io/schemas/forgejo/apirepoarchivederror/)
+- [APIUnauthorizedError](https://apis.io/schemas/forgejo/apiunauthorizederror/)
+- [APIValidationError](https://apis.io/schemas/forgejo/apivalidationerror/)
+- [APRemoteFollowOption](https://apis.io/schemas/forgejo/apremotefollowoption/)
+- [Attachment](https://apis.io/schemas/forgejo/attachment/)
+- [BlockedUser represents a blocked user.](https://apis.io/schemas/forgejo/blockeduser/)
+- …and 221 more published on APIs.io
 
-## Common Properties
+#### Examples (15)
+
+Example requests and responses.
+
+- [Actiontask Example](https://apis.io/examples/forgejo/actiontask-example/)
+- [Branch Example](https://apis.io/examples/forgejo/branch-example/)
+- [Commit Example](https://apis.io/examples/forgejo/commit-example/)
+- [Hook Example](https://apis.io/examples/forgejo/hook-example/)
+- [Issue Example](https://apis.io/examples/forgejo/issue-example/)
+- [Label Example](https://apis.io/examples/forgejo/label-example/)
+- [Milestone Example](https://apis.io/examples/forgejo/milestone-example/)
+- [Notificationthread Example](https://apis.io/examples/forgejo/notificationthread-example/)
+- [Organization Example](https://apis.io/examples/forgejo/organization-example/)
+- [Package Example](https://apis.io/examples/forgejo/package-example/)
+- [Pullrequest Example](https://apis.io/examples/forgejo/pullrequest-example/)
+- [Release Example](https://apis.io/examples/forgejo/release-example/)
+- [Repository Example](https://apis.io/examples/forgejo/repository-example/)
+- [Team Example](https://apis.io/examples/forgejo/team-example/)
+- [User Example](https://apis.io/examples/forgejo/user-example/)
+
+#### Collections (10)
+
+Postman and Open Collection request collections.
+
+- [Forgejo activitypub API](https://apis.io/collections/forgejo/open-forgejo-activitypub-api/)
+- [Forgejo activitypub admin API](https://apis.io/collections/forgejo/open-forgejo-admin-api/)
+- [Forgejo activitypub issue API](https://apis.io/collections/forgejo/open-forgejo-issue-api/)
+- [Forgejo activitypub miscellaneous API](https://apis.io/collections/forgejo/open-forgejo-miscellaneous-api/)
+- [Forgejo activitypub notification API](https://apis.io/collections/forgejo/open-forgejo-notification-api/)
+- [Forgejo activitypub organization API](https://apis.io/collections/forgejo/open-forgejo-organization-api/)
+- [Forgejo activitypub package API](https://apis.io/collections/forgejo/open-forgejo-package-api/)
+- [Forgejo activitypub repository API](https://apis.io/collections/forgejo/open-forgejo-repository-api/)
+- [Forgejo activitypub settings API](https://apis.io/collections/forgejo/open-forgejo-settings-api/)
+- [Forgejo activitypub user API](https://apis.io/collections/forgejo/open-forgejo-user-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Forgejo — jsonschema rules](https://apis.io/rules/forgejo/forgejo-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Forgejo Authentication](https://apis.io/security/forgejo/forgejo-authentication/)
+- [Forgejo Domain Security](https://apis.io/security/forgejo/forgejo-domain-security/)
+- [Forgejo Vulnerability Disclosure](https://apis.io/security/forgejo/forgejo-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Forgejo Plans Pricing](https://apis.io/plans/forgejo/forgejo-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Forgejo Rate Limits](https://apis.io/rate-limits/forgejo/forgejo-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Forgejo Finops](https://apis.io/finops/forgejo/forgejo-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://forgejo.org)
 - [Documentation](https://forgejo.org/docs/latest/)
-- [Git Hub Org](https://github.com/forgejo)
-- [Blog](https://forgejo.org/news/)
-- [Blog R S S](https://forgejo.org/rss.xml)
-- [Status Page](https://status.forgejo.org)
-- [X (Twitter)](https://floss.social/@forgejo)
 - [Pricing](https://forgejo.org)
-- [Plans](plans/forgejo-plans-pricing.yml)
-- [Rate Limits](rate-limits/forgejo-rate-limits.yml)
-- [Fin Ops](finops/forgejo-finops.yml)
-- [Source Code](https://codeberg.org/forgejo/forgejo)
-- [Donate](https://liberapay.com/forgejo)
+- [Blog](https://forgejo.org/news/)
+- [Status](https://status.forgejo.org)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 43.6 |
+| Contract governance | 9.8 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 15.8 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/forgejo/](https://apis.io/providers/forgejo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Forgejo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/forgejo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
